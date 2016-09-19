@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MBProgressHUD.h"
 @interface RegistTableViewController : UITableViewController<UITextFieldDelegate>
 {
     
@@ -16,9 +16,10 @@
     __weak IBOutlet UITextField *vertyCodeField;
     __weak IBOutlet UITextField *mynameFiled;
     __weak IBOutlet UIButton *getVerityCodeBtn;
+    NSInteger timeCount;
 }
 
-
+@property(nonatomic,retain) MBProgressHUD *hud;
 - (IBAction)getVerityCodeBtnClick:(id)sender;
 
 - (IBAction)registAndLoginBtnClick:(id)sender;

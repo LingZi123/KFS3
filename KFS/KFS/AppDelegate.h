@@ -21,6 +21,7 @@
 @property(nonatomic,retain)MainTabBarController *mainTabbarv;//主界面
 @property(nonatomic,retain)UINavigationController *loginNav;//登录界面
 @property(nonatomic,retain)UIStoryboard *storyboard;//界面
+@property(nonatomic,retain)NSString *token;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

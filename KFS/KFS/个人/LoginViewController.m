@@ -12,6 +12,8 @@
 #import "RegistTableViewController.h"
 #import "SPUtil.h"
 #import "SPKitExample.h"
+#import "AFHTTPSessionManager.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -43,7 +45,6 @@
     accountView=[[LableTextFieldView alloc]initWithFrame:CGRectMake(width*DE_Ration20, 23, width-2*width*DE_Ration20, 32)
                          ];
     accountView.titleLabel.text=@"帐号";
-    accountView.textField.text=@"visitor621";
     accountView.textField.delegate=self;
     accountView.textField.placeholder=@"请输入账号";
     [contentview addSubview:accountView];
@@ -54,7 +55,6 @@
     pwdView.titleLabel.text=@"密码";
     pwdView.textField.delegate=self;
     pwdView.textField.placeholder=@"请输入密码";
-    pwdView.textField.text=@"taobao1234";
     pwdView.textField.secureTextEntry=YES;
     [contentview addSubview:pwdView];
     
@@ -94,12 +94,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
 
+    [super viewWillAppear: animated];
     self.navigationController.navigationBarHidden=YES;
-    
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    self.username=[defaults objectForKey:DE_Phone];
+    accountView.textField.text=self.username;
 }
 -(void)viewWillDisappear:(BOOL)animated{
 
-
+    [super viewWillDisappear:animated];
     self.navigationController.navigationBarHidden=NO;
 }
 
@@ -116,14 +119,71 @@
 - (IBAction)loginBtnClick:(id)sender {
     [accountView.textField resignFirstResponder];
     [pwdView.textField resignFirstResponder];
-   
+    if (accountView.textField.text.length<=0||pwdView.textField.text.length<=0) {
+        if (_hud==nil) {
+            _hud =[[MBProgressHUD alloc]initWithView:self.view];
+           
+            
+        }
+         _hud.label.text=@"用户名和密码为空了";
+//        _hud.graceTime=3;
+        [_hud showAnimated:YES];
+        
+        return;
+    }
     
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
+    [mdic setObject:accountView.textField.text forKey:@"username"];
+    [mdic setObject:pwdView.textField.text forKey:@"password"];
+    
+    __weak typeof(self) weakSelf = self;
+
+    [manager POST:DE_UrlLoginIn parameters:mdic progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"%@",uploadProgress);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            weakSelf.hud.label.text=[responseObject objectForKey:@"message"];
+            [weakSelf.hud showAnimated:YES];
+        }
+        else{
+            
+            NSDictionary *data=[responseObject objectForKey:@"data"];
+            
+            NSString *token=[data objectForKey:@"token"];
+            [weakSelf appdelegate].token=token;
+            
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            [defaults setObject:token forKey:DE_Token];
+            
+            if (![weakSelf.username isEqualToString:accountView.textField.text]) {
+                weakSelf.username=accountView.textField.text;
+                [defaults setObject:weakSelf.username forKey:DE_Phone];
+            }
+            if (![weakSelf.pwd isEqualToString:pwdView.textField.text]) {
+                weakSelf.pwd=pwdView.textField.text;
+                [defaults setObject:weakSelf.pwd forKey:DE_PWD];
+            }
+            [defaults synchronize];
+            [self loginIM];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+    
+}
+
+
+-(void)loginIM{
     
     //登录成功就登录im
-     __weak typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     [[SPUtil sharedInstance]setWaitingIndicatorShown:YES withKey:self.description];
     
-    [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:accountView.textField.text passWord:pwdView.textField.text preloginedBlock:^{
+    [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:weakSelf.username passWord:weakSelf.pwd preloginedBlock:^{
         
         [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
         
@@ -136,7 +196,7 @@
         [defaults synchronize];
         
         [[self appdelegate]makeMianView];
-         [[SPKitExample sharedInstance] exampleGetFeedbackUnreadCount:YES inViewController:self];
+        [[SPKitExample sharedInstance] exampleGetFeedbackUnreadCount:YES inViewController:self];
         
     } failedBlock:^(NSError *aError) {
         [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
@@ -148,12 +208,11 @@
                 [as showInView:weakSelf.view];
             });
         }
-
+        
     }
-    ];
-    
-}
+     ];
 
+}
 -(void)regitBtnClick:(UIButton *)sender{
     
     RegistTableViewController *vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"RegistTableViewController"];

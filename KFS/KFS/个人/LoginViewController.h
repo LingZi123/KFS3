@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "CommonRootViewController.h"
 #import "LableTextFieldView.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController : CommonRootViewController<UITextFieldDelegate>{
     
     UIImageView *headImageView;
     LableTextFieldView *accountView;
     LableTextFieldView *pwdView;
+   
 }
-
+@property(nonatomic,retain) MBProgressHUD  *hud;
+@property(nonatomic,retain)NSString *username;
+@property(nonatomic,retain)NSString *pwd;
 @end

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="136" id="KGk-i7-Jjw" customClass="LearnMainCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4A-AT-1jh">
+                        <rect key="frame" x="16" y="20" width="288" height="145"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wmy-Zh-X4p">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="145"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="孙杨里约奥运会夺冠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saa-fz-RMQ">
+                                <rect key="frame" x="0.0" y="115" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30511853448275861" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="nyc-HY-Y5c"/>
+                                    <constraint firstAttribute="height" constant="30" id="vt6-74-qOR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nyc-HY-Y5c"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="saa-fz-RMQ" secondAttribute="bottom" id="LYf-xf-APX"/>
+                            <constraint firstAttribute="trailing" secondItem="saa-fz-RMQ" secondAttribute="trailing" id="aWa-9O-pOb"/>
+                            <constraint firstAttribute="bottom" secondItem="Wmy-Zh-X4p" secondAttribute="bottom" id="b2a-kZ-h8v"/>
+                            <constraint firstItem="Wmy-Zh-X4p" firstAttribute="leading" secondItem="t4A-AT-1jh" secondAttribute="leading" id="fJK-80-itS"/>
+                            <constraint firstItem="saa-fz-RMQ" firstAttribute="leading" secondItem="t4A-AT-1jh" secondAttribute="leading" id="tDi-nJ-WKK"/>
+                            <constraint firstAttribute="trailing" secondItem="Wmy-Zh-X4p" secondAttribute="trailing" id="v3k-c7-SQ1"/>
+                            <constraint firstItem="Wmy-Zh-X4p" firstAttribute="top" secondItem="t4A-AT-1jh" secondAttribute="top" id="yXm-iC-Orw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="t4A-AT-1jh" secondAttribute="trailing" constant="8" id="6KW-2h-IYA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="t4A-AT-1jh" secondAttribute="bottom" constant="8" id="7Tk-8j-N1N"/>
+                    <constraint firstItem="t4A-AT-1jh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Fyh-0Q-a4r"/>
+                    <constraint firstItem="t4A-AT-1jh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="mSL-zd-CU3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bottomTitleLabel" destination="saa-fz-RMQ" id="gzP-6d-KBI"/>
+                <outlet property="topImgeView" destination="Wmy-Zh-X4p" id="bnA-kU-7Hq"/>
+            </connections>
+            <point key="canvasLocation" x="314" y="290"/>
+        </tableViewCell>
+    </objects>
+</document>

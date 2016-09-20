@@ -19,7 +19,6 @@
     NSInteger timeCount;
 }
 
-@property(nonatomic,retain) MBProgressHUD *hud;
 - (IBAction)getVerityCodeBtnClick:(id)sender;
 
 - (IBAction)registAndLoginBtnClick:(id)sender;

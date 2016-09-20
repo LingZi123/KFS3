@@ -16,9 +16,10 @@
     UIImageView *headImageView;
     LableTextFieldView *accountView;
     LableTextFieldView *pwdView;
+    CGRect originframe;
+    UIView  *contentview;
    
 }
-@property(nonatomic,retain) MBProgressHUD  *hud;
 @property(nonatomic,retain)NSString *username;
 @property(nonatomic,retain)NSString *pwd;
 @end

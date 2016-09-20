@@ -37,7 +37,7 @@
 //    headImageView.center=topView.center;
 //    [topView addSubview:headImageView];
     
-    UIView  *contentview=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(topView.frame)+20,width, 160)];
+    contentview=[[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(topView.frame)+20,width, 160)];
     contentview.backgroundColor=[UIColor clearColor];
     [self.view addSubview:contentview];
     
@@ -84,6 +84,7 @@
     btn.titleLabel.font=DE_Font14;
     [btn setTitleColor:DE_BgColorPink forState:UIControlStateNormal];
     [self.view addSubview:btn];
+    originframe=self.view.frame;
     
 }
 
@@ -111,24 +112,61 @@
     [accountView.textField resignFirstResponder];
     [pwdView.textField resignFirstResponder];
 }
+#pragma mark-UITextFieldDelegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self loginBtnClick:nil];
+    if (textField==accountView.textField) {
+        [accountView.textField resignFirstResponder];
+        [pwdView.textField becomeFirstResponder];
+    }
+    else{
+         [self loginBtnClick:nil];
+    }
     return YES;
 }
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    CGRect frame;
+    if (textField==accountView.textField) {
+        frame=accountView.frame;
+    }
+    else{
+        frame=pwdView.frame;
+    }
+    
+    int offset=contentview.frame.origin.y+CGRectGetMaxY(frame)-(originframe.size.height-216)+10;
+    
+    //被键盘挡住了
+    if (offset>0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.frame=CGRectMake(0, -offset, originframe.size.width, originframe.size.height+offset);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    if (self.view.frame.origin.y<0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.frame=originframe;
+        } completion:^(BOOL finished) {
+            [textField resignFirstResponder];
+        }];
+    }
+}
+
 - (IBAction)loginBtnClick:(id)sender {
     [accountView.textField resignFirstResponder];
     [pwdView.textField resignFirstResponder];
     if (accountView.textField.text.length<=0||pwdView.textField.text.length<=0) {
-        if (_hud==nil) {
-            _hud =[[MBProgressHUD alloc]initWithView:self.view];
-           
-            
-        }
-         _hud.label.text=@"用户名和密码为空了";
-//        _hud.graceTime=3;
-        [_hud showAnimated:YES];
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
+        hud.label.text=@"用户名或密码为空了";
+        hud.mode=MBProgressHUDModeText;
+        [hud hideAnimated:YES afterDelay:3.0f];
         return;
     }
     
@@ -139,16 +177,23 @@
     
     __weak typeof(self) weakSelf = self;
 
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [manager POST:DE_UrlLoginIn parameters:mdic progress:^(NSProgress * _Nonnull uploadProgress) {
         NSLog(@"%@",uploadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         NSLog(@"%@",responseObject);
         NSString *status=[responseObject objectForKey:@"status"];
+        
         if ([status isEqualToString:@"error"]) {
-            weakSelf.hud.label.text=[responseObject objectForKey:@"message"];
-            [weakSelf.hud showAnimated:YES];
+            hud.mode=MBProgressHUDModeText;
+            hud.label.text=[responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
         }
         else{
+            
+            [hud hideAnimated:YES];
             
             NSDictionary *data=[responseObject objectForKey:@"data"];
             
@@ -171,6 +216,11 @@
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        hud.mode=MBProgressHUDModeText;
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:3.f];
+        
         NSLog(@"%@",error);
     }];
     

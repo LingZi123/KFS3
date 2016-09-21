@@ -25,10 +25,8 @@
     
     //向阿里注册
     [[SPKitExample sharedInstance]callThisInDidFinishLaunching];
-    
     //向微信注册
     [WXApi registerApp:DE_WeChatAppId];
-    
     //注册腾讯qq
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccessed) name:kLoginSuccessed object:[sdkCall getinstance]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:kLoginFailed object:[sdkCall getinstance]];
@@ -38,8 +36,6 @@
 
     self.window=[[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor=DE_BgColorPink;
-    
-    
     
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationSettings *noteSetting=[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
@@ -68,12 +64,16 @@
     //获取是否已经登录
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL isLogin=[[defaults objectForKey:DE_IsLogin]boolValue];
-    
+   
     //如果登录进入主界面,否则进入登录界面
     if (isLogin) {
         
+        self.username=[defaults objectForKey:DE_Phone];
+        self.pwd=[defaults objectForKey:DE_PWD];
+        self.token=[defaults objectForKey:DE_Token];
+        
          [self makeMianView];
-        [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:@"visitor621" passWord:@"taobao1234" preloginedBlock:^{
+        [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:self.username passWord:self.pwd preloginedBlock:^{
             
         } successBlock:^{
             

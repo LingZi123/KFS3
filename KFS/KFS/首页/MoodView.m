@@ -7,6 +7,9 @@
 //
 
 #import "MoodView.h"
+#import "AFHTTPSessionManager.h"
+#import "MoodAndHealthModel.h"
+#import "AppDelegate.h"
 
 @implementation MoodView
 
@@ -32,6 +35,7 @@
     
     xinqingview=[[MoodUnitView alloc]initWithFrame:CGRectMake(0, 0, 220, 26) count:5 subimagename:@""];
     xinqingview.titleLabel.text=@"心情：";
+    xinqingview.delegate=self;
     xinqingview.center=CGPointMake(self.center.x, CGRectGetMaxY(locationLabel.frame)+32);
     [xinqingview.headImageView setImage:[UIImage imageNamed:@"心情2"]];
     [self addSubview:xinqingview];
@@ -39,6 +43,7 @@
     jiankangview=[[MoodUnitView alloc]initWithFrame:CGRectMake(0, 0,220, 26) count:5 subimagename:@""];
     [jiankangview.headImageView setImage:[UIImage imageNamed:@"健康2"]];
     jiankangview.titleLabel.text=@"健康：";
+    jiankangview.delegate=self;
     jiankangview.center=CGPointMake(self.center.x, CGRectGetMaxY(xinqingview.frame)+24);
     [self addSubview:jiankangview];
     
@@ -64,4 +69,95 @@
 -(void)jiankangBtnClick:(UIButton *)sender{
     
 }
+
+//获取心情和健康
+-(void)getMoodAndHealth{
+    
+    //获取本地存储的心情和健康，包括用户名、心情、健康、时间
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *data=[defaults objectForKey:DE_Mood];
+    _datamodel=[NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    NSDate *today=[NSDate date];
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *todayStr=[formatter stringFromDate:today];
+    
+    if (_datamodel==nil) {
+        _datamodel=[[MoodAndHealthModel alloc]init];
+        _datamodel.mydate=todayStr;
+        _datamodel.healthStarIndex=0;
+        _datamodel.moodStarIndex=0;
+        _datamodel.username=[self appdelegate].username;
+        _datamodel.isPost=NO;
+        
+    }
+    else{
+        //不是今天重置
+        if (![_datamodel.mydate isEqualToString:todayStr]) {
+            _datamodel.mydate=todayStr;
+            _datamodel.healthStarIndex=0;
+            _datamodel.moodStarIndex=0;
+            _datamodel.isPost=NO;
+        }
+    }
+    
+    [xinqingview fullStart:[_datamodel.moodStarIndex  integerValue] seleted:YES];
+    [jiankangview fullStart:[_datamodel.healthStarIndex integerValue]seleted:YES];
+    
+}
+
+#pragma mark-MoodUnitViewDelegate
+-(void)moodUnitViewDidBtnSelected:(MoodUnitView *)view star:(NSString *)star{
+    if (view==xinqingview) {
+        _datamodel.moodStarIndex=star;
+    }
+    else{
+        _datamodel.healthStarIndex=star;
+    }
+    
+    if (xinqingview.selected&&jiankangview.selected&&!_datamodel.isPost) {
+        //保存到服务器
+        [self postToServer];
+    }
+}
+
+#pragma mark-appdelegate
+-(AppDelegate *)appdelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
+}
+
+-(void)postToServer{
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
+    [mdic setObject: _datamodel.moodStarIndex forKey:@"mood"];
+    [mdic setObject:_datamodel.healthStarIndex forKey:@"body_condition"];
+    
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    __weak typeof(self)weakself=self;
+    
+    [manager POST:DE_UrlInfoByUser parameters:mdic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            
+        }
+        else{
+            weakself.datamodel.isPost=YES;
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            NSData *data=[NSKeyedArchiver archivedDataWithRootObject:weakself.datamodel];
+            [defaults setObject:data forKey:DE_Mood];
+            [defaults synchronize];
+
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+}
+
 @end

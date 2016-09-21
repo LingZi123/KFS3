@@ -51,6 +51,26 @@
     
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //请求健康和心情
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getMyMoodAndHealth];
+    }) ;
+    
+    //请求提醒
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getMyRemand];
+    }) ;
+    //请求状态
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self getMyStatus];
+    }) ;
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
 #pragma mark-RemainViewDelegate
 
 -(void)goSetHelperPage{
@@ -74,5 +94,14 @@
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
 
+-(void)getMyMoodAndHealth{
+    [firstView getMoodAndHealth];
+}
 
+-(void)getMyRemand{
+    
+}
+-(void)getMyStatus{
+    
+}
 @end

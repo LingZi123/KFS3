@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/AppDelegate.m"
-            timestampString = "495878380.6785"
+            timestampString = "496122265.030458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/MoodUnitView.m"
-            timestampString = "492942038.732686"
+            timestampString = "496122265.030458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-btnClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/AppDelegate.m"
-            timestampString = "495878380.6785"
+            timestampString = "496122265.030458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
@@ -776,11 +776,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "495017907.401216"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1145"
-            endingLineNumber = "1145"
+            startingLineNumber = "1146"
+            endingLineNumber = "1146"
             landmarkName = "-image:didFinishSavingWithError:contextInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1000,11 +1000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494408381.950343"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "639"
+            endingLineNumber = "639"
             landmarkName = "-exampleOpenConversationViewControllerWithPerson:fromNavigationController:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1016,7 +1016,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494494775.209114"
+            timestampString = "496114666.450097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "696"
+            endingLineNumber = "696"
+            landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "695"
@@ -1032,27 +1048,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494494830.492589"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "694"
-            endingLineNumber = "694"
-            landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494494838.22187"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "663"
-            endingLineNumber = "663"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
             landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1096,11 +1096,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494496144.287325"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "693"
-            endingLineNumber = "693"
+            startingLineNumber = "694"
+            endingLineNumber = "694"
             landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1112,11 +1112,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "494496171.178402"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "692"
-            endingLineNumber = "692"
+            startingLineNumber = "693"
+            endingLineNumber = "693"
             landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1368,11 +1368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "495018629.037518"
+            timestampString = "496114666.450097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "666"
-            endingLineNumber = "666"
+            startingLineNumber = "667"
+            endingLineNumber = "667"
             landmarkName = "-exampleMakeConversationViewControllerWithConversation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1672,11 +1672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/LoginViewController.m"
-            timestampString = "496055829.227419"
+            timestampString = "496122265.030458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-loginIM"
             landmarkType = "5">
          </BreakpointContent>
@@ -1790,6 +1790,86 @@
             startingLineNumber = "152"
             endingLineNumber = "152"
             landmarkName = "-textFieldDidEndEditing:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/MoodView.m"
+            timestampString = "496122263.009293"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-getMoodAndHealth"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/MoodUnitView.m"
+            timestampString = "496131413.58888"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-fullStart:seleted:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/MoodUnitView.m"
+            timestampString = "496131476.175682"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "-btnClick:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/MoodView.m"
+            timestampString = "496132391.787657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "-postToServer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/MoodView.m"
+            timestampString = "496132438.803128"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-postToServer"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

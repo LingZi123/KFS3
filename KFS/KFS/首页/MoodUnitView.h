@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class MoodUnitView;
+
+@protocol MoodUnitViewDelegate <NSObject>
+
+-(void)moodUnitViewDidBtnSelected:(MoodUnitView *)view  star:(NSString *)star;
+
+@end
+
 @interface MoodUnitView : UIView
+
+@property(nonatomic,assign)BOOL selected;
 
 @property(nonatomic,retain)UIImageView *headImageView;
 @property(nonatomic,retain)UILabel *titleLabel;
@@ -16,5 +26,9 @@
 @property(nonatomic,assign)NSInteger btnCount;
 
 -(instancetype)initWithFrame:(CGRect)frame count:(NSInteger)count subimagename:(NSString *)subimagename;
+-(void)fullStart:(NSInteger)StartIndex  seleted:(BOOL)selected;
+
+@property(nonatomic,assign) id<MoodUnitViewDelegate> delegate;
 
 @end
+

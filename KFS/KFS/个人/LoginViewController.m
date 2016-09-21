@@ -211,6 +211,9 @@
                 weakSelf.pwd=pwdView.textField.text;
                 [defaults setObject:weakSelf.pwd forKey:DE_PWD];
             }
+            
+            [weakSelf appdelegate].username=weakSelf.username;
+            [weakSelf appdelegate].pwd=weakSelf.pwd;
             [defaults synchronize];
             [self loginIM];
         }

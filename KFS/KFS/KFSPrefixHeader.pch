@@ -19,6 +19,8 @@
 #define DE_Phone @"phone"
 #define DE_PWD @"pwd"
 #define DE_Token @"token"
+#define DE_Mood @"mood"
+
 
 #define DE_Font11 [UIFont systemFontOfSize:11]  //11号字
 #define DE_Font14 [UIFont systemFontOfSize:14]  //14号字
@@ -47,6 +49,9 @@
 #define DE_UrlCodes [NSString stringWithFormat:@"http://%@/api/codes",DE_ServerUrl]//获取验证码
 #define DE_UrlRegister [NSString stringWithFormat:@"http://%@/api/register",DE_ServerUrl]//注册
 #define DE_UrlLoginIn [NSString stringWithFormat:@"http://%@/api/loginIn",DE_ServerUrl]//登录
+#define DE_UrlInfoByUser[NSString stringWithFormat:@"http://%@/api/infoByUser",DE_ServerUrl]//用户心情和健康
+
+
 
 #define DE_TaobaoAPPkey @"23457612"  // 淘宝
 #define DE_TaobaoAppSecret @"1baeed2df7bfbf4591eafe87fd58194b"

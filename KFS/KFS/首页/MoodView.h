@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MoodUnitView.h"
+#import "MoodAndHealthModel.h"
 
 @protocol  MoodViewDelegate<NSObject>
 
@@ -15,11 +16,14 @@
 
 @end
 
-@interface MoodView : UIView
+@interface MoodView : UIView<MoodUnitViewDelegate>
 {
     MoodUnitView *xinqingview;
     MoodUnitView *jiankangview;
 }
 
 @property(nonatomic,assign)id<MoodViewDelegate> delegate;
+@property(nonatomic,retain)MoodAndHealthModel *datamodel;
+
+-(void)getMoodAndHealth;//获取心情和健康
 @end

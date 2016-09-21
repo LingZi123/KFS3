@@ -85,6 +85,7 @@
 		A67B857D1D6D7A8200B08D9F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A67B85771D6D7A8200B08D9F /* libWeChatSDK.a */; };
 		A67B857E1D6D7A8200B08D9F /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = A67B85781D6D7A8200B08D9F /* read_me.txt */; };
 		A67B857F1D6D7A8200B08D9F /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A67B85791D6D7A8200B08D9F /* README.txt */; };
+		A68304591D922BFD00347938 /* MoodAndHealthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A68304581D922BFD00347938 /* MoodAndHealthModel.m */; };
 		A68812441D75635000E37207 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68812431D75635000E37207 /* UIKit.framework */; };
 		A68812461D75635E00E37207 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68812451D75635E00E37207 /* AddressBook.framework */; };
 		A68812481D75636900E37207 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68812471D75636900E37207 /* CoreLocation.framework */; };
@@ -315,6 +316,8 @@
 		A67B857A1D6D7A8200B08D9F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		A67B857B1D6D7A8200B08D9F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		A67B857C1D6D7A8200B08D9F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		A68304571D922BFD00347938 /* MoodAndHealthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodAndHealthModel.h; sourceTree = "<group>"; };
+		A68304581D922BFD00347938 /* MoodAndHealthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodAndHealthModel.m; sourceTree = "<group>"; };
 		A68812431D75635000E37207 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A68812451D75635E00E37207 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A68812471D75636900E37207 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -615,6 +618,7 @@
 		A62F215C1D518657003E71C7 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				A68304561D922BE100347938 /* Model */,
 				A67B85711D6D493500B08D9F /* 故事03.m4a */,
 				A67B85691D6D421500B08D9F /* 短信08.caf */,
 				A62F21881D582BBD003E71C7 /* View */,
@@ -774,6 +778,15 @@
 				A67B857C1D6D7A8200B08D9F /* WXApiObject.h */,
 			);
 			path = "微信";
+			sourceTree = "<group>";
+		};
+		A68304561D922BE100347938 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A68304571D922BFD00347938 /* MoodAndHealthModel.h */,
+				A68304581D922BFD00347938 /* MoodAndHealthModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A688125B1D7569BC00E37207 /* 阿里 */ = {
@@ -1346,6 +1359,7 @@
 				A63B056D1D816C58004B8AC8 /* SPTribeSystemMessageCell.m in Sources */,
 				A62F21651D518703003E71C7 /* LearnMainViewController.m in Sources */,
 				A62F219A1D586E4C003E71C7 /* SetHelperViewController.m in Sources */,
+				A68304591D922BFD00347938 /* MoodAndHealthModel.m in Sources */,
 				A6AD43381D8E8BB60090F38E /* CommonHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

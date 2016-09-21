@@ -22,6 +22,8 @@
 @property(nonatomic,retain)UINavigationController *loginNav;//登录界面
 @property(nonatomic,retain)UIStoryboard *storyboard;//界面
 @property(nonatomic,retain)NSString *token;
+@property(nonatomic,retain)NSString *username;
+@property(nonatomic,retain)NSString *pwd;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

@@ -38,22 +38,43 @@
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
     }
-    
+}
 
+
+//填充
+-(void)fullStart:(NSInteger)StartIndex  seleted:(BOOL)selected{
+    NSInteger count=StartIndex;
+    BOOL myselected=selected;
+    
+    if (StartIndex==0) {
+        count=5;
+        myselected=NO;
+        _selected=NO;
+    }
+    for (int i=0; i<StartIndex; i++) {
+        _selected=YES;
+        UIButton *btn=(UIButton *)[self viewWithTag:100+i];
+        btn.selected=myselected;
+    }
 }
 
 -(void)btnClick:(UIButton *)sender{
+     //有一个选了就不能选已经选择不能修改
+    if (self.selected) {
+        return;
+    }
     if (sender.selected) {
-        sender.selected=NO;
         return;
     }
     NSInteger i=sender.tag-100;
     sender.selected=YES;
+    _selected=YES;
     for(int j=0;j<i;j++)
     {
         UIButton *btn=(UIButton *)[self viewWithTag:100+j];
         btn.selected=YES;
     }
+    [self.delegate moodUnitViewDidBtnSelected:self star:[NSString stringWithFormat:@"%lD",(long)i]];
 }
 
 @end

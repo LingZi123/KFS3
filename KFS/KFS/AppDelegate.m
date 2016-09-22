@@ -50,7 +50,7 @@
 //    NSString *documentsDirectory = [paths objectAtIndex:0];
 //    NSString *path=NSHomeDirectory();
 //    NSLog(documentsDirectory);
-//    
+    
 //    NSArray *localNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
 //
 //     NSLog(@"%@", localNotifications);

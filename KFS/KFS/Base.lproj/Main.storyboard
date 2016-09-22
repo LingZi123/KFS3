@@ -176,7 +176,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入名称" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KV3-Uz-AEL">
-                                                    <rect key="frame" x="63" y="21" width="249" height="30"/>
+                                                    <rect key="frame" x="63" y="17" width="249" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="DtZ-Kg-oKm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -194,6 +197,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="KV3-Uz-AEL" firstAttribute="centerY" secondItem="PUm-EG-fcg" secondAttribute="centerY" id="3gn-2q-rtr"/>
                                                 <constraint firstItem="g7q-ue-ffE" firstAttribute="leading" secondItem="PUm-EG-fcg" secondAttribute="leadingMargin" constant="10" id="J5X-Ko-560"/>
                                                 <constraint firstItem="KV3-Uz-AEL" firstAttribute="centerY" secondItem="PUm-EG-fcg" secondAttribute="centerY" id="KMy-ne-0Jv"/>
                                                 <constraint firstItem="KV3-Uz-AEL" firstAttribute="bottom" secondItem="PUm-EG-fcg" secondAttribute="bottomMargin" id="QMN-Cl-WQY"/>
@@ -205,17 +209,18 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="YGE-42-Db0"/>
+                                                    <exclude reference="3gn-2q-rtr"/>
                                                     <exclude reference="KMy-ne-0Jv"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="z8c-jQ-H2z">
-                                        <rect key="frame" x="0.0" y="60" width="320" height="60"/>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="z8c-jQ-H2z">
+                                        <rect key="frame" x="0.0" y="60" width="320" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z8c-jQ-H2z" id="sbz-kL-tfy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <rect key="frame" x="0.0" y="-1" width="320" height="1"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="图像：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF4-MT-lJu">
@@ -250,7 +255,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="foj-6Q-sFk">
-                                        <rect key="frame" x="0.0" y="120" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foj-6Q-sFk" id="wc8-jX-gxV">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -286,7 +291,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Wzq-9f-LoG">
-                                        <rect key="frame" x="0.0" y="180" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wzq-9f-LoG" id="Ask-hQ-6pX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -322,7 +327,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="w0x-u1-jRj">
-                                        <rect key="frame" x="0.0" y="240" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="180" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w0x-u1-jRj" id="01S-7d-8wo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
@@ -358,7 +363,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="7bY-fI-LCI">
-                                        <rect key="frame" x="0.0" y="300" width="320" height="183"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="183"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bY-fI-LCI" id="9Ne-Zg-yaU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>

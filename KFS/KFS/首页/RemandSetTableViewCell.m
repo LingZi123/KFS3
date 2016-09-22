@@ -21,4 +21,16 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)switchValueChanged:(id)sender {
+    
+    if (_controlSwitch.isOn&&!self.datamodel.isOpen) {
+        //打开
+        NSLog(@"打开");
+        
+    }
+    else if(!_controlSwitch.isOn&&self.datamodel.isOpen){
+        //关闭
+        NSLog(@"关闭");
+    }
+}
 @end

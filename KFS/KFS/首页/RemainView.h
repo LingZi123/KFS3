@@ -22,4 +22,6 @@
 }
 
 @property(nonatomic,assign)id<RemainViewDelegate> delegate;
+-(void)fullLastMyRemandWithArray:(NSArray *)array;//填充
+
 @end

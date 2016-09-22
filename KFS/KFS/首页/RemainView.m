@@ -7,7 +7,7 @@
 //
 
 #import "RemainView.h"
-
+#import "RemandModel.h"
 
 @implementation RemainView
 
@@ -29,14 +29,14 @@
     
     view1=[[RemandUnitView alloc]initWithFrame:CGRectMake((CGRectGetWidth(self.frame)-270)/2, CGRectGetMaxY(headlabel.frame)+20, 115, 68)];
     [view1.imageview setImage:[UIImage imageNamed:@"沙漏"]];
-    view1.titleLabel.text=@"跑步";
-    view1.timeLabel.text=@"5min";
+    view1.titleLabel.text=@"无提醒";
+    view1.timeLabel.text=@"00:00";
     [self addSubview:view1];
     
     view2=[[RemandUnitView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(view1.frame)+40, CGRectGetMaxY(headlabel.frame)+20, 115, 68)];
     [view2.imageview setImage:[UIImage imageNamed:@"闹铃"]];
-    view2.titleLabel.text=@"吃药";
-    view2.timeLabel.text=@"14:00";
+    view2.titleLabel.text=@"无提醒";
+    view2.timeLabel.text=@"00:00";
     [self addSubview:view2];
 
     UIButton *settingBtn=[[UIButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.frame)-80, CGRectGetMaxY(view2.frame)+12, 60, 25)];
@@ -54,6 +54,32 @@
 
 -(void)setBtnClick:(UIButton *)sender{
     [self.delegate goSetHelperPage];
+}
+
+-(void)fullLastMyRemandWithArray:(NSArray *)array{
+    if (!array||array.count==0) {
+        view1.titleLabel.text=@"无提醒";
+        view1.timeLabel.text=@"00:00";
+        view2.titleLabel.text=@"无提醒";
+        view2.timeLabel.text=@"00:00";
+    }
+    else if(array.count==1){
+        RemandModel *model=[array objectAtIndex:0];
+        view1.titleLabel.text=model.name;
+        view1.timeLabel.text=[model.excuteTime substringWithRange:NSMakeRange(0, 5)];
+        view2.titleLabel.text=@"无提醒";
+        view2.timeLabel.text=@"00:00";
+
+    }
+    else{
+        RemandModel *model1=[array objectAtIndex:0];
+        RemandModel *model2=[array objectAtIndex:1];
+        
+        view1.titleLabel.text=model1.name;
+        view1.timeLabel.text=[model1.excuteTime substringWithRange:NSMakeRange(0, 5)];
+        view2.titleLabel.text=model2.name;
+        view2.timeLabel.text=[model2.excuteTime substringWithRange:NSMakeRange(0, 5)];
+    }
 }
 
 

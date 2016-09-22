@@ -15,15 +15,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-sf-ASy">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHW-sf-ASy">
                         <rect key="frame" x="8" y="10" width="114" height="75"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="75" id="QOd-Dr-g9V"/>
                             <constraint firstAttribute="width" constant="114" id="Xw5-Yr-NXF"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fN-X8-YOz">
-                        <rect key="frame" x="130" y="19" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fN-X8-YOz">
+                        <rect key="frame" x="17" y="19" width="203" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="GF3-uF-zWb"/>
                             <constraint firstAttribute="width" constant="90" id="ybd-yV-IId"/>
@@ -32,7 +32,7 @@
                         <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自：医生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-uq-KqW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPo-uq-KqW">
                         <rect key="frame" x="130" y="59" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="X7t-ba-olF"/>
@@ -58,6 +58,9 @@
                             <constraint firstAttribute="width" constant="49" id="DUc-fz-roM"/>
                             <constraint firstAttribute="height" constant="31" id="rQe-EZ-oVu"/>
                         </constraints>
+                        <connections>
+                            <action selector="switchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="RRc-yb-XPH"/>
+                        </connections>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-PT-gU4">
                         <rect key="frame" x="282" y="19" width="30" height="21"/>
@@ -69,7 +72,7 @@
                         <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期一" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-9C-bvj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-9C-bvj">
                         <rect key="frame" x="232" y="19" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="mCI-jf-QaZ"/>
@@ -81,6 +84,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="9fN-X8-YOz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="0Gv-m0-5FY"/>
                     <constraint firstItem="4Tc-PT-gU4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="1Ap-TU-4dl"/>
                     <constraint firstItem="lPo-uq-KqW" firstAttribute="leading" secondItem="bHW-sf-ASy" secondAttribute="trailing" constant="8" id="8OD-BA-vYG"/>
                     <constraint firstItem="4Tc-PT-gU4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="DF1-yd-1Rh"/>
@@ -97,6 +101,11 @@
                     <constraint firstItem="9fN-X8-YOz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="iVx-ZV-oNf"/>
                     <constraint firstItem="BYt-9C-bvj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="rTC-sI-aJn"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="P5B-7s-cvP"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="controlSwitch" destination="b6Z-OS-E20" id="2tW-ae-bh7"/>

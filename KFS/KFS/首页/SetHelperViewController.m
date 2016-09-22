@@ -9,6 +9,9 @@
 #import "SetHelperViewController.h"
 #import "AppDelegate.h"
 #import "AddRemandViewController.h"
+#import "AFHTTPSessionManager.h"
+#import "MBProgressHUD.h"
+#import "RemandModel.h"
 
 @interface SetHelperViewController ()
 
@@ -24,12 +27,14 @@
     self.navigationItem.rightBarButtonItem=rigthBar;
     tastTableview.tableFooterView=[[UIView alloc]init];
     tastTableview.rowHeight=96;
-    dataMArray=[[NSMutableArray alloc]init];
-    [dataMArray addObject:@"test1"];
     //注册cell
     [tastTableview registerNib:[UINib nibWithNibName:@"RemandSetTableViewCell" bundle:nil] forCellReuseIdentifier:@"remandsetCell"];
    
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,8 +57,8 @@
 
 #pragma mark-UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (dataMArray) {
-        return  dataMArray.count;
+    if (self.remandListArray) {
+        return  self.remandListArray.count;
     }
     return 0;
 }
@@ -63,8 +68,14 @@
     if (cell==nil) {
         cell=[[RemandSetTableViewCell alloc]init];
     }
-    cell.myTitleLabel.text=[dataMArray objectAtIndex:indexPath.row];
-    cell.imageView.image=[UIImage imageNamed:@"appLogo"];
+    
+    RemandModel *model=[self.remandListArray objectAtIndex:indexPath.row];
+    cell.myTitleLabel.text=model.name;
+//    cell.imageView.image=[UIImage imageNamed:@"appLogo"];
+    [cell.controlSwitch setOn:model.isOpen];
+    cell.detailLabel2.text=[model.excuteTime substringWithRange:NSMakeRange(0, 5)];
+    cell.datamodel=model;
+    
     return cell;
 }
 
@@ -88,4 +99,6 @@
 -(AppDelegate *)appdelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
+
+
 @end

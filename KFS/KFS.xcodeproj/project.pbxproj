@@ -76,6 +76,7 @@
 		A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */; };
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
 		A66793501D7FAD880085C6AC /* SPContactProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934F1D7FAD880085C6AC /* SPContactProfileController.m */; };
+		A66ADCB91D927312004D1335 /* RemandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A66ADCB81D927312004D1335 /* RemandModel.m */; };
 		A67B856A1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856B1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856C1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
@@ -308,6 +309,8 @@
 		A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTribeProfileViewController.m; sourceTree = "<group>"; };
 		A667934E1D7FAD880085C6AC /* SPContactProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContactProfileController.h; sourceTree = "<group>"; };
 		A667934F1D7FAD880085C6AC /* SPContactProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPContactProfileController.m; sourceTree = "<group>"; };
+		A66ADCB71D927312004D1335 /* RemandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemandModel.h; sourceTree = "<group>"; };
+		A66ADCB81D927312004D1335 /* RemandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandModel.m; sourceTree = "<group>"; };
 		A67B85691D6D421500B08D9F /* 短信08.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "短信08.caf"; sourceTree = "<group>"; };
 		A67B85711D6D493500B08D9F /* 故事03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "故事03.m4a"; sourceTree = "<group>"; };
 		A67B85771D6D7A8200B08D9F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -785,6 +788,8 @@
 			children = (
 				A68304571D922BFD00347938 /* MoodAndHealthModel.h */,
 				A68304581D922BFD00347938 /* MoodAndHealthModel.m */,
+				A66ADCB71D927312004D1335 /* RemandModel.h */,
+				A66ADCB81D927312004D1335 /* RemandModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1324,6 +1329,7 @@
 				A6AD43531D8E97710090F38E /* AFURLSessionManager.m in Sources */,
 				A68812E51D757C0500E37207 /* SPBubbleViewModelCustomize.m in Sources */,
 				A68812F71D757C0500E37207 /* UIControl+BlockSupport.m in Sources */,
+				A66ADCB91D927312004D1335 /* RemandModel.m in Sources */,
 				A6C672DC1D5C10B900EDCC56 /* UIViewController+LewPopupViewController.m in Sources */,
 				A6594B8B1D5C7EAD0007C4A3 /* CommonRootViewController.m in Sources */,
 				A6594BA81D61A6040007C4A3 /* JHPieItemsView.m in Sources */,

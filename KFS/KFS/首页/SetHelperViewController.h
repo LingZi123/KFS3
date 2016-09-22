@@ -13,7 +13,7 @@
 {
     
     __weak IBOutlet UITableView *tastTableview;
-    NSMutableArray *dataMArray;//数据
 }
 
+@property(nonatomic,retain)NSMutableArray *remandListArray;
 @end

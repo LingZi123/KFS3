@@ -15,7 +15,11 @@
 @interface FirstPageMainViewController : CommonRootViewController<RemainViewDelegate,MoodViewDelegate>
 {
     MoodView *firstView;
-    RemainView *remandView;
     MyStateView *mystateView;
+    NSMutableArray *lastTwoArray;//最近俩提醒
+//    NSMutableArray *todayRemandArray;
 }
+
+@property(nonatomic,retain)NSMutableArray  *remandListArray;
+@property(nonatomic,retain)RemainView *remandView;
 @end

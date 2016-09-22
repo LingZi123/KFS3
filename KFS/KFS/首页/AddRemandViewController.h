@@ -7,6 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RemandModel.h"
+
+
+@protocol AddRemandViewControllerDelegate <NSObject>
+
+-(void)addRemand:(RemandModel *)model;
+-(void)updateRemand:(RemandModel *)model;
+@end
 
 @interface AddRemandViewController : UITableViewController<UITextFieldDelegate>
 {
@@ -15,8 +23,8 @@
     __weak IBOutlet UIButton *timeBtn;
     __weak IBOutlet UIButton *repeatBtn;
     __weak IBOutlet UITextField *nameTextField;
-    NSDate *beginDate;//开始日期
-    NSDate *beginTime;//开始时间
+//    NSDate *beginDate;//开始日期
+//    NSDate *beginTime;//开始时间
     NSMutableArray *repeatArray;//重复时间
     NSString *repeatStr;
     NSString *beginDateStr;
@@ -24,8 +32,12 @@
     NSString *imagename;//图片
     
     
-    NSMutableDictionary *datamdic;
+//    NSMutableDictionary *datamdic;
 }
+
+@property(nonatomic,retain)RemandModel *remandmodel;
+@property(nonatomic,assign) id<AddRemandViewControllerDelegate>delegate;
+
 - (IBAction)dateBtnClick:(id)sender;
 
 - (IBAction)timeBtnClick:(id)sender;

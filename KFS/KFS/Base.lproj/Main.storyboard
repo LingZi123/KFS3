@@ -216,44 +216,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="z8c-jQ-H2z">
-                                        <rect key="frame" x="0.0" y="60" width="320" height="0.0"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z8c-jQ-H2z" id="sbz-kL-tfy">
-                                            <rect key="frame" x="0.0" y="-1" width="320" height="1"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="图像：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bF4-MT-lJu">
-                                                    <rect key="frame" x="17" y="19" width="51" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="51" id="HjH-2u-kQS"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltu-ZD-HvO">
-                                                    <rect key="frame" x="262" y="17" width="50" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="P7G-t4-nx0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="变更" backgroundImage="弹出框按钮">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="changeBtnClick:" destination="6td-Ar-3nG" eventType="touchUpInside" id="9Ff-7d-0V4"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Ltu-ZD-HvO" firstAttribute="centerY" secondItem="sbz-kL-tfy" secondAttribute="centerY" id="2DZ-9t-QJ2"/>
-                                                <constraint firstItem="bF4-MT-lJu" firstAttribute="centerY" secondItem="sbz-kL-tfy" secondAttribute="centerY" id="GUK-bK-KAx"/>
-                                                <constraint firstItem="bF4-MT-lJu" firstAttribute="leading" secondItem="sbz-kL-tfy" secondAttribute="leadingMargin" constant="10" id="chh-VS-5Uj"/>
-                                                <constraint firstItem="Ltu-ZD-HvO" firstAttribute="trailing" secondItem="sbz-kL-tfy" secondAttribute="trailingMargin" id="tUg-PU-C4Q"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="foj-6Q-sFk">
                                         <rect key="frame" x="0.0" y="60" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -2021,7 +1983,6 @@
         <image name="单选灰" width="15" height="15"/>
         <image name="反馈" width="25" height="23"/>
         <image name="头像90" width="90" height="90"/>
-        <image name="弹出框按钮" width="50" height="27"/>
         <image name="搜索灰" width="9" height="10"/>
         <image name="注册按钮" width="280" height="40"/>
         <image name="注销" width="99" height="34"/>

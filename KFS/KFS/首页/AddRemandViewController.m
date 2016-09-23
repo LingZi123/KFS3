@@ -48,6 +48,17 @@
         //右边为编辑按钮
         UIBarButtonItem *rightBar=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editBarClick:)];
         self.navigationItem.rightBarButtonItem=rightBar;
+        //填充
+        nameTextField.text=self.remandmodel.name;
+        beginDateStr=self.remandmodel.beginDate;
+        timeStr=self.remandmodel.excuteTime;
+        name=self.remandmodel.name;
+        repeatStr=self.remandmodel.isRepeat;
+        
+        [dateBtn setTitle:beginDateStr forState:UIControlStateNormal];
+        [timeBtn setTitle:timeStr forState:UIControlStateNormal];
+        [repeatBtn setTitle:[self.remandmodel getRepeatDis:self.remandmodel.isRepeat] forState:UIControlStateNormal];
+        
     }
     
 }
@@ -60,7 +71,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 6;
+    return 5;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -142,6 +153,10 @@
 }
 
 - (IBAction)deleteBtnClick:(id)sender {
+    if (self.remandmodel){
+        //删除
+        [self.delegate deleteRemand:self.remandmodel];
+    }
 }
 
 #pragma mark-GFDateViewDelegate
@@ -237,9 +252,63 @@
 
 
 
+
 //修改
 -(void)putToServer{
     
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    
+    NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
+    [mdic setObject:name forKey:@"name"];
+    [mdic setObject:@"" forKey:@"pic"];
+    
+    NSString *postexecutiontime=[NSString stringWithFormat:@"%@#%@",beginDateStr,timeStr];
+    [mdic setObject:postexecutiontime forKey:@"execution_time"];
+    
+    if (repeatStr==nil) {
+        repeatStr=@"null";
+    }
+    [mdic setObject:repeatStr forKey:@"is_repeat"];
+    [mdic setObject:[NSNumber numberWithBool:YES] forKey:@"is_open"];
+    
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __weak typeof(self)weakself=self;
+    
+    [manager PUT:[NSString stringWithFormat:@"%@/%ld",DE_UrlRemind,(long)self.remandmodel.modelId] parameters:mdic success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            hud.mode=MBProgressHUDModeText;
+            hud.label.text=[responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+        else{
+            [hud hideAnimated:YES];
+            
+            // 先删除再修改
+            [[RemandNotifManager shareManager]deleteNotifWithModel:weakself.remandmodel];
+            
+            weakself.remandmodel.name=name;
+            weakself.remandmodel.beginDate=beginDateStr;
+            weakself.remandmodel.excuteTime=timeStr;
+            weakself.remandmodel.isRepeat=repeatStr;
+            
+            
+            [self.delegate updateRemand:weakself.remandmodel];
+            [[RemandNotifManager shareManager]addLocalNotifWithModel:weakself.remandmodel];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        hud.mode=MBProgressHUDModeText;
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:3.f];
+        NSLog(@"%@",error);
+    }];
 }
 
 

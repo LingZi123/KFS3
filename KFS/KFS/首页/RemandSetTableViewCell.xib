@@ -37,7 +37,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提醒：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-14-VGZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="提醒：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK1-14-VGZ">
                         <rect key="frame" x="209" y="59" width="33" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="7FO-rx-FsG"/>
@@ -47,7 +47,7 @@
                         <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6Z-OS-E20">
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6Z-OS-E20">
                         <rect key="frame" x="250" y="54" width="51" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="DUc-fz-roM"/>
@@ -67,7 +67,7 @@
                         <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-9C-bvj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYt-9C-bvj">
                         <rect key="frame" x="252" y="19" width="42" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="mCI-jf-QaZ"/>
@@ -91,6 +91,7 @@
                 <constraints>
                     <constraint firstItem="9fN-X8-YOz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="0Gv-m0-5FY"/>
                     <constraint firstItem="4Tc-PT-gU4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="1Ap-TU-4dl"/>
+                    <constraint firstItem="BYt-9C-bvj" firstAttribute="leading" secondItem="9fN-X8-YOz" secondAttribute="trailing" constant="32" id="2f3-IT-D9c"/>
                     <constraint firstItem="lPo-uq-KqW" firstAttribute="leading" secondItem="bHW-sf-ASy" secondAttribute="trailing" constant="8" id="8OD-BA-vYG"/>
                     <constraint firstItem="4Tc-PT-gU4" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="20" id="DF1-yd-1Rh"/>
                     <constraint firstItem="b6Z-OS-E20" firstAttribute="leading" secondItem="nK1-14-VGZ" secondAttribute="trailing" constant="7" id="H2a-Lw-nQd"/>

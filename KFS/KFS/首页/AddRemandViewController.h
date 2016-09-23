@@ -14,6 +14,8 @@
 
 -(void)addRemand:(RemandModel *)model;
 -(void)updateRemand:(RemandModel *)model;
+-(void)deleteRemand:(RemandModel *)model;
+
 @end
 
 @interface AddRemandViewController : UITableViewController<UITextFieldDelegate>

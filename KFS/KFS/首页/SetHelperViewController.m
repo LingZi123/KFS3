@@ -102,6 +102,15 @@
     return @"删除";
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    RemandModel *selectdmodel=[self.remandListArray objectAtIndex:indexPath.row];
+    AddRemandViewController *vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"AddRemandViewController"];
+    vc.delegate=self;
+    vc.remandmodel=selectdmodel;
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
 #pragma mark-AppDelegate
 -(AppDelegate *)appdelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -115,13 +124,37 @@
     [self.remandListArray addObject:model];
       [tastTableview reloadData];
     //存到系统
+    [self saveToLocal];
+}
+
+-(void)deleteRemand:(RemandModel *)model{
+    [self deleteRemandModelFromServer:model];
+}
+
+-(void)updateRemand:(RemandModel *)model{
+    if (self.remandListArray) {
+        for (RemandModel *item in self.remandListArray) {
+            if (item.modelId==model.modelId) {
+                item.name=model.name;
+                item.beginDate=model.beginDate;
+                item.excuteTime=model.excuteTime;
+                item.isRepeat=model.isRepeat;
+                break;
+            }
+        }
+    }
+    
+    [tastTableview reloadData];
+    [self saveToLocal];
+}
+
+-(void)saveToLocal{
+    //存到系统
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:self.remandListArray];
     [defaults setObject:savedata forKey:DE_RemandList];
     [defaults synchronize];
-  
 }
-
 -(void)deleteRemandModelFromServer:(RemandModel *)model{
     AFHTTPSessionManager *manamger=[AFHTTPSessionManager manager];
     [manamger.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];

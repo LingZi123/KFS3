@@ -22,20 +22,19 @@ static CommonHelper* instance=nil;
     return instance;
 }
 
--(NSInteger)getWeekDay:(NSDate *)date{
-    NSArray *weekdays = [NSArray arrayWithObjects: @"7", @"1", @"2", @"3", @"4", @"5", @"6", nil];
+-(NSString *)getWeekDay:(NSDate *)date{
+    NSArray *weekdays = [NSArray arrayWithObjects:[NSNull null], @"7", @"1", @"2", @"3", @"4", @"5", @"6", nil];
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Beijing"];
     
     [calendar setTimeZone: timeZone];
+
     
-    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+    NSDateComponents *theComponents = [calendar components:NSCalendarUnitWeekday fromDate:date];
     
-    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
-    
-    return [[weekdays objectAtIndex:theComponents.weekday] integerValue];
+    return [weekdays objectAtIndex:theComponents.weekday];
 }
 
 //时分秒hh:mm:ss

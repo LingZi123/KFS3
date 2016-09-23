@@ -7,7 +7,7 @@
 //
 
 #import "RemandSetTableViewCell.h"
-
+#import "RemandNotifManager.h"
 @implementation RemandSetTableViewCell
 
 - (void)awakeFromNib {
@@ -26,11 +26,14 @@
     if (_controlSwitch.isOn&&!self.datamodel.isOpen) {
         //打开
         NSLog(@"打开");
-        
+        NSMutableArray *array=[self.datamodel getRepeatArray:self.datamodel.isRepeat];
+        NSString *str=[self.datamodel getRepeatDis:self.datamodel.isRepeat];
+        [[RemandNotifManager shareManager]addLocalNotifWithModel:self.datamodel];
     }
     else if(!_controlSwitch.isOn&&self.datamodel.isOpen){
         //关闭
         NSLog(@"关闭");
+        [[RemandNotifManager shareManager]deleteNotifWithModel:self.datamodel];
     }
 }
 @end

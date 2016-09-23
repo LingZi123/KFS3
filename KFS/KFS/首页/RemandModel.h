@@ -18,4 +18,8 @@
 @property(nonatomic,assign)NSInteger modelId;//
 +(RemandModel *)getModelWithDic:(NSDictionary *)dic;
 
+-(NSString *)getRepeatDis:(NSString *)repeat;//获取描述
+-(NSMutableArray *)getRepeatArray:(NSString *)repeat;//获取描述
+
+
 @end

@@ -55,6 +55,8 @@
 //
 //     NSLog(@"%@", localNotifications);
 //    for (UILocalNotification *itme in localNotifications) {
+//        NSLog(@"%@",itme.userInfo);
+//        
 //        [[UIApplication sharedApplication]cancelLocalNotification:itme];
 //
 //    }

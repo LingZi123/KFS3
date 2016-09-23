@@ -77,6 +77,7 @@
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
 		A66793501D7FAD880085C6AC /* SPContactProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934F1D7FAD880085C6AC /* SPContactProfileController.m */; };
 		A66ADCB91D927312004D1335 /* RemandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A66ADCB81D927312004D1335 /* RemandModel.m */; };
+		A66ADCBC1D94D59E004D1335 /* RemandNotifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66ADCBB1D94D59E004D1335 /* RemandNotifManager.m */; };
 		A67B856A1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856B1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856C1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
@@ -311,6 +312,8 @@
 		A667934F1D7FAD880085C6AC /* SPContactProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPContactProfileController.m; sourceTree = "<group>"; };
 		A66ADCB71D927312004D1335 /* RemandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemandModel.h; sourceTree = "<group>"; };
 		A66ADCB81D927312004D1335 /* RemandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandModel.m; sourceTree = "<group>"; };
+		A66ADCBA1D94D59E004D1335 /* RemandNotifManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemandNotifManager.h; sourceTree = "<group>"; };
+		A66ADCBB1D94D59E004D1335 /* RemandNotifManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandNotifManager.m; sourceTree = "<group>"; };
 		A67B85691D6D421500B08D9F /* 短信08.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "短信08.caf"; sourceTree = "<group>"; };
 		A67B85711D6D493500B08D9F /* 故事03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "故事03.m4a"; sourceTree = "<group>"; };
 		A67B85771D6D7A8200B08D9F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -790,6 +793,8 @@
 				A68304581D922BFD00347938 /* MoodAndHealthModel.m */,
 				A66ADCB71D927312004D1335 /* RemandModel.h */,
 				A66ADCB81D927312004D1335 /* RemandModel.m */,
+				A66ADCBA1D94D59E004D1335 /* RemandNotifManager.h */,
+				A66ADCBB1D94D59E004D1335 /* RemandNotifManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1325,6 +1330,7 @@
 				A63B05611D81596E004B8AC8 /* SPTribeConversationViewController.m in Sources */,
 				A68812E31D757C0500E37207 /* SPInputViewPluginGreeting.m in Sources */,
 				A68812E61D757C0500E37207 /* SPInputViewPluginTransparent.m in Sources */,
+				A66ADCBC1D94D59E004D1335 /* RemandNotifManager.m in Sources */,
 				A6594BA51D61A6040007C4A3 /* JHLineChart.m in Sources */,
 				A6AD43531D8E97710090F38E /* AFURLSessionManager.m in Sources */,
 				A68812E51D757C0500E37207 /* SPBubbleViewModelCustomize.m in Sources */,

@@ -10,7 +10,7 @@
 
 @protocol GFWeekViewDelegate <NSObject>
 
--(void)didWeekSelectedFinished:(NSMutableArray *)array weekStr:(NSString *)weekStr;
+-(void)didWeekSelectedFinished:(NSString *)repeatStr weekStr:(NSString *)weekStr;
 
 @end
 
@@ -28,12 +28,12 @@
 @property(nonatomic,retain)UIViewController *parentVC;
 @property(nonatomic,assign)id<GFWeekViewDelegate>delegate;
 
-
 + (instancetype)defaultPopupView:(CGFloat)width;
 
 - (IBAction)cancelBtnClick:(id)sender;
 - (IBAction)okBtnClick:(id)sender;
 - (IBAction)weekBtnClick:(id)sender;
+-(void)fullWeekBtn:(NSMutableArray *)repeatArray;//填充
 
 
 

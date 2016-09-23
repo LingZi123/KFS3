@@ -12,6 +12,6 @@
 
 +(CommonHelper *)shareHeper;
 
--(NSInteger)getWeekDay:(NSDate *)date;
+-(NSString *)getWeekDay:(NSDate *)date;
 -(NSInteger)getMinitByTimeStr:(NSString *)str;
 @end

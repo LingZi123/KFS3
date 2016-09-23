@@ -104,7 +104,7 @@
 
 -(void)getLastMyRemand{
     
-    [self getRemandListFromLocal];
+    [self getRemandListFromServer];
 }
 -(void)getMyStatus{
     
@@ -115,7 +115,6 @@
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
     
-    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
     __weak typeof(self) weakself=self;
     [manager GET:DE_UrlRemind parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -123,10 +122,9 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
         NSString *status=[responseObject objectForKey:@"status"];
-        [hud hideAnimated:YES];
         if ([status isEqualToString:@"error"]) {
-            //构造两个现实无提醒
-            [weakself.remandView fullLastMyRemandWithArray:nil];
+            
+            [weakself getRemandListFromLocal];
         }
         else{
             if (weakself.remandListArray==nil) {
@@ -150,9 +148,7 @@
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        hud.mode=MBProgressHUDModeText;
-        hud.label.text=@"网络错误";
-        [hud hideAnimated:YES afterDelay:3.f];
+        [weakself getRemandListFromLocal];
     }];
 }
 
@@ -169,8 +165,10 @@
         }
         [self fullRemandView];
     }
-    if (self.remandListArray==nil) {
-        [self getRemandListFromServer];
+    //从本地获取
+    if (self.remandListArray==nil||self.remandListArray.count<=0) {
+        //构造两个现实无提醒
+        [self.remandView fullLastMyRemandWithArray:nil];
     }
 }
 
@@ -183,29 +181,67 @@
 -(void)getLastTwoRemand{
     if (self.remandListArray) {
         
-        NSDateFormatter *fomatter=[[NSDateFormatter alloc]init];
-        [fomatter setDateFormat:@"hh:mm:ss"];
+        NSDateFormatter *timefomatter=[[NSDateFormatter alloc]init];
+        [timefomatter setDateFormat:@"HH:mm:ss"];
+        NSDateFormatter *datefomatter=[[NSDateFormatter alloc]init];
+        [datefomatter setDateFormat:@"yyyy-MM-dd"];
+        
         NSDate *now=[NSDate date];
-        NSString *nowStr=[fomatter stringFromDate:now];
+        NSString *nowtimeStr=[timefomatter stringFromDate:now];
+        NSString *nowDateStr=[datefomatter stringFromDate:now];
         
         //获取今天的星期
-        NSString *currentWekday=[NSString stringWithFormat:@"%lD",(long)[[CommonHelper shareHeper]getWeekDay:now]];
-//        if (todayRemandArray==nil) {
-//            todayRemandArray=[[NSMutableArray alloc]init];
-//        }
+        NSString *currentWekday=[[CommonHelper shareHeper]getWeekDay:now];
+
         if (lastTwoArray==nil) {
             lastTwoArray=[[NSMutableArray alloc]init];
         }
         [lastTwoArray removeAllObjects];
-//        [todayRemandArray removeAllObjects];
         for (RemandModel *model in self.remandListArray) {
-            if (model.isOpen&&[model.isRepeat containsString:currentWekday]) {
+            //开始时间比今天早或者相等
+            NSDate *beginModelDate=[datefomatter dateFromString:model.beginDate];
+            NSDate *todayDate=[datefomatter dateFromString:nowDateStr];
+            
+            NSComparisonResult compatereuslt=[beginModelDate compare:todayDate];
+            if (model.isOpen&&[model.isRepeat containsString:currentWekday]&&compatereuslt!=NSOrderedDescending) {
                 
-                NSInteger todayS=[[CommonHelper shareHeper]getMinitByTimeStr:nowStr];
+                NSInteger todayS=[[CommonHelper shareHeper]getMinitByTimeStr:nowtimeStr];
                 NSInteger modelS=[[CommonHelper shareHeper]getMinitByTimeStr:model.excuteTime];
                 
                 if (modelS>todayS) {
-                    [lastTwoArray addObject:model];
+                    //进行冒泡排序
+                    if (lastTwoArray.count==0) {
+                         [lastTwoArray addObject:model];
+                    }
+                    else{
+                        //选择第一个和他比较
+                        RemandModel *minmodel=lastTwoArray[0];
+                        NSInteger modelones=[[CommonHelper shareHeper]getMinitByTimeStr:minmodel.excuteTime];
+                        
+                        if (lastTwoArray.count==1) {
+                            if (modelS<modelones) {
+                                [lastTwoArray insertObject:model atIndex:0];
+                            }
+                            else{
+                                [lastTwoArray addObject:model];
+                            }
+                        }
+                        else{
+                            RemandModel *minmodel2=lastTwoArray[1];
+                            NSInteger modelones2=[[CommonHelper shareHeper]getMinitByTimeStr:minmodel2.excuteTime];
+                            
+                            if (modelS<modelones) {
+                                [lastTwoArray insertObject:model atIndex:0];
+                            }
+                            else if (modelS<modelones2){
+                                 [lastTwoArray insertObject:model atIndex:1];
+                            }
+                            else{
+                                [lastTwoArray addObject:model];
+                            }
+                        }
+                    }
+                   
                 }
             }
         }

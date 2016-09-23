@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "RemandSetTableViewCell.h"
+#import "AddRemandViewController.h"
 
-@interface SetHelperViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface SetHelperViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,AddRemandViewControllerDelegate>
 {
     
     __weak IBOutlet UITableView *tastTableview;
 }
 
 @property(nonatomic,retain)NSMutableArray *remandListArray;
+
 @end

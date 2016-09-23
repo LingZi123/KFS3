@@ -12,6 +12,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "RemandModel.h"
+#import "RemandNotifManager.h"
 
 @interface SetHelperViewController ()
 
@@ -47,6 +48,7 @@
 -(void)addTask:(UIBarButtonItem *)sender{
     
     AddRemandViewController *vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"AddRemandViewController"];
+    vc.delegate=self;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -73,6 +75,7 @@
     cell.myTitleLabel.text=model.name;
 //    cell.imageView.image=[UIImage imageNamed:@"appLogo"];
     [cell.controlSwitch setOn:model.isOpen];
+    cell.detailLabel.text=[model getRepeatDis:model.isRepeat];
     cell.detailLabel2.text=[model.excuteTime substringWithRange:NSMakeRange(0, 5)];
     cell.datamodel=model;
     
@@ -85,6 +88,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle==UITableViewCellEditingStyleDelete) {
         NSLog(@"deletecell");
+        
+        RemandModel *selectdmodel=[self.remandListArray objectAtIndex:indexPath.row];
+        
+        [self deleteRemandModelFromServer:selectdmodel];
     }
 }
 
@@ -99,6 +106,59 @@
 -(AppDelegate *)appdelegate{
     return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
+
+#pragma mark-AddRemandViewControllerDelegate
+-(void)addRemand:(RemandModel *)model{
+    if (self.remandListArray==nil) {
+        self.remandListArray=[[NSMutableArray alloc]init];
+    }
+    [self.remandListArray addObject:model];
+      [tastTableview reloadData];
+    //存到系统
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:self.remandListArray];
+    [defaults setObject:savedata forKey:DE_RemandList];
+    [defaults synchronize];
+  
+}
+
+-(void)deleteRemandModelFromServer:(RemandModel *)model{
+    AFHTTPSessionManager *manamger=[AFHTTPSessionManager manager];
+    [manamger.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    
+    MBProgressHUD  *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __weak typeof(self)weakself=self;
+    
+    [manamger DELETE:[NSString stringWithFormat:@"%@/%lD",DE_UrlRemind,(long)model.modelId] parameters:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            hud.label.text=[responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+        else{
+            [hud hideAnimated:YES];
+            [weakself.remandListArray removeObject:model];
+            [tastTableview reloadData];
+            
+            
+            //移除本地
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            NSData *data=[NSKeyedArchiver archivedDataWithRootObject:weakself.remandListArray];
+            [defaults setObject:data forKey:DE_RemandList];
+            [defaults synchronize];
+            
+            //移除通知
+            [[RemandNotifManager shareManager]deleteNotifWithModel:model];
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:3.f];
+    }];
+}
+
 
 
 @end

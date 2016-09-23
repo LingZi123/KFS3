@@ -56,3 +56,7 @@
 
 #define DE_TaobaoAPPkey @"23457612"  // 淘宝
 #define DE_TaobaoAppSecret @"1baeed2df7bfbf4591eafe87fd58194b"
+
+#define DE_Everyday @"1#2#3#4#5#6#7"
+#define DE_WeekendDay @"6#7"
+#define DE_JobDay @"1#2#3#4#5"

@@ -25,11 +25,12 @@
     __weak IBOutlet UITextField *nameTextField;
 //    NSDate *beginDate;//开始日期
 //    NSDate *beginTime;//开始时间
-    NSMutableArray *repeatArray;//重复时间
+//    NSMutableArray *repeatArray;//重复时间
     NSString *repeatStr;
     NSString *beginDateStr;
     NSString *timeStr;
     NSString *imagename;//图片
+    NSString *name;
     
     
 //    NSMutableDictionary *datamdic;

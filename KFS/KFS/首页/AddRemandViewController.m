@@ -14,6 +14,7 @@
 #import "AFHTTPSessionManager.h"
 #import "AppDelegate.h"
 #import "CommonHelper.h"
+#import "RemandNotifManager.h"
 
 @interface AddRemandViewController ()<GFDateViewDelegate,GFWeekViewDelegate>
 
@@ -94,6 +95,11 @@
     GFWeekView *v=[GFWeekView defaultPopupView:CGRectGetWidth(self.view.frame)];
     v.parentVC=self;
     v.delegate=self;
+    NSMutableArray *arry=nil;
+    if (_remandmodel&&![_remandmodel.isRepeat isEqualToString:@"null"]) {
+        arry=[_remandmodel getRepeatArray:_remandmodel.isRepeat];
+    }
+    [v fullWeekBtn:arry];
     [self lew_presentPopupView:v position:1  animation:[LewPopupViewAnimationSpring new] dismissed:^{
         
     }];
@@ -106,7 +112,10 @@
 - (IBAction)saveBtnClick:(id)sender {
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if (nameTextField.text.length<=0) {
+
+    name= [nameTextField.text stringByTrimmingCharactersInSet:
+           [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (name<=0) {
         hud.label.text=@"名称不能为空";
         [hud hideAnimated:YES afterDelay:3.f];
     }
@@ -146,13 +155,9 @@
     
 }
 #pragma mrak-GFWeekViewDelegate
--(void)didWeekSelectedFinished:(NSMutableArray *)array weekStr:(NSString *)weekStr{
+-(void)didWeekSelectedFinished:(NSString *)repeat weekStr:(NSString *)weekStr{
     [repeatBtn setTitle:weekStr forState:UIControlStateNormal];
-    if (repeatArray==nil) {
-        repeatArray=[[NSMutableArray alloc]init];
-    }
-    [repeatArray removeAllObjects];
-    [repeatArray addObjectsFromArray:array];
+     repeatStr=repeat;
 }
 
 #pragma mark-UITextFieldDelegate
@@ -163,17 +168,7 @@
 
 
 
--(void)exeAddNotifWeekDay:(NSInteger )weekday  curentWeekDay:(NSInteger )currentWeekDay notification:(UILocalNotification *)notification inputDate:(NSDate *)inputDate info:(NSDictionary *)info{
-    
-    NSInteger a=weekday-currentWeekDay;
-    if (a<0) {
-        a+=7;
-    }
-    notification.fireDate=[inputDate dateByAddingTimeInterval:a*60*60*24];
-    notification.repeatInterval=NSCalendarUnitWeekday;//循环次数，kCFCalendarUnitWeekday一周一次
-    notification.userInfo=info;
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-}
+
 
 #pragma mark-appdelegate
 -(AppDelegate *)appdelegate{
@@ -186,34 +181,21 @@
     [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
     
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
-    [mdic setObject:nameTextField.text forKey:@"name"];
+    [mdic setObject:name forKey:@"name"];
     [mdic setObject:@"" forKey:@"pic"];
     
     NSString *postexecutiontime=[NSString stringWithFormat:@"%@#%@",beginDateStr,timeStr];
     [mdic setObject:postexecutiontime forKey:@"execution_time"];
     
-    if (repeatArray) {
-        for (int i=0; i<repeatArray.count; i++) {
-            if ([[repeatArray objectAtIndex:i] isEqualToString:@"1"]) {
-                if (repeatStr.length>0) {
-                    repeatStr=[NSString stringWithFormat:@"%@%D#",repeatStr,i+1];
-                }
-                else{
-                    repeatStr=[NSString stringWithFormat:@"%D#",i+1];
-                }
-            }
-            
-        }
-    }
-    else{
+    if (repeatStr==nil) {
         repeatStr=@"null";
     }
-    repeatStr=[repeatStr substringWithRange:NSMakeRange(0, repeatStr.length-1)];
-    
     [mdic setObject:repeatStr forKey:@"is_repeat"];
     [mdic setObject:[NSNumber numberWithBool:YES] forKey:@"is_open"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __weak typeof(self)weakself=self;
  
     [manager POST:DE_UrlRemind parameters:mdic progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -227,19 +209,19 @@
         }
         else{
             [hud hideAnimated:YES];
-            if (_remandmodel==nil) {
-                _remandmodel=[[RemandModel alloc]init];
+            if (weakself.remandmodel==nil) {
+                weakself.remandmodel=[[RemandModel alloc]init];
             }
-            _remandmodel.modelId=[[responseObject objectForKey:@"data"]integerValue];
-            _remandmodel.name=nameTextField.text;
-            _remandmodel.beginDate=beginDateStr;
-            _remandmodel.excuteTime=timeStr;
-            _remandmodel.isRepeat=repeatStr;
-            _remandmodel.isOpen=YES;
+            weakself.remandmodel.modelId=[[responseObject objectForKey:@"data"]integerValue];
+            weakself.remandmodel.name=name;
+            weakself.remandmodel.beginDate=beginDateStr;
+            weakself.remandmodel.excuteTime=timeStr;
+            weakself.remandmodel.isRepeat=repeatStr;
+            weakself.remandmodel.isOpen=YES;
             
-            //存到系统
-            [self.delegate addRemand:_remandmodel];
-            [self addLocalNotif];
+            
+            [self.delegate addRemand:weakself.remandmodel];
+            [[RemandNotifManager shareManager]addLocalNotifWithModel:weakself.remandmodel];
             [self.navigationController popViewControllerAnimated:YES];
         }
         
@@ -260,71 +242,6 @@
     
 }
 
--(void)addLocalNotif{
-    
-    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
-    [inputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *inputDateStr=[NSString stringWithFormat:@"%@ %@",beginDateStr,timeStr];
-    NSDate* inputDate = [inputFormatter dateFromString:inputDateStr];
-    
-    NSInteger weekDay=[[CommonHelper shareHeper] getWeekDay:inputDate];
-    NSLog(@"%@",inputDate);
-    
-    UILocalNotification *notification=[[UILocalNotification alloc]init];
-    notification.timeZone=[NSTimeZone defaultTimeZone];
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"短信08" ofType:@"caf"];
-    NSLog(@"path-------------%@",path);
-    notification.soundName=@"故事03.m4a";
-    notification.applicationIconBadgeNumber++;//应用的红色数字
-    
-    //去掉下面2行就不会弹出提示框
-    notification.alertTitle=@"任务通知";
-    notification.alertBody=nameTextField.text;//提示信息 弹出提示框
-    notification.alertAction = @"打开";  //提示框按钮
-    notification.hasAction = YES; //是否显示额外的按钮，为no时alertAction消失
-    
-    // 添加通知
-    if (repeatArray.count==7) {
-        notification.fireDate=inputDate;
-        notification.repeatInterval=NSCalendarUnitDay;//循环次数，kCFCalendarUnitWeekday一天一次
-        NSDictionary*infoDict = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@ %@",inputDateStr,repeatBtn.titleLabel.text] forKey:_remandmodel.name];
-        notification.userInfo = infoDict; //添加额外的信息
-        
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
-    else if ([repeatBtn.titleLabel.text isEqualToString:@"工作日"]){
-        
-        for (int i=1; i<6; i++) {
-            NSDictionary*infoDict = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@ 周%D",inputDateStr,i] forKey:_remandmodel.name];
-            
-            [self exeAddNotifWeekDay:i curentWeekDay:weekDay notification:notification inputDate:inputDate info:infoDict];
-        }
-    }
-    else if ([repeatBtn.titleLabel.text isEqualToString:@"周末"]){
-        
-        for (int i=6; i<8; i++) {
-            NSDictionary*infoDict = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@ 周%D",inputDateStr,i] forKey:_remandmodel.name];
-            
-            [self exeAddNotifWeekDay:i curentWeekDay:weekDay notification:notification inputDate:inputDate info:infoDict];
-        }
-    }
-    else{
-        
-        
-        for (int i=1; i<8; i++) {
-            
-            NSString *item =repeatArray[i-1];
-            if ([item isEqualToString:@"0"]) {
-                continue;
-            }
-            NSDictionary*infoDict = [NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%@ 周%D",inputDateStr,i] forKey:_remandmodel.name];
-            [self exeAddNotifWeekDay:i curentWeekDay:weekDay notification:notification inputDate:inputDate info:infoDict];
-        }
-        
-    }
-
-}
 
 -(void)editBarClick:(UIBarButtonItem *)sender{
     [nameTextField becomeFirstResponder];

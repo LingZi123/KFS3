@@ -78,6 +78,8 @@
     
     __weak __typeof(conversationListController) weakConversationListController = conversationListController;
     conversationListController.didSelectItemBlock = ^(YWConversation *aConversation) {
+        
+        
         if ([aConversation isKindOfClass:[YWCustomConversation class]]) {
             YWCustomConversation *customConversation = (YWCustomConversation *)aConversation;
             [customConversation markConversationAsRead];

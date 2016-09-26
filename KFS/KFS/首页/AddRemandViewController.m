@@ -39,8 +39,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if (_remandmodel==nil) {
-        [nameTextField becomeFirstResponder];
-
+//        [nameTextField becomeFirstResponder];
+        deleteBtn.hidden=YES;
+        
+        saveBtn.center=[saveBtn superview].center;
     }
     else{
         
@@ -48,6 +50,8 @@
         //右边为编辑按钮
         UIBarButtonItem *rightBar=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editBarClick:)];
         self.navigationItem.rightBarButtonItem=rightBar;
+        
+        deleteBtn.hidden=NO;
         //填充
         nameTextField.text=self.remandmodel.name;
         beginDateStr=self.remandmodel.beginDate;
@@ -56,7 +60,8 @@
         repeatStr=self.remandmodel.isRepeat;
         
         [dateBtn setTitle:beginDateStr forState:UIControlStateNormal];
-        [timeBtn setTitle:timeStr forState:UIControlStateNormal];
+        [timeBtn setTitle:[timeStr substringWithRange:NSMakeRange(0, timeStr.length-3)] forState:UIControlStateNormal];
+
         [repeatBtn setTitle:[self.remandmodel getRepeatDis:self.remandmodel.isRepeat] forState:UIControlStateNormal];
         
     }

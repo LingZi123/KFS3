@@ -22,6 +22,7 @@
      self.isHidenShareView=YES;
     shareView.hidden= self.isHidenShareView;
     
+    self.navigationItem.title=@"邀请好友";
     [self.view addSubview:shareView];
     origiColor=self.view.backgroundColor;
 }

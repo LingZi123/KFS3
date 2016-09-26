@@ -13,6 +13,9 @@
 {
     
     __weak IBOutlet UITableView *mytableView;
-    NSMutableArray *dataArray;
+    UIScrollView *sc;
+    UIButton *oldSelectTitleBtn;//选中的
 }
+@property(nonatomic,retain)NSMutableArray *titlemArray;
+@property(nonatomic,retain)NSMutableArray *contentArray;
 @end

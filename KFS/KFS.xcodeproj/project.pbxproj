@@ -128,6 +128,9 @@
 		A68812F61D757C0500E37207 /* UIBarButtonItem+BlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = A68812DA1D757C0500E37207 /* UIBarButtonItem+BlockSupport.m */; };
 		A68812F71D757C0500E37207 /* UIControl+BlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = A68812DC1D757C0500E37207 /* UIControl+BlockSupport.m */; };
 		A68812FA1D757FB200E37207 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68812F91D757FB200E37207 /* MainTabBarController.m */; };
+		A68DFE531D990872007F5CD4 /* ReducationTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A68DFE521D990872007F5CD4 /* ReducationTypeModel.m */; };
+		A68DFE561D991752007F5CD4 /* ReducationContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A68DFE551D991752007F5CD4 /* ReducationContentModel.m */; };
+		A68DFE581D991B47007F5CD4 /* 学习默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A68DFE571D991B47007F5CD4 /* 学习默认.png */; };
 		A6AD43381D8E8BB60090F38E /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AD43371D8E8BB60090F38E /* CommonHelper.m */; };
 		A6AD433C1D8E942D0090F38E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AD433B1D8E942D0090F38E /* MBProgressHUD.m */; };
 		A6AD433E1D8E951A0090F38E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AD433D1D8E951A0090F38E /* NotificationCenter.framework */; };
@@ -378,6 +381,11 @@
 		A68812DC1D757C0500E37207 /* UIControl+BlockSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+BlockSupport.m"; sourceTree = "<group>"; };
 		A68812F81D757FB200E37207 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		A68812F91D757FB200E37207 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		A68DFE511D990872007F5CD4 /* ReducationTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReducationTypeModel.h; sourceTree = "<group>"; };
+		A68DFE521D990872007F5CD4 /* ReducationTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReducationTypeModel.m; sourceTree = "<group>"; };
+		A68DFE541D991752007F5CD4 /* ReducationContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReducationContentModel.h; sourceTree = "<group>"; };
+		A68DFE551D991752007F5CD4 /* ReducationContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReducationContentModel.m; sourceTree = "<group>"; };
+		A68DFE571D991B47007F5CD4 /* 学习默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "学习默认.png"; sourceTree = "<group>"; };
 		A6AD43361D8E8BB60090F38E /* CommonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHelper.h; sourceTree = "<group>"; };
 		A6AD43371D8E8BB60090F38E /* CommonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonHelper.m; sourceTree = "<group>"; };
 		A6AD433A1D8E942D0090F38E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -606,6 +614,7 @@
 		A62F215A1D518657003E71C7 /* 学习 */ = {
 			isa = PBXGroup;
 			children = (
+				A68DFE501D99084F007F5CD4 /* Model */,
 				A6DCCE7B1D62C09D006A0CAF /* View */,
 				A6DCCE7A1D62C08D006A0CAF /* Controller */,
 			);
@@ -934,6 +943,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A68DFE501D99084F007F5CD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A68DFE571D991B47007F5CD4 /* 学习默认.png */,
+				A68DFE511D990872007F5CD4 /* ReducationTypeModel.h */,
+				A68DFE521D990872007F5CD4 /* ReducationTypeModel.m */,
+				A68DFE541D991752007F5CD4 /* ReducationContentModel.h */,
+				A68DFE551D991752007F5CD4 /* ReducationContentModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A6AD43331D8E89000090F38E /* 网络 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,6 +1261,7 @@
 				A68812EC1D757C0500E37207 /* icon_delete@2x.png in Resources */,
 				A6D29AE91D6EE5BC000DCA0B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A6C672E11D5C114B00EDCC56 /* GFDateView.xib in Resources */,
+				A68DFE581D991B47007F5CD4 /* 学习默认.png in Resources */,
 				A68812F31D757C0500E37207 /* pub_title_ico_back_white@2x.png in Resources */,
 				A68812EA1D757C0500E37207 /* greeting_message@2x.png in Resources */,
 				A62F217C1D51E24D003E71C7 /* TableViewCell.xib in Resources */,
@@ -1339,10 +1361,12 @@
 				A6C672DC1D5C10B900EDCC56 /* UIViewController+LewPopupViewController.m in Sources */,
 				A6594B8B1D5C7EAD0007C4A3 /* CommonRootViewController.m in Sources */,
 				A6594BA81D61A6040007C4A3 /* JHPieItemsView.m in Sources */,
+				A68DFE561D991752007F5CD4 /* ReducationContentModel.m in Sources */,
 				A68812E01D757C0500E37207 /* SPInputViewPluginCallingCard.m in Sources */,
 				A6594BA71D61A6040007C4A3 /* JHPieForeBGView.m in Sources */,
 				A6C672DF1D5C113800EDCC56 /* GFDateView.m in Sources */,
 				A6594BA61D61A6040007C4A3 /* JHPieChart.m in Sources */,
+				A68DFE531D990872007F5CD4 /* ReducationTypeModel.m in Sources */,
 				A6594B851D5C2A1E0007C4A3 /* GFWeekView.m in Sources */,
 				A62F21281D518502003E71C7 /* AppDelegate.m in Sources */,
 				A63B056A1D816C38004B8AC8 /* SPTribeSystemConversationViewController.m in Sources */,

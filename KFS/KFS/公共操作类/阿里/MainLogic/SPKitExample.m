@@ -617,7 +617,7 @@ UIAlertViewDelegate>
         conversationViewController = [self exampleMakeConversationViewControllerWithConversation:aConversation];
     }
 
-    conversationViewController.disableReceiverReadFlag=YES;//添加不显示未读已读
+//    conversationViewController.disableReceiverReadFlag=YES;//添加不显示未读已读
     NSArray *viewControllers = nil;
     if (conversationNavigationController.viewControllers.firstObject == conversationViewController) {
         viewControllers = @[conversationNavigationController.viewControllers.firstObject];

@@ -161,6 +161,8 @@
     if (self.remandmodel){
         //删除
         [self.delegate deleteRemand:self.remandmodel];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
 }
 

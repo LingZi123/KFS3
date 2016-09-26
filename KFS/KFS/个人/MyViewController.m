@@ -8,6 +8,7 @@
 
 #import "MyViewController.h"
 #import "AppDelegate.h"
+#import "SPKitExample.h"
 
 @interface MyViewController ()
 
@@ -112,7 +113,8 @@
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"InviteFriendsViewController"];
     }
     else if (indexPath.row==2){
-        
+        //反馈
+        [[SPKitExample sharedInstance] exampleOpenFeedbackViewController:NO fromViewController:self];
     }
     else{
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
@@ -177,6 +179,8 @@
 
 
 - (IBAction)logoutBtnClick:(id)sender {
+    
+    [[SPKitExample sharedInstance] callThisBeforeISVAccountLogout];
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     [defaults setBool:NO forKey:DE_IsLogin];
     [defaults synchronize];

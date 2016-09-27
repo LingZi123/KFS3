@@ -149,7 +149,7 @@
         AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
         NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
         if (mynameFiled.text.length>0) {
-            [mdic setObject:mynameFiled.text forKey:@"username"];
+            [mdic setObject:phoneField.text forKey:@"username"];
         }
         else{
             [mdic setObject:@"" forKey:@"username"];

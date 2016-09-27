@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.tableView.tableFooterView=[[UIView alloc]init];
     self.navigationItem.title=@"密码重置";
-    self.tableView.tableFooterView=[UIView alloc];
 }
 
 - (void)didReceiveMemoryWarning {

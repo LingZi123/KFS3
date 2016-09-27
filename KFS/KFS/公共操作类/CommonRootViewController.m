@@ -21,6 +21,10 @@
     NSDictionary * dict=[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
 
+    UIBarButtonItem *backImte=[[UIBarButtonItem alloc]init];
+    backImte.title=@"返回" ;
+    self.navigationItem.backBarButtonItem=backImte;
+
     
    
 

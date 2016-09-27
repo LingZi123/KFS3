@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     UIImageView *bgImage=[[UIImageView alloc]initWithFrame:self.view.frame];
     [bgImage setImage:[UIImage imageNamed:@"登录背景"]];
     [self.view addSubview:bgImage];

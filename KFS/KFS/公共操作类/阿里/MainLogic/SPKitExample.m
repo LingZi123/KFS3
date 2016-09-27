@@ -1031,11 +1031,12 @@ const CGFloat kSPCustomConversationCellHeight = 30;
 const CGFloat kSPCustomConversationCellContentMargin =10;
 - (void)exampleCustomizeConversationCellWithConversationListController:(YWConversationListViewController *)aConversationListController
 {
+    
     /// 自定义Cell高度
     [aConversationListController setHeightForRowBlock:^CGFloat(UITableView *aTableView, NSIndexPath *aIndexPath, YWConversation *aConversation) {
         if ([aConversation.conversationId isEqualToString:kSPCustomConversationIdForFAQ]) {
             /// TODO: 如果希望自定义Cell高度，在此返回你希望的高度
-            return kSPCustomConversationCellHeight;
+            return 8;//kSPCustomConversationCellHeight;
         } else {
             return YWConversationListCellDefaultHeight;
         }
@@ -1051,8 +1052,8 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
             [label setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
             [faqCell.contentView addSubview:label];
             
-            [label setText:@"点击查看云旺iOS精华问题"];
-            [faqCell setBackgroundColor:[UIColor colorWithRed:201.f/255.f green:201.f/255.f blue:206.f/255.f alpha:1.f]];
+//            [label setText:@"点击查看云旺iOS精华问题"];
+//            [faqCell setBackgroundColor:[UIColor colorWithRed:201.f/255.f green:201.f/255.f blue:206.f/255.f alpha:1.f]];
             [label setTextColor:[UIColor whiteColor]];
             [label setTextAlignment:NSTextAlignmentCenter];
             [label setFont:[UIFont systemFontOfSize:12.f]];

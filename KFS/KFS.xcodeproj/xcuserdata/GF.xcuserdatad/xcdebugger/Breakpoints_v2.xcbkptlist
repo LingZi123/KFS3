@@ -712,11 +712,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "496114666.450097"
+            timestampString = "496659515.359142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1146"
-            endingLineNumber = "1146"
+            startingLineNumber = "1148"
+            endingLineNumber = "1148"
             landmarkName = "-image:didFinishSavingWithError:contextInfo:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1016,11 +1016,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/MainTabBarController.m"
-            timestampString = "496295811.143091"
+            timestampString = "496659174.052374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-makeControllers"
             landmarkType = "5">
          </BreakpointContent>
@@ -2216,11 +2216,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/MainTabBarController.m"
-            timestampString = "496295811.143091"
+            timestampString = "496659174.052374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-makeControllers"
             landmarkType = "5">
          </BreakpointContent>
@@ -2232,11 +2232,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/MainTabBarController.m"
-            timestampString = "496295811.143091"
+            timestampString = "496659174.052374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-makeControllers"
             landmarkType = "5">
          </BreakpointContent>
@@ -2792,11 +2792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/MainTabBarController.m"
-            timestampString = "496548212.513348"
+            timestampString = "496659174.052374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-makeControllers"
             landmarkType = "5">
          </BreakpointContent>
@@ -2952,11 +2952,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "496574666.52826"
+            timestampString = "496659515.359142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1207"
-            endingLineNumber = "1207"
+            startingLineNumber = "1209"
+            endingLineNumber = "1209"
             landmarkName = "-exampleListenNewMessage"
             landmarkType = "5">
             <Locations>
@@ -3000,11 +3000,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
-            timestampString = "496576127.137378"
+            timestampString = "496659515.359142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1208"
-            endingLineNumber = "1208"
+            startingLineNumber = "1210"
+            endingLineNumber = "1210"
             landmarkName = "-exampleListenNewMessage"
             landmarkType = "5">
          </BreakpointContent>

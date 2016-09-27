@@ -56,7 +56,6 @@
     YWConversationListViewController *conversationListController = [[SPKitExample sharedInstance].ywIMKit makeConversationListViewController];
     
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:conversationListController];
-    nav5.title=@"消息";
     [nav5.tabBarItem setSelectedImage:[UIImage imageNamed:@"亮消息"]];
     [nav5.tabBarItem setImage:[UIImage imageNamed:@"灰消息"]];
     [nav5.tabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:DE_BgColorPink,NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
@@ -76,6 +75,9 @@
     
     [[SPKitExample sharedInstance] exampleCustomizeConversationCellWithConversationListController:conversationListController];
     
+    nav5.title=@"消息";
+
+    
     __weak __typeof(conversationListController) weakConversationListController = conversationListController;
     conversationListController.didSelectItemBlock = ^(YWConversation *aConversation) {
         
@@ -89,10 +91,10 @@
                 [weakConversationListController.navigationController pushViewController:controller animated:YES];
             }
             else if ([customConversation.conversationId isEqualToString:kSPCustomConversationIdForFAQ]) {
-                YWWebViewController *controller = [YWWebViewController makeControllerWithUrlString:@"http://bbs.aliyun.com/searcher.php?step=2&method=AND&type=thread&verify=d26d3c6e63c0b37d&sch_area=1&fid=285&sch_time=all&keyword=汇总" andImkit:[SPKitExample sharedInstance].ywIMKit];
-                [controller setHidesBottomBarWhenPushed:YES];
-                [controller setTitle:@"云旺iOS精华问题"];
-                [weakConversationListController.navigationController pushViewController:controller animated:YES];
+//                YWWebViewController *controller = [YWWebViewController makeControllerWithUrlString:@"http://bbs.aliyun.com/searcher.php?step=2&method=AND&type=thread&verify=d26d3c6e63c0b37d&sch_area=1&fid=285&sch_time=all&keyword=汇总" andImkit:[SPKitExample sharedInstance].ywIMKit];
+//                [controller setHidesBottomBarWhenPushed:YES];
+//                [controller setTitle:@"云旺iOS精华问题"];
+//                [weakConversationListController.navigationController pushViewController:controller animated:YES];
             }
             else {
                 YWWebViewController *controller = [YWWebViewController makeControllerWithUrlString:@"http://im.baichuan.taobao.com/" andImkit:[SPKitExample sharedInstance].ywIMKit];

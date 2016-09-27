@@ -35,7 +35,6 @@
 		A62F21621D5186F3003E71C7 /* ContactMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21611D5186F3003E71C7 /* ContactMainViewController.m */; };
 		A62F21651D518703003E71C7 /* LearnMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21641D518703003E71C7 /* LearnMainViewController.m */; };
 		A62F216E1D519522003E71C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F216D1D519522003E71C7 /* LoginViewController.m */; };
-		A62F21761D519DE1003E71C7 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21751D519DE1003E71C7 /* ForgetPwdViewController.m */; };
 		A62F217B1D51E24D003E71C7 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21791D51E24D003E71C7 /* TableViewCell.m */; };
 		A62F217C1D51E24D003E71C7 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62F217A1D51E24D003E71C7 /* TableViewCell.xib */; };
 		A62F21831D54766D003E71C7 /* InviteFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21821D54766D003E71C7 /* InviteFriendsViewController.m */; };
@@ -131,6 +130,7 @@
 		A68DFE531D990872007F5CD4 /* ReducationTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A68DFE521D990872007F5CD4 /* ReducationTypeModel.m */; };
 		A68DFE561D991752007F5CD4 /* ReducationContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A68DFE551D991752007F5CD4 /* ReducationContentModel.m */; };
 		A68DFE581D991B47007F5CD4 /* 学习默认.png in Resources */ = {isa = PBXBuildFile; fileRef = A68DFE571D991B47007F5CD4 /* 学习默认.png */; };
+		A68DFE5B1D9A413A007F5CD4 /* ForgetPwdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68DFE5A1D9A413A007F5CD4 /* ForgetPwdTableViewController.m */; };
 		A6AD43381D8E8BB60090F38E /* CommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AD43371D8E8BB60090F38E /* CommonHelper.m */; };
 		A6AD433C1D8E942D0090F38E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AD433B1D8E942D0090F38E /* MBProgressHUD.m */; };
 		A6AD433E1D8E951A0090F38E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6AD433D1D8E951A0090F38E /* NotificationCenter.framework */; };
@@ -233,8 +233,6 @@
 		A62F216C1D519522003E71C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A62F216D1D519522003E71C7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A62F216F1D519727003E71C7 /* KFSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFSPrefixHeader.pch; sourceTree = "<group>"; };
-		A62F21741D519DE1003E71C7 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
-		A62F21751D519DE1003E71C7 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
 		A62F21781D51E24D003E71C7 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		A62F21791D51E24D003E71C7 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		A62F217A1D51E24D003E71C7 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -386,6 +384,8 @@
 		A68DFE541D991752007F5CD4 /* ReducationContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReducationContentModel.h; sourceTree = "<group>"; };
 		A68DFE551D991752007F5CD4 /* ReducationContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReducationContentModel.m; sourceTree = "<group>"; };
 		A68DFE571D991B47007F5CD4 /* 学习默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "学习默认.png"; sourceTree = "<group>"; };
+		A68DFE591D9A413A007F5CD4 /* ForgetPwdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdTableViewController.h; sourceTree = "<group>"; };
+		A68DFE5A1D9A413A007F5CD4 /* ForgetPwdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdTableViewController.m; sourceTree = "<group>"; };
 		A6AD43361D8E8BB60090F38E /* CommonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHelper.h; sourceTree = "<group>"; };
 		A6AD43371D8E8BB60090F38E /* CommonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonHelper.m; sourceTree = "<group>"; };
 		A6AD433A1D8E942D0090F38E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -663,8 +663,6 @@
 				A63B05751D828864004B8AC8 /* SPTribeQRCodeViewController.m */,
 				A62F216C1D519522003E71C7 /* LoginViewController.h */,
 				A62F216D1D519522003E71C7 /* LoginViewController.m */,
-				A62F21741D519DE1003E71C7 /* ForgetPwdViewController.h */,
-				A62F21751D519DE1003E71C7 /* ForgetPwdViewController.m */,
 				A62F21811D54766D003E71C7 /* InviteFriendsViewController.h */,
 				A62F21821D54766D003E71C7 /* InviteFriendsViewController.m */,
 				A62F21841D5478F2003E71C7 /* AboutViewController.h */,
@@ -673,6 +671,8 @@
 				A6594B8D1D5DC3C90007C4A3 /* MyViewController.m */,
 				A6DCCE891D6550C5006A0CAF /* RegistTableViewController.h */,
 				A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */,
+				A68DFE591D9A413A007F5CD4 /* ForgetPwdTableViewController.h */,
+				A68DFE5A1D9A413A007F5CD4 /* ForgetPwdTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1317,10 +1317,10 @@
 				A68812FA1D757FB200E37207 /* MainTabBarController.m in Sources */,
 				A6594BAA1D61A6040007C4A3 /* JHShowInfoView.m in Sources */,
 				A66793501D7FAD880085C6AC /* SPContactProfileController.m in Sources */,
+				A68DFE5B1D9A413A007F5CD4 /* ForgetPwdTableViewController.m in Sources */,
 				A68812F61D757C0500E37207 /* UIBarButtonItem+BlockSupport.m in Sources */,
 				A6C672C91D5C102100EDCC56 /* AddRemandViewController.m in Sources */,
 				A68812E11D757C0500E37207 /* SPGreetingBubbleChatView.m in Sources */,
-				A62F21761D519DE1003E71C7 /* ForgetPwdViewController.m in Sources */,
 				A68812DF1D757C0500E37207 /* SPCallingCardBubbleViewModel.m in Sources */,
 				A63B05641D8167EE004B8AC8 /* SPSearchTribeViewController.m in Sources */,
 				A6594B8E1D5DC3C90007C4A3 /* MyViewController.m in Sources */,

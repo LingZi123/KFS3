@@ -57,6 +57,8 @@
 #define DE_UrlDducation_Type [NSString stringWithFormat:@"http://%@/api/get_education_system_type",DE_ServerUrl]  //教育类型
 
 #define DE_UrlDducationByType [NSString stringWithFormat:@"http://%@/api/education_system",DE_ServerUrl]  //根据教育类型获取数据
+#define DE_UrlRecoverPassword [NSString stringWithFormat:@"http://%@/api/recoverPassword",DE_ServerUrl]  //修改密码
+
 
 
 

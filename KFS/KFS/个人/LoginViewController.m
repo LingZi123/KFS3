@@ -14,6 +14,7 @@
 #import "SPKitExample.h"
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
+#import "ForgetPwdTableViewController.h"
 
 @interface LoginViewController ()
 
@@ -273,6 +274,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)forgetPwdBtnClick:(UIButton *)sender{
+    
+    ForgetPwdTableViewController * vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"ForgetPwdTableViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 #pragma mark-appdelegate

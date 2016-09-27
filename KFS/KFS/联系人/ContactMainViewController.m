@@ -208,9 +208,6 @@
                 cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"createTribeCell"];
             }
             cell.imageView.image=[UIImage imageNamed:[sectionOneArray objectAtIndex:indexPath.row]];
-//            if (!cell.imageView.image) {
-//                cell.imageView.image=[UIImage imageNamed:@"头像90"];
-//            }
             cell.textLabel.text=[sectionOneArray objectAtIndex:indexPath.row];
             return cell;
         }

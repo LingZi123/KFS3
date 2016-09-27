@@ -177,6 +177,10 @@ static NSString *reuseIdentifier = @"spContactProfileCell";
                                                               }
                                                           }];
             }
+            if(avatar==nil)
+            {
+                avatar=[UIImage imageNamed:@"头像90"];
+            }
             avatarView.image = avatar;
             label.text = displayName;
             

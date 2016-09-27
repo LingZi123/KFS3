@@ -24,6 +24,10 @@
     [super viewDidLoad];
    
     self.navigationItem.title=@"助手设置";
+    UIBarButtonItem *backImte=[[UIBarButtonItem alloc]init];
+    backImte.title=@"返回" ;
+    self.navigationItem.backBarButtonItem=backImte;
+
     UIBarButtonItem *rigthBar=[[UIBarButtonItem alloc]initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(addTask:)];
     self.navigationItem.rightBarButtonItem=rigthBar;
     tastTableview.tableFooterView=[[UIView alloc]init];

@@ -49,8 +49,12 @@ typedef enum : int {
     [super viewDidLoad];
 
     // Do any additional setup after loading the view from its nib.
-    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width * 0.5;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width * 0.2;
     self.avatarImageView.clipsToBounds = YES;
+    
+    UIBarButtonItem *backImte=[[UIBarButtonItem alloc]init];
+    backImte.title=@"返回" ;
+    self.navigationItem.backBarButtonItem=backImte;
 
     self.countOfMembers = [[self ywTribeService] fetchTribeMembers:self.tribe.tribeId].count;
     self.myTribeMember = [[self ywTribeService] fetchTribeMember:[[[self ywIMCore] getLoginService] currentLoginedUser]
@@ -189,6 +193,9 @@ typedef enum : int {
     self.tribeIDLabel.text = [NSString stringWithFormat:@"群号 %@", self.tribe.tribeId ?: @""];
     self.tribeNameLabel.text = self.tribe.tribeName;
     UIImage *avatar = [[SPUtil sharedInstance] avatarForTribe:self.tribe];
+    if (avatar==nil) {
+        avatar=[UIImage imageNamed:@"头像120"];
+    }
     self.avatarImageView.image = avatar;
 
     [self.tableView reloadData];

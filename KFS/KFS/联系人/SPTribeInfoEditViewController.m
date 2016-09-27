@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    self.avatarButton.layer.cornerRadius = self.avatarButton.frame.size.width * 0.5;
+    self.avatarButton.layer.cornerRadius = self.avatarButton.frame.size.width * 0.2;
     self.avatarButton.clipsToBounds = YES;
 
     if( self.mode == SPTribeInfoEditModeModify ) {

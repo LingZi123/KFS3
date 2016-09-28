@@ -79,6 +79,9 @@
 
     
     __weak __typeof(conversationListController) weakConversationListController = conversationListController;
+    [conversationListController setViewWillAppearBlock:^(BOOL aAnimated) {
+        weakConversationListController.navigationItem.title=@"消息";
+    }];
     conversationListController.didSelectItemBlock = ^(YWConversation *aConversation) {
         
         

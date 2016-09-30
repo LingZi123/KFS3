@@ -52,8 +52,18 @@
 {
     /// 你可以在这里根据消息的内容，更新子view的显示
     
-    [self.label setText:self.viewModel.bodyCustomize.content];
+#warning 这里有修改额
     
+    if (self.viewModel.hasRead) {
+        self.label.textColor=[UIColor greenColor];
+        [self.label setText:@"该问卷已回答完毕"];
+    }
+    else{
+        [self.label setText:@"长按此条消息选择［前往问卷］完成问卷答题"];
+        //    [self.label setText:self.viewModel.bodyCustomize.content];
+        self.label.textColor=[UIColor redColor];
+    }
+     self.label.font=DE_Font14;
     /// 加大内容的边缘，您可以根据您的卡片，调整合适的大小
     CGSize result = [self.label.text sizeWithFont:self.label.font constrainedToSize:CGSizeMake(200, 10000)];
     result.width += 20;

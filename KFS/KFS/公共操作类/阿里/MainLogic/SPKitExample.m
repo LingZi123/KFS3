@@ -64,6 +64,8 @@
 #import "SPGreetingBubbleViewModel.h"
 #import "SPGreetingBubbleChatView.h"
 
+#import "ProblemViewController.h"
+
 #if __has_include(<YWExtensionForShortVideoFMWK/IYWExtensionForShortVideoService.h>)
 #import <YWExtensionForShortVideoFMWK/IYWExtensionForShortVideoService.h>
 
@@ -1163,6 +1165,7 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
 #warning TODO: JUST RETURN IF NO NEED TO ADD Custom Menu OR CHANGE TO YOUR ACTUAL METHOD TO ADD Custom Menu
     __weak typeof(self) weakSelf = self;
     [aConversationController setMessageCustomMenuItemsBlock:^NSArray *(id<IYWMessage> aMessage) {
+        
         if ([[aMessage messageBody] isKindOfClass:[YWMessageBodyImage class]]) {
             YWMessageBodyImage *bodyImage = (YWMessageBodyImage *)[aMessage messageBody];
             if (bodyImage.originalImageType == YWMessageBodyImageTypeNormal) {
@@ -1188,6 +1191,26 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
                     }
                 }]];
             }
+        }
+        else if ([[aMessage messageBody]isKindOfClass:[YWMessageBodyCustomize class]]){
+            
+            YWMessageBodyCustomize *customizebody=(YWMessageBodyCustomize *)[aMessage messageBody];
+//            if ([aMessage hasReaded]&&[aMessage receiverHasReaded]) {
+//                return nil;
+//            }
+            NSLog(@"%@",customizebody.content);
+            
+            return  @[[[YWMoreActionItem alloc]initWithActionName:@"前往问卷" actionBlock:^(NSDictionary *aUserInfo) {
+                NSString *messagetId=aUserInfo[YWConversationMessageCustomMenuItemUserInfoKeyMessageId];
+                YWConversationViewController *conversationController=aUserInfo[YWConversationMessageCustomMenuItemUserInfoKeyController];
+                
+                ProblemViewController *vc=[[ProblemViewController alloc]init];
+                vc.content=customizebody.content;
+                [conversationController presentViewController:vc animated:YES completion:^{
+                    
+                }];
+            }]];
+            
         }
         return nil;
     }];

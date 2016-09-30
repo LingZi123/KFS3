@@ -16,5 +16,6 @@
 
 /// 自定义消息体
 @property (nonatomic, strong, readonly) YWMessageBodyCustomize *bodyCustomize;
+@property(nonatomic,assign,readwrite)BOOL hasRead;//已经阅读
 
 @end

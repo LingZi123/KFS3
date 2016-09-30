@@ -340,12 +340,12 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.mode==SPContactListModeNormal) {
-        if (indexPath.section==0) {
-            return NO;
-        }
-    }
-    
+//    if (self.mode==SPContactListModeNormal) {
+//        if (indexPath.section==0) {
+//            return NO;
+//        }
+//        return YES;
+//    }
     return YES;
 }
 
@@ -357,14 +357,17 @@
             if (indexPath.section==0) {
                 return UITableViewCellEditingStyleNone;
             }
+            return UITableViewCellEditingStyleDelete;
         }
     
     return UITableViewCellEditingStyleDelete;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-        if (self.mode == SPContactListModeNormal) {
-    YWPerson *person = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if (self.mode == SPContactListModeNormal&&indexPath.section>0) {
+            
+            NSIndexPath *newInextpath=[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section-1];
+    YWPerson *person = [self.fetchedResultsController objectAtIndexPath:newInextpath];
     
     __weak typeof(self) weakSelf = self;
     

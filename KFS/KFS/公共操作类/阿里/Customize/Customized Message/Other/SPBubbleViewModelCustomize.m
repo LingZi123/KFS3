@@ -29,6 +29,10 @@
         
         /// 设置气泡类型
         self.bubbleStyle = [aMessage outgoing] ? BubbleStyleCommonRight : BubbleStyleCommonLeft;
+        
+        if ([aMessage hasReaded]||[aMessage receiverHasReaded]) {
+            self.hasRead=YES;
+        }
     }
     
     return self;

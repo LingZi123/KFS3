@@ -172,6 +172,7 @@
 		A6DCCE851D62C127006A0CAF /* LearnSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DCCE831D62C127006A0CAF /* LearnSubCell.xib */; };
 		A6DCCE881D643A24006A0CAF /* LableTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE871D643A24006A0CAF /* LableTextFieldView.m */; };
 		A6DCCE8B1D6550C5006A0CAF /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */; };
+		A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -453,6 +454,8 @@
 		A6DCCE871D643A24006A0CAF /* LableTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableTextFieldView.m; sourceTree = "<group>"; };
 		A6DCCE891D6550C5006A0CAF /* RegistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistTableViewController.h; sourceTree = "<group>"; };
 		A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistTableViewController.m; sourceTree = "<group>"; };
+		A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
+		A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1058,6 +1061,8 @@
 				A63B055A1D8104F6004B8AC8 /* GFAddContactViewController.m */,
 				A63B05771D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.h */,
 				A63B05781D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m */,
+				A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */,
+				A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1374,6 +1379,7 @@
 				A6DCCE841D62C127006A0CAF /* LearnSubCell.m in Sources */,
 				A62F21E31D5B10BA003E71C7 /* RemandSetTableViewCell.m in Sources */,
 				A6C672D91D5C10B900EDCC56 /* LewPopupViewAnimationFade.m in Sources */,
+				A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */,
 				A6594BA91D61A6040007C4A3 /* JHRingChart.m in Sources */,
 				A62F218B1D582C18003E71C7 /* MoodView.m in Sources */,
 				A62F21941D585916003E71C7 /* MoodUnitView.m in Sources */,

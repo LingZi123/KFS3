@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyViewController : UITableViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+@interface MyViewController : UITableViewController{
     
     __weak IBOutlet UIButton *imageBtn;
     
@@ -17,6 +17,5 @@
     __weak IBOutlet UILabel *subLabel;
 }
 
-- (IBAction)imageBtnClick:(id)sender;
 - (IBAction)logoutBtnClick:(id)sender;
 @end

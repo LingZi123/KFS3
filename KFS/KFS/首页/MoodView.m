@@ -89,7 +89,7 @@
         _datamodel.mydate=todayStr;
         _datamodel.healthStarIndex=0;
         _datamodel.moodStarIndex=0;
-        _datamodel.username=[self appdelegate].username;
+        _datamodel.username=[self appdelegate].userInfo.username;
         _datamodel.isPost=NO;
         
     }

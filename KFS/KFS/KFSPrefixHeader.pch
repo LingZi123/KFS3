@@ -16,8 +16,8 @@
 
 #define DE_IsLogin @"IsLogin" //是否登录
 #define DE_PhotoImage @"PhotoImage" //头像
-#define DE_Phone @"phone"
-#define DE_PWD @"pwd"
+#define DE_UserInfo @"userInfo"
+
 #define DE_Token @"token"
 #define DE_Mood @"mood"
 #define DE_RemandList @"RemandList"
@@ -58,6 +58,10 @@
 
 #define DE_UrlDducationByType [NSString stringWithFormat:@"http://%@/api/education_system",DE_ServerUrl]  //根据教育类型获取数据
 #define DE_UrlRecoverPassword [NSString stringWithFormat:@"http://%@/api/recoverPassword",DE_ServerUrl]  //修改密码
+
+#define DE_UrlUpgradeUser [NSString stringWithFormat:@"http://%@/api/upgrade_user",DE_ServerUrl]  //修改个人信息
+
+
 
 
 

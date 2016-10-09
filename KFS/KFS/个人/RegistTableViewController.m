@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
+#import "UserInfoModel.h"
 
 
 @interface RegistTableViewController ()
@@ -181,8 +182,14 @@
                 
                 [hud hideAnimated:YES];
                 NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-                [defaults setObject:phoneField.text forKey:DE_Phone];
-                [defaults setObject:pwdField.text forKey:DE_PWD];
+                if ([self appdelegate].userInfo==nil) {
+                    [self appdelegate].userInfo=[[UserInfoModel alloc]init];
+                }
+                [self appdelegate].userInfo.username=phoneField.text;
+                [self appdelegate].userInfo.pwd=pwdField.text;
+                
+                NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
+                [defaults setObject:saveData forKey:DE_UserInfo];
                 [defaults synchronize];
                 [self.navigationController popToRootViewControllerAnimated:YES];
     //            [[self appdelegate] makeMianView];

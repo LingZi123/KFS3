@@ -7,7 +7,6 @@
 //
 
 #import "SPKitExample.h"
-#import "UIBarButtonItem+BlockSupport.h"
 
 #import <AVFoundation/AVFoundation.h>
 
@@ -301,7 +300,7 @@ UIAlertViewDelegate>
     /// 你可以根据当前的bundleId，设置不同的证书，避免修改代码
     
     /// 这些证书是我们在百川后台添加的。
-    if ([[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.taobao.tcmpushtest"]) {
+    if ([[NSBundle mainBundle].bundleIdentifier isEqualToString:@"com.gf.KFS"]) {
         [[[YWAPI sharedInstance] getGlobalPushService] setXPushCertName:@"sandbox"];
     } else {
         /// 默认的情况下，我们都设置为生产证书
@@ -497,7 +496,7 @@ UIAlertViewDelegate>
 //        if (aPerson.personId.length == 0) {
 //            return ;
 //        }
-//        
+//
 //        /// 如果你接入使用反馈功能并希望能够自定义显示头像，可参考如下实现：
 //        /// 登陆反馈请替换使用YWFeedbackServiceForIMCore(self.ywIMKit.IMCore)，并只需拦截FeedbackReceiver
 //        if ( [YWAnonFeedbackService isFeedbackSender:aPerson] ) {
@@ -512,14 +511,14 @@ UIAlertViewDelegate>
 //            item.avatar = [UIImage imageNamed:@"greeting_message"];
 //            aCompletionBlock(YES, item); return;
 //        }
-//        
+//
 //        /// Demo中模拟了异步获取Profile的过程，你需要根据实际情况，从你的服务器获取用户profile
 //        YWProfileItem *item = [YWProfileItem new];
 //        item.person = aPerson;
 //        // 如果先获取了部分信息，那么可以通过aProgressBlock回调，可以回调多次
 //        item.displayName = @"我是昵称";
 //        aProgressBlock(item);
-//        
+//
 //        // 异步获取其他信息
 //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // 获取全部信息，通过aCompletionBlock回调，第一个参数为YES时更新缓存，aCompletionBlock只能回调一次，一旦回调后请不要使用aCompletionBlock或者aProgressBlock回调。
@@ -699,10 +698,10 @@ UIAlertViewDelegate>
         __weak YWConversationViewController *weakController = conversationController;
         conversationController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain andBlock:^{
             SPContactProfileController *profileController = [[SPContactProfileController alloc] initWithContact:((YWP2PConversation *)conversation).person IMKit:weakSelf.ywIMKit];
-//            [weakController  presentViewController:profileController animated:YES completion:nil];
+//            [weakController presentViewController:profileController animated:YES completion:nil];
             [weakController.navigationController pushViewController:profileController animated:YES];
         }];
-        conversationController.navigationItem.rightBarButtonItem.image=[UIImage imageNamed:@"更多"];
+         conversationController.navigationItem.rightBarButtonItem.image=[UIImage imageNamed:@"更多"];
     }
 #endif
     
@@ -714,7 +713,7 @@ UIAlertViewDelegate>
                 [weakController sendVideoMessage:fileUrl videoSize:0 frontImage:frontImage width:width height:height duration:duration];
             }];
             [(YWMessageInputView *)conversationController.messageInputView addPlugin:shortVideoPlugin];
-        }
+    }
 #endif
     
 #warning IF YOU NEED CUSTOMER SERVICE USER TRACK, REMOVE THE COMMENT '//' AND CHANGE THE ywcsTrackTitle OR ywcsUrl PROPERTIES
@@ -851,8 +850,8 @@ UIAlertViewDelegate>
             /// 透传消息目前仅支持单聊会话
             /// 此功能仅作为示例代码
             /**
-            SPInputViewPluginTransparent *pluginTransparent = [[SPInputViewPluginTransparent alloc] init];
-            [messageInputView addPlugin:pluginTransparent];
+             SPInputViewPluginTransparent *pluginTransparent = [[SPInputViewPluginTransparent alloc] init];
+             [messageInputView addPlugin:pluginTransparent];
              */
         }
         
@@ -1184,7 +1183,7 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
                             /// 下载成功后保存
                             UIImage *img = [UIImage imageWithData:imageData];
                             if (img) {
-//                                UIImageWriteToSavedPhotosAlbum(img, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+                                UIImageWriteToSavedPhotosAlbum(img, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
                             }
                             [forRetain count]; /// 用于防止bodyImage被释放
                         }];
@@ -1231,9 +1230,9 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
         [aMessages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             id<IYWMessage> msg = obj;
             YWMessageBodyCustomize *body = nil;
-//            if ([msg respondsToSelector:@selector(messageBody)]) {
-//                body = [[msg messageBody] isKindOfClass:[YWMessageBodyCustomize class]] ? (YWMessageBodyCustomize *)[msg messageBody] : nil;
-//            }
+            if ([msg respondsToSelector:@selector(messageBody)]) {
+                body = [[msg messageBody] isKindOfClass:[YWMessageBodyCustomize class]] ? (YWMessageBodyCustomize *)[msg messageBody] : nil;
+            }
             if (body) {
                 
                 @try {
@@ -1525,7 +1524,7 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
 {
     YWPerson *person = [[YWPerson alloc] initWithPersonId:aPersonId EServiceGroupId:aGroupId baseContext:self.ywIMKit.IMCore];
     /// 下面这一行用于控制锁定某个子账号，不分流。
-//    [person setLockShunt:YES];
+    //    [person setLockShunt:YES];
     return person;
 }
 

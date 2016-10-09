@@ -125,12 +125,13 @@
             [hud hideAnimated:YES];
             //修改密码
             
-            [self appdelegate].pwd=newpwd;
+            [self appdelegate].userInfo.pwd=newpwd;
         
             //保存到本地
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-            [defaults setObject:newpwd forKey:DE_PWD];
+            NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
+            [defaults setObject:savedata forKey:DE_UserInfo];
             [defaults synchronize];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "MainTabBarController.h"
+#import "UserInfoModel.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -22,8 +23,7 @@
 @property(nonatomic,retain)UINavigationController *loginNav;//登录界面
 @property(nonatomic,retain)UIStoryboard *storyboard;//界面
 @property(nonatomic,retain)NSString *token;
-@property(nonatomic,retain)NSString *username;
-@property(nonatomic,retain)NSString *pwd;
+@property(nonatomic,retain)UserInfoModel *userInfo;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

@@ -53,7 +53,7 @@ FOUNDATION_EXTERN NSString *const kSPCustomConversationIdForFAQ;
  */
 - (void)callThisInDidFinishLaunching;
 
-/** 
+/**
  *  入口胶水函数：登录入口函数
  *
  *  用户在应用的服务器登录成功之后，向云旺服务器登录之前调用
@@ -166,7 +166,7 @@ FOUNDATION_EXTERN NSString *const kSPCustomConversationIdForFAQ;
  *  @param aPersonId 客服Id
  */
 - (void)exampleOpenEServiceConversationWithPersonId:(NSString *)aPersonId
-                    fromNavigationController:(UINavigationController *)aNavigationController;
+                           fromNavigationController:(UINavigationController *)aNavigationController;
 
 /**
  *  创建某个会话Controller

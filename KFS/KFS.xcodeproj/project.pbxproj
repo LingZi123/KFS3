@@ -77,6 +77,8 @@
 		A66793501D7FAD880085C6AC /* SPContactProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934F1D7FAD880085C6AC /* SPContactProfileController.m */; };
 		A66ADCB91D927312004D1335 /* RemandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A66ADCB81D927312004D1335 /* RemandModel.m */; };
 		A66ADCBC1D94D59E004D1335 /* RemandNotifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A66ADCBB1D94D59E004D1335 /* RemandNotifManager.m */; };
+		A67830E11DA8CD3D00BB3CC5 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A67830E01DA8CD3D00BB3CC5 /* UserInfoModel.m */; };
+		A67830E51DA8E63200BB3CC5 /* MyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67830E41DA8E63200BB3CC5 /* MyInfoTableViewController.m */; };
 		A67B856A1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856B1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
 		A67B856C1D6D421500B08D9F /* 短信08.caf in Resources */ = {isa = PBXBuildFile; fileRef = A67B85691D6D421500B08D9F /* 短信08.caf */; };
@@ -316,6 +318,10 @@
 		A66ADCB81D927312004D1335 /* RemandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandModel.m; sourceTree = "<group>"; };
 		A66ADCBA1D94D59E004D1335 /* RemandNotifManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemandNotifManager.h; sourceTree = "<group>"; };
 		A66ADCBB1D94D59E004D1335 /* RemandNotifManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandNotifManager.m; sourceTree = "<group>"; };
+		A67830DF1DA8CD3D00BB3CC5 /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		A67830E01DA8CD3D00BB3CC5 /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		A67830E31DA8E63200BB3CC5 /* MyInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoTableViewController.h; sourceTree = "<group>"; };
+		A67830E41DA8E63200BB3CC5 /* MyInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfoTableViewController.m; sourceTree = "<group>"; };
 		A67B85691D6D421500B08D9F /* 短信08.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "短信08.caf"; sourceTree = "<group>"; };
 		A67B85711D6D493500B08D9F /* 故事03.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "故事03.m4a"; sourceTree = "<group>"; };
 		A67B85771D6D7A8200B08D9F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -608,6 +614,7 @@
 		A62F21591D518657003E71C7 /* 个人 */ = {
 			isa = PBXGroup;
 			children = (
+				A67830E21DA8CD4400BB3CC5 /* Model */,
 				A62F21771D51E00C003E71C7 /* View */,
 				A62F216B1D518A80003E71C7 /* Controller */,
 			);
@@ -676,6 +683,8 @@
 				A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */,
 				A68DFE591D9A413A007F5CD4 /* ForgetPwdTableViewController.h */,
 				A68DFE5A1D9A413A007F5CD4 /* ForgetPwdTableViewController.m */,
+				A67830E31DA8E63200BB3CC5 /* MyInfoTableViewController.h */,
+				A67830E41DA8E63200BB3CC5 /* MyInfoTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -783,6 +792,15 @@
 				A6594BA21D61A6040007C4A3 /* JHWaveChart.m */,
 			);
 			path = JHChart;
+			sourceTree = "<group>";
+		};
+		A67830E21DA8CD4400BB3CC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A67830DF1DA8CD3D00BB3CC5 /* UserInfoModel.h */,
+				A67830E01DA8CD3D00BB3CC5 /* UserInfoModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A67B85761D6D7A8200B08D9F /* 微信 */ = {
@@ -1215,6 +1233,7 @@
 				TargetAttributes = {
 					A62F211F1D518502003E71C7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 92S2DMY739;
 					};
 					A62F213B1D518502003E71C7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1328,6 +1347,7 @@
 				A68812E11D757C0500E37207 /* SPGreetingBubbleChatView.m in Sources */,
 				A68812DF1D757C0500E37207 /* SPCallingCardBubbleViewModel.m in Sources */,
 				A63B05641D8167EE004B8AC8 /* SPSearchTribeViewController.m in Sources */,
+				A67830E11DA8CD3D00BB3CC5 /* UserInfoModel.m in Sources */,
 				A6594B8E1D5DC3C90007C4A3 /* MyViewController.m in Sources */,
 				A6C672D81D5C10B900EDCC56 /* LewPopupViewAnimationDrop.m in Sources */,
 				A6D29ABC1D6D7F93000DCA0B /* GFShareView.m in Sources */,
@@ -1379,6 +1399,7 @@
 				A6DCCE841D62C127006A0CAF /* LearnSubCell.m in Sources */,
 				A62F21E31D5B10BA003E71C7 /* RemandSetTableViewCell.m in Sources */,
 				A6C672D91D5C10B900EDCC56 /* LewPopupViewAnimationFade.m in Sources */,
+				A67830E51DA8E63200BB3CC5 /* MyInfoTableViewController.m in Sources */,
 				A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */,
 				A6594BA91D61A6040007C4A3 /* JHRingChart.m in Sources */,
 				A62F218B1D582C18003E71C7 /* MoodView.m in Sources */,
@@ -1545,6 +1566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92S2DMY739;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KFS/公共操作类/QQ",
@@ -1576,6 +1598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 92S2DMY739;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KFS/公共操作类/QQ",

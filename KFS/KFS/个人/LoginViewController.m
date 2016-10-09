@@ -99,8 +99,7 @@
 
     [super viewWillAppear: animated];
     self.navigationController.navigationBarHidden=YES;
-    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-    self.username=[defaults objectForKey:DE_Phone];
+    self.username=[self appdelegate].userInfo.username;
     accountView.textField.text=self.username;
 }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -202,21 +201,41 @@
             NSString *token=[data objectForKey:@"token"];
             [weakSelf appdelegate].token=token;
             
+            UserInfoModel *userModel=[UserInfoModel getModelWithDic:data];
+            
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:DE_Token];
             
-            if (![weakSelf.username isEqualToString:accountView.textField.text]) {
-                weakSelf.username=accountView.textField.text;
-                [defaults setObject:weakSelf.username forKey:DE_Phone];
-            }
-            if (![weakSelf.pwd isEqualToString:pwdView.textField.text]) {
+            if (![weakSelf.username isEqualToString:accountView.textField.text]||![weakSelf.pwd isEqualToString:pwdView.textField.text]) {
+                
+                weakSelf.username= accountView.textField.text;
                 weakSelf.pwd=pwdView.textField.text;
-                [defaults setObject:weakSelf.pwd forKey:DE_PWD];
+                
+                NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:userModel];
+                [defaults setObject:savedata forKey:DE_UserInfo];
             }
             
-            [weakSelf appdelegate].username=weakSelf.username;
-            [weakSelf appdelegate].pwd=weakSelf.pwd;
             [defaults synchronize];
+            
+            [weakSelf appdelegate].userInfo.username=weakSelf.username;
+            [weakSelf appdelegate].userInfo.pwd=weakSelf.pwd;
+            [weakSelf appdelegate].userInfo.headImage=userModel.headImage;
+            [weakSelf appdelegate].userInfo.trueName=userModel.trueName;
+            [weakSelf appdelegate].userInfo.phone=userModel.phone;
+            
+            [weakSelf appdelegate].userInfo.address=userModel.address;
+            [weakSelf appdelegate].userInfo.age=userModel.age;
+            [weakSelf appdelegate].userInfo.canLogin=userModel.canLogin;
+            [weakSelf appdelegate].userInfo.canSpeak=userModel.canSpeak;
+            [weakSelf appdelegate].userInfo.dontSpeakTime=userModel.dontSpeakTime;
+            
+            [weakSelf appdelegate].userInfo.height=userModel.height;
+            [weakSelf appdelegate].userInfo.userId=userModel.userId;
+            [weakSelf appdelegate].userInfo.isCheck=userModel.isCheck;
+            [weakSelf appdelegate].userInfo.sex=userModel.sex;
+            [weakSelf appdelegate].userInfo.weight=userModel.weight;
+            
+           
             [self loginIM];
         }
         

@@ -39,18 +39,27 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    mainLabel.text=[self appdelegate].username;
+    mainLabel.text=[self appdelegate].userInfo.username;
+    if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
+        [imageBtn setBackgroundImage:[UIImage imageNamed:@"头像90"] forState:UIControlStateNormal];
+    }
+    else{
+        [imageBtn setBackgroundImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage] forState:UIControlStateNormal];
+    }
 }
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 4;
+    if (section==0) {
+        return 4;
+    }
+    return 1;
 }
 
 /*
@@ -110,9 +119,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *vc=nil;
     if (indexPath.row==0) {
-        return;
+        vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"MyInfoTableViewController"];
     }
-    if (indexPath.row==1) {
+    else if (indexPath.row==1) {
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"InviteFriendsViewController"];
     }
     else if (indexPath.row==2){
@@ -134,46 +143,6 @@
     }
     return self.tableView.rowHeight;
 }
-#pragma mark-UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0){
-    imageBtn.imageView.image=image;
-    
-}
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    __block UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    
-    if (image) {
-        //        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-        //            dispatch_async(kGlobalThread, ^{
-        //
-        //            DDLogVerbose(@"image size : %@", NSStringFromCGSize(image.size));
-        
-        //            dispatch_async(kMainThread, ^{
-        //                self.completion(image);
-        //            });
-        //        });
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [imageBtn setBackgroundImage:image forState:UIControlStateNormal];
-//                        image= [image imageResizedToSize:CGSizeMake(100.0,100.0)];
-            
-            NSData *imageData=UIImagePNGRepresentation(image);
-            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-            //            NSData *imagedata=NSData data
-            [defaults setObject:imageData forKey:DE_PhotoImage];
-            [defaults synchronize];
-        });
-        
-        //
-    }
-    return;
-}
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    [picker dismissViewControllerAnimated:YES completion:^{
-        //取消选择
-    }];
-}
 
 #pragma mark-appdelegate
 -(AppDelegate *)appdelegate{
@@ -189,45 +158,7 @@
     [defaults synchronize];
     [[self appdelegate] makeLoginView];
 }
-- (IBAction)imageBtnClick:(id)sender {
-    //访问弹出框
-    UIAlertController *cameravc=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *openCamera=[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        UIImagePickerControllerSourceType sourceType=UIImagePickerControllerSourceTypeCamera;
-        UIImagePickerController *picker=[[UIImagePickerController alloc]init];
-        picker.delegate=self;
-        picker.allowsEditing=NO;
-        picker.sourceType=sourceType;
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
-    }];
-    UIAlertAction *fromPhotos=[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        UIImagePickerControllerSourceType sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        UIImagePickerController *picker=[[UIImagePickerController alloc]init];
-        picker.delegate=self;
-        picker.allowsEditing=NO;
-        picker.sourceType=sourceType;
-        [self presentViewController:picker animated:YES completion:^{
-            
-        }];
-        
-    }];
-    UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [cameravc addAction:openCamera];
-    [cameravc addAction:fromPhotos];
-    [cameravc addAction:cancel];
-    
-    [self presentViewController:cameravc animated:YES completion:^{
-        
-    }];
 
-}
 
 
 @end

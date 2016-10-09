@@ -80,7 +80,8 @@
         self.navigationItem.leftBarButtonItem = cancelButtonItem;
     }
     
-    [_contactTableView deselectRowAtIndexPath:_contactTableView.indexPathForSelectedRow animated:YES];
+    [_contactTableView reloadData];
+//    [_contactTableView deselectRowAtIndexPath:_contactTableView.indexPathForSelectedRow animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -340,12 +341,12 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (self.mode==SPContactListModeNormal) {
-//        if (indexPath.section==0) {
-//            return NO;
-//        }
-//        return YES;
-//    }
+    if (self.mode==SPContactListModeNormal) {
+        if (indexPath.section==0) {
+            return NO;
+        }
+        return YES;
+    }
     return YES;
 }
 
@@ -357,7 +358,6 @@
             if (indexPath.section==0) {
                 return UITableViewCellEditingStyleNone;
             }
-            return UITableViewCellEditingStyleDelete;
         }
     
     return UITableViewCellEditingStyleDelete;
@@ -382,6 +382,14 @@
         }
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return @"";
+    }
+    else{
+        return @"删除";
+    }
+}
 #pragma mark-搜索
 - (void)searchBarButtonItemPressed:(id)sender {
     //    SPSearchContactViewController *controller = [[SPSearchContactViewController alloc] init];

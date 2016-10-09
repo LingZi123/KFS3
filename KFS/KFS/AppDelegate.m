@@ -70,12 +70,12 @@
     //如果登录进入主界面,否则进入登录界面
     if (isLogin) {
         
-        self.username=[defaults objectForKey:DE_Phone];
-        self.pwd=[defaults objectForKey:DE_PWD];
+        NSData *userdata=[defaults objectForKey:DE_UserInfo];
+        self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
         self.token=[defaults objectForKey:DE_Token];
         
          [self makeMianView];
-        [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:self.username passWord:self.pwd preloginedBlock:^{
+        [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:self.userInfo.username passWord:self.userInfo.pwd preloginedBlock:^{
             
         } successBlock:^{
             

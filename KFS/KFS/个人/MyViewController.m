@@ -29,7 +29,7 @@
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     NSData *imagedata=[defaults objectForKey:DE_PhotoImage];
     UIImage *image=[UIImage imageWithData:imagedata];
-    [imageBtn setBackgroundImage:image forState:UIControlStateNormal];
+    [headImageView setImage :image];
     self.tableView.rowHeight=54;
 }
 
@@ -41,10 +41,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     mainLabel.text=[self appdelegate].userInfo.username;
     if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
-        [imageBtn setBackgroundImage:[UIImage imageNamed:@"头像90"] forState:UIControlStateNormal];
+        [headImageView setImage :[UIImage imageNamed:@"头像90"] ];
     }
     else{
-        [imageBtn setBackgroundImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage] forState:UIControlStateNormal];
+        
+        [headImageView setImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage]];
     }
 }
 #pragma mark - Table view data source

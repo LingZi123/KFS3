@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
+#import "UserInfoModel.h"
 
 @interface MyInfoTableViewController ()
 
@@ -24,6 +25,10 @@
     
     UIBarButtonItem *rightBar=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClick:)];
     self.navigationItem.rightBarButtonItem=rightBar;
+    
+    self.tableView.tableFooterView=[[UIView alloc]init];
+    originframe=self.view.frame;
+    buttonEnble=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +37,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self enbleControls:NO];
     
     if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
         [imageBtn setBackgroundImage:[UIImage imageNamed:@"头像90"] forState:UIControlStateNormal];
@@ -41,17 +45,16 @@
         [imageBtn setBackgroundImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage] forState:UIControlStateNormal];
     }
     
-    //userNameTextField.text=[self appdelegate].userInfo.username;
+     usernameLabel.text=[self appdelegate].userInfo.username;
     
     NSString *sexstr=[self appdelegate].userInfo.sex;
     if (sexstr!=(id)[NSNull null]&& sexstr!=nil) {
         if ([sexstr isEqualToString:@"男"]) {
-            sexNanBtn.selected=YES;
-            oldSelectedBtn=sexNanBtn;
+            
+            [self sexBtnClick:sexNanBtn];
         }
         else{
-            sexNvBtn.selected=YES;
-            oldSelectedBtn=sexNvBtn;
+            [self sexBtnClick:sexNvBtn];
         }
     }
     
@@ -67,6 +70,11 @@
        _phoneField.text=[self appdelegate].userInfo.phone;
     }
     
+    if ([self appdelegate].userInfo.trueName!=nil) {
+        trueNameField.text=[self appdelegate].userInfo.trueName;
+    }
+    
+     [self enbleControls:NO];
 }
 #pragma mark - Table view data source
 
@@ -79,7 +87,7 @@
     if (section==0) {
         return 1;
     }
-    return 3;
+    return 4;
 }
 
 -(void)rightBarClick:(UIBarButtonItem *)sender{
@@ -90,10 +98,13 @@
     }
     else{
         [sender setTitle:@"编辑"];
+        
         //禁用所有
         [self enbleControls:NO];
+        
         //提交保存
         [self saveToServer];
+
     }
 }
 - (IBAction)imageBtnClick:(id)sender {
@@ -138,6 +149,9 @@
 }
 
 - (IBAction)sexBtnClick:(id)sender {
+    if (!buttonEnble) {
+        return;
+    }
     UIButton *btn=(UIButton *)sender;
     
     if (oldSelectedBtn!=btn) {
@@ -147,16 +161,22 @@
             
         }
         oldSelectedBtn=btn;
+//        if (oldSelectedBtn.selected&&!oldSelectedBtn.enabled) {
+//            [oldSelectedBtn setImage:[UIImage imageNamed:@"单选亮"] forState:UIControlStateDisabled];
+//        }
     }
     
 }
 
 -(void)enbleControls:(BOOL) enble{
+    buttonEnble=enble;
     imageBtn.enabled=enble;
+    trueNameField.enabled=enble;
     //userNameTextField.enabled=enble;
 
-    sexNvBtn.enabled=enble;
-    sexNanBtn.enabled=enble;
+//    sexNvBtn.enabled=enble;
+//    sexNanBtn.enabled=enble;
+    
     heightField.enabled=enble;
     weightField.enabled=enble;
     _phoneField.enabled=enble;
@@ -212,10 +232,15 @@
 
 
 -(void)closeKeyBoard{
+    [trueNameField resignFirstResponder];
     [weightField resignFirstResponder];
     [heightField resignFirstResponder];
     [_phoneField resignFirstResponder];
-  //  [userNameTextField resignFirstResponder];
+//    [userNameTextField resignFirstResponder];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self closeKeyBoard];
 }
 #pragma mark- 保存到服务器
 
@@ -225,8 +250,10 @@
     
     NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
     
+    NSString *sexStr=[oldSelectedBtn.titleLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
     if (oldSelectedBtn) {
-        if (![[self appdelegate].userInfo.sex isEqualToString:oldSelectedBtn.titleLabel.text]) {
+        if (![[self appdelegate].userInfo.sex isEqualToString:sexStr]) {
             [dic setObject:oldSelectedBtn.titleLabel.text forKey:@"sex"];
         }
     }
@@ -239,6 +266,12 @@
     NSString *weightStr=[weightField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if (weightStr.length>0&&![weightStr isEqual:[self appdelegate].userInfo.weight]) {
         [dic setObject:weightStr forKey:@"height"];
+    }
+    
+    NSString *truenameStr=[trueNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (truenameStr.length>0&&![truenameStr isEqual:[self appdelegate].userInfo.trueName]) {
+        [dic setObject:truenameStr forKey:@"trueName"];
     }
     
     if (dic.count==0) {
@@ -267,21 +300,74 @@
         else{
             
             [hud hideAnimated:YES];
+            [weakself appdelegate].userInfo.trueName=truenameStr;
             [weakself appdelegate].userInfo.height=heightStr;
             [weakself appdelegate].userInfo.weight=weightStr;
-            [weakself appdelegate].userInfo.sex=oldSelectedBtn.titleLabel.text;
+            [weakself appdelegate].userInfo.sex=sexStr ;
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[weakself appdelegate].userInfo];
             [defaults setObject:saveData forKey:DE_UserInfo];
             [defaults synchronize];
             
-
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         hud.label.text=@"网络错误";
         [hud hideAnimated:YES afterDelay:3.f];
     }];
+}
+
+
+#pragma mark-UITextFieldDelegate
+
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    if (textField==heightField){
+        [weightField becomeFirstResponder];
+    }
+    
+    return  YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    NSInteger row;
+    if (textField==trueNameField) {
+        row=2;
+    }
+    else if(textField==heightField){
+        row=4;
+    }
+    else if (textField==weightField){
+        row=5;
+    }
+    else{
+        return;
+    }
+    int offset=row*90-(originframe.size.height-216);
+    
+    //被键盘挡住了
+    if (offset>0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.frame=CGRectMake(0, -offset, originframe.size.width, originframe.size.height+offset);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+    
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    if (self.view.frame.origin.y<0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.frame=originframe;
+        } completion:^(BOOL finished) {
+            [textField resignFirstResponder];
+        }];
+    }
 }
 
 

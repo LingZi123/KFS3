@@ -10,7 +10,7 @@
 
 @interface MyViewController : UITableViewController{
     
-    __weak IBOutlet UIButton *imageBtn;
+    __weak IBOutlet UIImageView *headImageView;
     
     __weak IBOutlet UILabel *mainLabel;
 

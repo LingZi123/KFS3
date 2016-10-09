@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyInfoTableViewController : UITableViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface MyInfoTableViewController : UITableViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
 {
     
     __weak IBOutlet UIButton *imageBtn;
@@ -23,7 +23,8 @@
     
     UIButton *oldSelectedBtn;
     NSString *headImageStr;
-    
+     CGRect originframe;
+    BOOL buttonEnble;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;

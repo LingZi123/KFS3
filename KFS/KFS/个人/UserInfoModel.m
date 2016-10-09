@@ -25,8 +25,8 @@
     [aCoder encodeBool:_isCheck forKey:@"isCheck"];
     
     [aCoder encodeObject:_phone forKey:@"phone"];
-    [aCoder encodeObject:_sex forKey:@"sex "];
-    [aCoder encodeBool:_trueName forKey:@"trueName"];
+    [aCoder encodeObject:_sex forKey:@"sex"];
+    [aCoder encodeObject:_trueName forKey:@"trueName"];
     
     [aCoder encodeObject:_username forKey:@"username"];
     [aCoder encodeObject:_weight forKey:@"weight"];

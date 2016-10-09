@@ -415,7 +415,6 @@
             [weakSelf.contactTableView reloadData];
         }];
     }
-    return _fetchedResultsController;
-}
+    return _fetchedResultsController;}
 
 @end

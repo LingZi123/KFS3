@@ -11,6 +11,7 @@
 #import "SPUtil.h"
 #import "SPContactCell.h"
 #import "SPContactManager.h"
+#import "MBProgressHUD.h"
 
 @interface GFAddContactViewController ()
 
@@ -55,28 +56,32 @@
     if( [_searchTextField.text length] == 0 ){
         return;
     }
+    [_searchTextField resignFirstResponder];
+    
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     YWPerson *person = [[YWPerson alloc] initWithPersonId:_searchTextField.text];
     __weak __typeof(self) weakSelf = self;
-    [[[self ywIMCore] getContactService] asyncGetProfileForPerson:person
-                                                         progress:nil
-                                                  completionBlock:^(BOOL aIsSuccess, YWPerson *aPerson, NSString *aDisplayName, UIImage *aAvatarImage) {
-                                                      if (aIsSuccess && aPerson) {
-                                                          if (aDisplayName) {
-                                                              weakSelf.cachedDisplayNames[aPerson.personId] = aDisplayName;
-                                                          }
-                                                          if (aAvatarImage) {
-                                                              weakSelf.cachedAvatars[aPerson.personId] = aAvatarImage;
-                                                          }
-                                                          weakSelf.results = @[aPerson];
-                                                          [weakSelf.mytableView reloadData];
-                                                      }
-                                                      else {
-                                                          [[SPUtil sharedInstance] showNotificationInViewController:weakSelf.navigationController
-                                                                                                              title:@"未找到该用户，请确认帐号后重试"
-                                                                                                           subtitle:nil
-                                                                                                               type:SPMessageNotificationTypeError];
-                                                      }
-                                                  }];
+    
+    [[[self ywIMCore]getContactService] asyncGetProfileFromServerForPerson:person withTribe:nil withProgress:nil andCompletionBlock:^(BOOL aIsSuccess, YWProfileItem *item) {
+        if (aIsSuccess && item.person) {
+            
+            [hud hideAnimated:YES];
+            if (item.displayName) {
+                weakSelf.cachedDisplayNames[item.person.personId] =item.displayName;
+            }
+            if (item.avatar) {
+                weakSelf.cachedAvatars[item.person.personId] = item.avatar;
+            }
+            weakSelf.results = @[item.person];
+            [weakSelf.mytableView reloadData];
+        }
+        else {
+            
+            hud.label.text=@"未找到该用户，请确认帐号后重试";
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+    } ];
 
 }
 

@@ -235,6 +235,7 @@
             [defaults setObject:imageData forKey:DE_PhotoImage];
             [defaults synchronize];
             
+            [self appdelegate].headImage=image;
             [self upLoadHeadImage:imageData];
         });
         
@@ -333,7 +334,7 @@
     
     NSString *weightStr=[weightField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if (weightStr.length>0&&![weightStr isEqual:[self appdelegate].userInfo.weight]) {
-        [dic setObject:weightStr forKey:@"height"];
+        [dic setObject:weightStr forKey:@"weight"];
     }
     
     NSString *truenameStr=[trueNameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

@@ -66,12 +66,13 @@
     //获取是否已经登录
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL isLogin=[[defaults objectForKey:DE_IsLogin]boolValue];
-   
+    
+    NSData *userdata=[defaults objectForKey:DE_UserInfo];
+    self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
+    
     //如果登录进入主界面,否则进入登录界面
     if (isLogin) {
         
-        NSData *userdata=[defaults objectForKey:DE_UserInfo];
-        self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
         self.token=[defaults objectForKey:DE_Token];
         NSData *headImageData=[defaults objectForKey:DE_PhotoImage];
         self.headImage=[UIImage imageWithData:headImageData];

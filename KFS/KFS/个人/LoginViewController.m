@@ -49,6 +49,7 @@
     accountView.titleLabel.text=@"帐号";
     accountView.textField.delegate=self;
     accountView.textField.placeholder=@"请输入账号";
+    accountView.textField.returnKeyType=UIReturnKeyNext;
     [contentview addSubview:accountView];
     
     
@@ -58,6 +59,7 @@
     pwdView.textField.delegate=self;
     pwdView.textField.placeholder=@"请输入密码";
     pwdView.textField.secureTextEntry=YES;
+    pwdView.textField.returnKeyType=UIReturnKeyGo;
     [contentview addSubview:pwdView];
     
     UIButton *loginbtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 30)];
@@ -101,6 +103,7 @@
     self.navigationController.navigationBarHidden=YES;
     self.username=[self appdelegate].userInfo.username;
     accountView.textField.text=self.username;
+    self.pwd=[self appdelegate].userInfo.pwd;
 }
 -(void)viewWillDisappear:(BOOL)animated{
 
@@ -162,7 +165,11 @@
 - (IBAction)loginBtnClick:(id)sender {
     [accountView.textField resignFirstResponder];
     [pwdView.textField resignFirstResponder];
-    if (accountView.textField.text.length<=0||pwdView.textField.text.length<=0) {
+    
+    NSString *accountStr=[accountView.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *pwdStr=[pwdView.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    if (accountStr.length<=0||pwdStr.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         hud.label.text=@"用户名或密码为空了";
@@ -173,8 +180,8 @@
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
-    [mdic setObject:accountView.textField.text forKey:@"username"];
-    [mdic setObject:pwdView.textField.text forKey:@"password"];
+    [mdic setObject:accountStr forKey:@"username"];
+    [mdic setObject:pwdStr forKey:@"password"];
     
     __weak typeof(self) weakSelf = self;
 
@@ -206,18 +213,19 @@
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:DE_Token];
             
-            if (![weakSelf.username isEqualToString:accountView.textField.text]||![weakSelf.pwd isEqualToString:pwdView.textField.text]) {
-                
-                weakSelf.username= accountView.textField.text;
-                weakSelf.pwd=pwdView.textField.text;
-                
+            if (![weakSelf.username isEqualToString:accountStr])
+            {
+                //清空头像
+                [defaults setObject:nil forKey:DE_PhotoImage];
+                weakSelf.username= accountStr;
                 NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:userModel];
                 [defaults setObject:savedata forKey:DE_UserInfo];
             }
             
             [defaults synchronize];
             
-            [weakSelf appdelegate].userInfo.username=weakSelf.username;
+            weakSelf.pwd=pwdStr;
+            [weakSelf appdelegate].userInfo.username=userModel.username;
             [weakSelf appdelegate].userInfo.pwd=weakSelf.pwd;
             [weakSelf appdelegate].userInfo.headImage=userModel.headImage;
             [weakSelf appdelegate].userInfo.trueName=userModel.trueName;

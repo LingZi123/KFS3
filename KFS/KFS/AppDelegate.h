@@ -24,6 +24,7 @@
 @property(nonatomic,retain)UIStoryboard *storyboard;//界面
 @property(nonatomic,retain)NSString *token;
 @property(nonatomic,retain)UserInfoModel *userInfo;
+@property(nonatomic,retain)UIImage *headImage;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

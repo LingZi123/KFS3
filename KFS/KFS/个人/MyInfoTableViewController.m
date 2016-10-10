@@ -38,14 +38,22 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
-        [imageBtn setBackgroundImage:[UIImage imageNamed:@"头像90"] forState:UIControlStateNormal];
+    //先去本地的图片
+    if ([self appdelegate].headImage) {
+        [imageBtn setBackgroundImage:[self appdelegate].headImage forState:UIControlStateNormal];
+        if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                 [self upLoadHeadImage:UIImagePNGRepresentation([self appdelegate].headImage)];
+            });
+        }
+
     }
     else{
-        [imageBtn setBackgroundImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage] forState:UIControlStateNormal];
+        [imageBtn setBackgroundImage:[UIImage imageNamed:@"头像90"] forState:UIControlStateNormal];
     }
     
-     usernameLabel.text=[self appdelegate].userInfo.username;
+    usernameLabel.text=[self appdelegate].userInfo.username;
     
     NSString *sexstr=[self appdelegate].userInfo.sex;
     if (sexstr!=(id)[NSNull null]&& sexstr!=nil) {
@@ -76,6 +84,7 @@
     
      [self enbleControls:NO];
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -109,6 +118,10 @@
 }
 - (IBAction)imageBtnClick:(id)sender {
     //访问弹出框
+    
+    if (!buttonEnble) {
+        return;
+    }
     UIAlertController *cameravc=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *openCamera=[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -170,7 +183,6 @@
 
 -(void)enbleControls:(BOOL) enble{
     buttonEnble=enble;
-    imageBtn.enabled=enble;
     trueNameField.enabled=enble;
     //userNameTextField.enabled=enble;
 
@@ -212,12 +224,15 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [imageBtn setBackgroundImage:image forState:UIControlStateNormal];
             //                        image= [image imageResizedToSize:CGSizeMake(100.0,100.0)];
-            
+        });
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData *imageData=UIImagePNGRepresentation(image);
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             //            NSData *imagedata=NSData data
             [defaults setObject:imageData forKey:DE_PhotoImage];
             [defaults synchronize];
+            
+            [self upLoadHeadImage:imageData];
         });
         
         //
@@ -243,6 +258,56 @@
     [self closeKeyBoard];
 }
 #pragma mark- 保存到服务器
+
+-(void)upLoadHeadImage:(NSData *)myimageData{
+    
+    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+    [dic setObject:myimageData forKey:@"file"];
+    
+    
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    
+    __weak typeof(self)weakself=self;
+    
+    [manager POST:DE_UrlUpload parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+//        [formData appendPartWithFormData:myimageData name:@"file"];
+        
+        [formData appendPartWithFileData:myimageData name:@"file" fileName:@"头像" mimeType:@"image/png"];
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        NSString *status=[responseObject objectForKey:@"status"];
+        if([status isEqualToString:@"error"]){
+            MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.label.text=@"上传头像失败 ";
+            hud.mode=MBProgressHUDModeText;
+            
+            [hud hideAnimated:YES afterDelay:2.f];
+            NSLog(@"上传头像失败 %@",[responseObject objectForKey:@"message"]);
+        }
+        else{
+            //路径保存
+            [weakself appdelegate].userInfo.headImage=[responseObject objectForKey:@"data"];
+            
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[weakself appdelegate].userInfo];
+            [defaults setObject:saveData forKey:DE_UserInfo];
+            [defaults synchronize];
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"网络错误，上传头像失败") ;
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.label.text=@"网络错误，上传头像失败";
+        hud.mode=MBProgressHUDModeText;
+        
+        [hud hideAnimated:YES afterDelay:2.f];
+    }];
+}
 
 -(void)saveToServer{
    

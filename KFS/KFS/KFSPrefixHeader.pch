@@ -61,6 +61,9 @@
 
 #define DE_UrlUpgradeUser [NSString stringWithFormat:@"http://%@/api/upgrade_user",DE_ServerUrl]  //修改个人信息
 
+#define DE_UrlUpload [NSString stringWithFormat:@"http://%@/api/upload",DE_ServerUrl]  //上传文件
+
+
 
 
 

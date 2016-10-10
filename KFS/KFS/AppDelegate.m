@@ -73,6 +73,8 @@
         NSData *userdata=[defaults objectForKey:DE_UserInfo];
         self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
         self.token=[defaults objectForKey:DE_Token];
+        NSData *headImageData=[defaults objectForKey:DE_PhotoImage];
+        self.headImage=[UIImage imageWithData:headImageData];
         
          [self makeMianView];
         [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:self.userInfo.username passWord:self.userInfo.pwd preloginedBlock:^{

@@ -40,12 +40,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     mainLabel.text=[self appdelegate].userInfo.username;
-    if (![self appdelegate].userInfo.headImage||[self appdelegate].userInfo.headImage==(id)[NSNull null]) {
-        [headImageView setImage :[UIImage imageNamed:@"头像90"] ];
+    
+    if ([self appdelegate].headImage) {
+        [headImageView setImage:[self appdelegate].headImage];
     }
     else{
-        
-        [headImageView setImage:[UIImage imageNamed:[self appdelegate].userInfo.headImage]];
+         [headImageView setImage :[UIImage imageNamed:@"头像90"] ];
     }
 }
 #pragma mark - Table view data source

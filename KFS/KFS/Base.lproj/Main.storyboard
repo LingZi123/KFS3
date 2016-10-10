@@ -900,7 +900,8 @@
                                             <frame key="frameInset" width="342" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-NV-Tnu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPw-NV-Tnu">
+                                                    <frame key="frameInset" minX="84.5" minY="104" width="173" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8gT-rk-Vsi"/>
                                                         <constraint firstAttribute="height" constant="21" id="CiP-RX-Ngw"/>
@@ -924,11 +925,11 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HLw-n9-1Tl" firstAttribute="top" secondItem="8RN-VH-67O" secondAttribute="top" constant="7" id="bI1-Un-8or"/>
+                                                <constraint firstItem="HLw-n9-1Tl" firstAttribute="centerY" secondItem="8RN-VH-67O" secondAttribute="centerY" id="JYm-ls-LyK"/>
+                                                <constraint firstItem="HLw-n9-1Tl" firstAttribute="centerX" secondItem="8RN-VH-67O" secondAttribute="centerX" id="JZF-dY-jbx"/>
                                                 <constraint firstItem="sPw-NV-Tnu" firstAttribute="top" secondItem="8RN-VH-67O" secondAttribute="topMargin" constant="33" id="gBq-8m-RJ3"/>
                                                 <constraint firstItem="sPw-NV-Tnu" firstAttribute="trailing" secondItem="8RN-VH-67O" secondAttribute="trailingMargin" id="jP9-lk-Xin"/>
                                                 <constraint firstItem="sPw-NV-Tnu" firstAttribute="top" secondItem="HLw-n9-1Tl" secondAttribute="bottom" constant="17" id="kaj-Pk-dDU"/>
-                                                <constraint firstItem="HLw-n9-1Tl" firstAttribute="centerX" secondItem="8RN-VH-67O" secondAttribute="centerX" id="rEJ-mc-piT"/>
                                                 <constraint firstItem="sPw-NV-Tnu" firstAttribute="centerX" secondItem="8RN-VH-67O" secondAttribute="centerX" id="tuA-Ze-29C"/>
                                             </constraints>
                                             <variation key="default">

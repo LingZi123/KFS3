@@ -18,7 +18,7 @@
     
     [aCoder encodeBool:_canSpeak forKey:@"canSpeak"];
     [aCoder encodeObject:_dontSpeakTime forKey:@"dontSpeakTime"];
-    [aCoder encodeBool:_headImage forKey:@"headImage"];
+    [aCoder encodeObject:_headImage forKey:@"headImage"];
     
     [aCoder encodeObject:_height forKey:@"height"];
     [aCoder encodeInteger:_userId forKey:@"userId"];

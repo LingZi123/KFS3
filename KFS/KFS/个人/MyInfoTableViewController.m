@@ -29,6 +29,9 @@
     self.tableView.tableFooterView=[[UIView alloc]init];
     originframe=self.view.frame;
     buttonEnble=YES;
+    trueNameField.returnKeyType=UIReturnKeyDone;
+    heightField.returnKeyType=UIReturnKeyNext;
+    weightField.returnKeyType=UIReturnKeyDone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -417,7 +420,7 @@
     //被键盘挡住了
     if (offset>0) {
         [UIView animateWithDuration:0.3 animations:^{
-            self.view.frame=CGRectMake(0, -offset, originframe.size.width, originframe.size.height+offset);
+            self.view.frame=CGRectMake(0, -offset, originframe.size.width, originframe.size.height);
         } completion:^(BOOL finished) {
             
         }];
@@ -428,7 +431,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (self.view.frame.origin.y<0) {
         [UIView animateWithDuration:0.3 animations:^{
-            self.view.frame=originframe;
+            self.view.frame=CGRectMake(0, originframe.origin.y+64, originframe.size.width, originframe.size.height);
         } completion:^(BOOL finished) {
             [textField resignFirstResponder];
         }];

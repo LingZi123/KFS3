@@ -32,6 +32,8 @@
     
     mytableView.rowHeight=107;
     mytableView.tableFooterView=[[UIView alloc]init];
+    
+     [self getTitleTypeFromServer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,7 +81,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self getTitleTypeFromServer];
+   
 }
 #pragma mark-动作
 -(void)searchBtnClick:(UIBarButtonItem *)sender{

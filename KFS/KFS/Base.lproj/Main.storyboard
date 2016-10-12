@@ -1426,6 +1426,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="shareImageview" destination="hPw-Sm-9uT" id="oOw-oz-yfG"/>
                         <outlet property="topView" destination="hQd-lW-stj" id="Tpg-ej-jKk"/>
                     </connections>
                 </viewController>

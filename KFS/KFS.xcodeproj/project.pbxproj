@@ -71,6 +71,11 @@
 		A6594BA91D61A6040007C4A3 /* JHRingChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594B9E1D61A6040007C4A3 /* JHRingChart.m */; };
 		A6594BAA1D61A6040007C4A3 /* JHShowInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594BA01D61A6040007C4A3 /* JHShowInfoView.m */; };
 		A6594BAB1D61A6040007C4A3 /* JHWaveChart.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594BA21D61A6040007C4A3 /* JHWaveChart.m */; };
+		A666E7201DAC8A9600CA367A /* ProblemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E71F1DAC8A9500CA367A /* ProblemModel.m */; };
+		A666E7271DACD23F00CA367A /* ProblemFourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7251DACD23F00CA367A /* ProblemFourTableViewCell.m */; };
+		A666E7281DACD23F00CA367A /* ProblemFourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E7261DACD23F00CA367A /* ProblemFourTableViewCell.xib */; };
+		A666E72C1DACDC8900CA367A /* ProblemThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */; };
+		A666E72D1DACDC8900CA367A /* ProblemThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */; };
 		A66793441D7D61940085C6AC /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793431D7D61930085C6AC /* PopViewController.m */; };
 		A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */; };
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
@@ -306,6 +311,14 @@
 		A6594BA01D61A6040007C4A3 /* JHShowInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHShowInfoView.m; sourceTree = "<group>"; };
 		A6594BA11D61A6040007C4A3 /* JHWaveChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHWaveChart.h; sourceTree = "<group>"; };
 		A6594BA21D61A6040007C4A3 /* JHWaveChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHWaveChart.m; sourceTree = "<group>"; };
+		A666E71E1DAC8A9500CA367A /* ProblemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemModel.h; sourceTree = "<group>"; };
+		A666E71F1DAC8A9500CA367A /* ProblemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemModel.m; sourceTree = "<group>"; };
+		A666E7241DACD23F00CA367A /* ProblemFourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemFourTableViewCell.h; sourceTree = "<group>"; };
+		A666E7251DACD23F00CA367A /* ProblemFourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemFourTableViewCell.m; sourceTree = "<group>"; };
+		A666E7261DACD23F00CA367A /* ProblemFourTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemFourTableViewCell.xib; sourceTree = "<group>"; };
+		A666E7291DACDC8900CA367A /* ProblemThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemThreeTableViewCell.h; sourceTree = "<group>"; };
+		A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemThreeTableViewCell.m; sourceTree = "<group>"; };
+		A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemThreeTableViewCell.xib; sourceTree = "<group>"; };
 		A66793421D7D61930085C6AC /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
 		A66793431D7D61930085C6AC /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		A66793481D7EAA290085C6AC /* SPTribeInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTribeInfoEditViewController.h; sourceTree = "<group>"; };
@@ -634,6 +647,7 @@
 		A62F215B1D518657003E71C7 /* 联系人 */ = {
 			isa = PBXGroup;
 			children = (
+				A666E71D1DAC8A6900CA367A /* Model */,
 				A6D064DD1D77FBFC00CFAAE5 /* Controller */,
 				A6D064DC1D77FBF300CFAAE5 /* View */,
 			);
@@ -792,6 +806,15 @@
 				A6594BA21D61A6040007C4A3 /* JHWaveChart.m */,
 			);
 			path = JHChart;
+			sourceTree = "<group>";
+		};
+		A666E71D1DAC8A6900CA367A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A666E71E1DAC8A9500CA367A /* ProblemModel.h */,
+				A666E71F1DAC8A9500CA367A /* ProblemModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A67830E21DA8CD4400BB3CC5 /* Model */ = {
@@ -1042,6 +1065,12 @@
 				A6D064E71D78027800CFAAE5 /* SPContactCell.h */,
 				A6D064E81D78027800CFAAE5 /* SPContactCell.m */,
 				A6D064E91D78027800CFAAE5 /* SPContactCell.xib */,
+				A666E7241DACD23F00CA367A /* ProblemFourTableViewCell.h */,
+				A666E7251DACD23F00CA367A /* ProblemFourTableViewCell.m */,
+				A666E7261DACD23F00CA367A /* ProblemFourTableViewCell.xib */,
+				A666E7291DACDC8900CA367A /* ProblemThreeTableViewCell.h */,
+				A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */,
+				A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1277,6 +1306,7 @@
 				A6DCCE801D62C0D4006A0CAF /* LearnMainCell.xib in Resources */,
 				A67B856A1D6D421500B08D9F /* 短信08.caf in Resources */,
 				A68812F21D757C0500E37207 /* demo_discussion@2x.png in Resources */,
+				A666E7281DACD23F00CA367A /* ProblemFourTableViewCell.xib in Resources */,
 				A68812EB1D757C0500E37207 /* icon_add@2x.png in Resources */,
 				A67B857F1D6D7A8200B08D9F /* README.txt in Resources */,
 				A62EE32B1D8F803100F92D24 /* WXOpenIMSDKResource.bundle in Resources */,
@@ -1303,6 +1333,7 @@
 				A62F212E1D518502003E71C7 /* Main.storyboard in Resources */,
 				A67B857E1D6D7A8200B08D9F /* read_me.txt in Resources */,
 				A68812E91D757C0500E37207 /* face_e@2x.png in Resources */,
+				A666E72D1DACDC8900CA367A /* ProblemThreeTableViewCell.xib in Resources */,
 				A6594B871D5C2A360007C4A3 /* GFWeekView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1375,6 +1406,7 @@
 				A6C672D71D5C10B900EDCC56 /* LewPopupBackgroundView.m in Sources */,
 				A6D29AF81D6EEF65000DCA0B /* sdkCall.m in Sources */,
 				A63B05611D81596E004B8AC8 /* SPTribeConversationViewController.m in Sources */,
+				A666E72C1DACDC8900CA367A /* ProblemThreeTableViewCell.m in Sources */,
 				A68812E31D757C0500E37207 /* SPInputViewPluginGreeting.m in Sources */,
 				A68812E61D757C0500E37207 /* SPInputViewPluginTransparent.m in Sources */,
 				A66ADCBC1D94D59E004D1335 /* RemandNotifManager.m in Sources */,
@@ -1411,9 +1443,11 @@
 				A6594BA31D61A6040007C4A3 /* JHChart.m in Sources */,
 				A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */,
 				A62F21831D54766D003E71C7 /* InviteFriendsViewController.m in Sources */,
+				A666E7201DAC8A9600CA367A /* ProblemModel.m in Sources */,
 				A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */,
 				A62F217B1D51E24D003E71C7 /* TableViewCell.m in Sources */,
 				A63B05791D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m in Sources */,
+				A666E7271DACD23F00CA367A /* ProblemFourTableViewCell.m in Sources */,
 				A62F21911D585867003E71C7 /* RemandUnitView.m in Sources */,
 				A6594BA41D61A6040007C4A3 /* JHColumnChart.m in Sources */,
 				A63B05701D825375004B8AC8 /* SPTribeMemberListViewController.m in Sources */,

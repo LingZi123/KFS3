@@ -13,6 +13,8 @@
     GFShareView *shareView;
     UIColor *origiColor;//原始背景色
     __weak IBOutlet UIView *topView;
+    NSData *imageData;
+    __weak IBOutlet UIImageView *shareImageview;
 }
 
 @property(nonatomic,assign)BOOL isHidenShareView;//是否显示分享页面

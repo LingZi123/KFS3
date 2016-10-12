@@ -7,6 +7,9 @@
 //
 
 #import "InviteFriendsViewController.h"
+#import "AFHTTPSessionManager.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
 
 @interface InviteFriendsViewController ()
 
@@ -25,6 +28,8 @@
     self.navigationItem.title=@"邀请好友";
     [self.view addSubview:shareView];
     origiColor=self.view.backgroundColor;
+    
+    [self getDataFromServer];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -99,5 +104,34 @@
 #pragma mark-GFShareViewDelegate
 -(void)cancelShareView{
     self.isHidenShareView=YES;
+}
+
+#pragma mark-请求数据
+-(void)getDataFromServer{
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    [manager GET:DE_UrlInvite parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        int a=0;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"网络错误");
+    }];
+}
+
+-(void)getDataFromLocal{
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    imageData=[defaults objectForKey:DE_UrlInvite];
+    if (imageData) {
+        shareImageview.image=[UIImage imageWithData:imageData];
+    }
+
+}
+#pragma mark-appdelegate
+-(AppDelegate *)appdelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
 @end

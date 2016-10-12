@@ -896,20 +896,20 @@ UIAlertViewDelegate>
                                                                               options:0
                                                                                 error:NULL];
             
-            NSString *messageType = contentDictionary[kSPCustomizeMessageType];
-            if ([messageType isEqualToString:@"CallingCard"]) {
-                SPCallingCardBubbleViewModel *viewModel = [[SPCallingCardBubbleViewModel alloc] initWithMessage:message];
-                return viewModel;
-            }
-            else if ([messageType isEqualToString:@"Greeting"]) {
-                SPGreetingBubbleViewModel *viewModel = [[SPGreetingBubbleViewModel alloc] initWithMessage:message];
-                return viewModel;
-                
-            }
-            else {
+//            NSString *messageType = contentDictionary[kSPCustomizeMessageType];
+//            if ([messageType isEqualToString:@"CallingCard"]) {
+//                SPCallingCardBubbleViewModel *viewModel = [[SPCallingCardBubbleViewModel alloc] initWithMessage:message];
+//                return viewModel;
+//            }
+//            else if ([messageType isEqualToString:@"Greeting"]) {
+//                SPGreetingBubbleViewModel *viewModel = [[SPGreetingBubbleViewModel alloc] initWithMessage:message];
+//                return viewModel;
+//                
+//            }
+//            else {
                 SPBubbleViewModelCustomize *viewModel = [[SPBubbleViewModelCustomize alloc] initWithMessage:message];
                 return viewModel;
-            }
+//            }
         }
         
         return nil;
@@ -1205,6 +1205,8 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
                 
                 ProblemViewController *vc=[[ProblemViewController alloc]init];
                 vc.content=customizebody.content;
+                vc.titlesummary=customizebody.summary;
+                vc.conversation=conversationController.conversation;
                 [conversationController presentViewController:vc animated:YES completion:^{
                     
                 }];

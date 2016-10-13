@@ -78,27 +78,7 @@
         self.headImage=[UIImage imageWithData:headImageData];
         
          [self makeMianView];
-        [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:self.userInfo.username passWord:self.userInfo.pwd preloginedBlock:^{
-            
-        } successBlock:^{
-            
-          
-            [[SPKitExample sharedInstance] exampleGetFeedbackUnreadCount:YES inViewController:[_mainTabbarv.viewControllers objectAtIndex:1]];
-            
-        } failedBlock:^(NSError *aError) {
-//            if (aError.code == YWLoginErrorCodePasswordError || aError.code == YWLoginErrorCodePasswordInvalid || aError.code == YWLoginErrorCodeUserNotExsit) {
-//                
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    
-//                    UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"登录失败, 可以使用游客登录。\n（如在调试，请确认AppKey、帐号、密码是否正确。）" delegate:weakSelf cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"游客登录", nil];
-//                    [as showInView:weakSelf.view];
-//                });
-//            }
-            
-        }
-         ];
-
-        
+        [self loginIM];
     }
     else{
         [self makeLoginView];
@@ -128,8 +108,9 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
+    
+    [[SPKitExample sharedInstance] callThisBeforeISVAccountLogout];
+
     [self saveContext];
 }
 
@@ -264,6 +245,38 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
     return [TencentOAuth HandleOpenURL:url];
+}
+
+-(void)loginIM{
+    
+    //登录成功就登录im
+    __weak typeof(self) weakSelf = self;
+//    [[SPUtil sharedInstance]setWaitingIndicatorShown:YES withKey:self.description];
+    
+    [[SPKitExample sharedInstance]callThisAfterISVAccountLoginSuccessWithYWLoginId:weakSelf.userInfo.username passWord:weakSelf.userInfo.pwd preloginedBlock:^{
+        
+//        [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
+        
+    } successBlock:^{
+        
+        //        [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
+        
+                [[SPKitExample sharedInstance] exampleGetFeedbackUnreadCount:YES inViewController:[_mainTabbarv.viewControllers objectAtIndex:1]];
+        
+    } failedBlock:^(NSError *aError) {
+//        [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
+//        if (aError.code == YWLoginErrorCodePasswordError || aError.code == YWLoginErrorCodePasswordInvalid || aError.code == YWLoginErrorCodeUserNotExsit) {
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                
+//                UIActionSheet *as = [[UIActionSheet alloc] initWithTitle:@"登录失败, 可以使用游客登录。\n（如在调试，请确认AppKey、帐号、密码是否正确。）" delegate:weakSelf cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"游客登录", nil];
+//                [as showInView:weakSelf.view];
+//            });
+//        }
+//        
+    }
+     ];
+    
 }
 
 @end

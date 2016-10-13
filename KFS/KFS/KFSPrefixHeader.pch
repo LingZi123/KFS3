@@ -17,6 +17,7 @@
 #define DE_IsLogin @"IsLogin" //是否登录
 #define DE_PhotoImage @"PhotoImage" //头像
 #define DE_UserInfo @"userInfo"
+#define DE_Username @"username"//仅供
 
 #define DE_Token @"token"
 #define DE_Mood @"mood"

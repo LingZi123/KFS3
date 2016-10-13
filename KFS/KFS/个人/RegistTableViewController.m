@@ -190,6 +190,7 @@
                 
                 NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
                 [defaults setObject:saveData forKey:DE_UserInfo];
+                [defaults setObject:[self appdelegate].userInfo.username forKey:DE_Username];
                 [defaults synchronize];
                 [self.navigationController popToRootViewControllerAnimated:YES];
     //            [[self appdelegate] makeMianView];

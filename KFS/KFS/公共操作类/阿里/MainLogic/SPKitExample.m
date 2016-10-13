@@ -1197,7 +1197,14 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
 //            if ([aMessage hasReaded]&&[aMessage receiverHasReaded]) {
 //                return nil;
 //            }
-            NSLog(@"%@",customizebody.content);
+            NSLog(@"%@",customizebody);
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            NSString *username= [defaults objectForKey:DE_Username];
+            
+            YWPerson *fromPerson=aMessage.messageFromPerson;
+            if ([username isEqualToString:fromPerson.personId]) {
+                return nil;
+            }
             
             return  @[[[YWMoreActionItem alloc]initWithActionName:@"前往问卷" actionBlock:^(NSDictionary *aUserInfo) {
                 NSString *messagetId=aUserInfo[YWConversationMessageCustomMenuItemUserInfoKeyMessageId];

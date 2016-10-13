@@ -41,6 +41,9 @@
         [self.label setTextAlignment:NSTextAlignmentCenter];
         
         [self addSubview:self.label];
+        
+        NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+        username=[defaults objectForKey:DE_Username];
     }
     
     return self;
@@ -54,7 +57,7 @@
     
 #warning 这里有修改额
     
-    if (self.viewModel.hasRead) {
+    if (self.viewModel.hasRead&&[username isEqualToString:self.viewModel.fromPersonId]) {
         self.label.textColor=[UIColor greenColor];
         [self.label setText:@"该问卷已回答完毕"];
     }

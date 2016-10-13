@@ -33,6 +33,9 @@
         if ([aMessage hasReaded]||[aMessage receiverHasReaded]) {
             self.hasRead=YES;
         }
+        
+        YWPerson *p=aMessage.messageFromPerson;
+        self.fromPersonId=p.personId;
     }
     
     return self;

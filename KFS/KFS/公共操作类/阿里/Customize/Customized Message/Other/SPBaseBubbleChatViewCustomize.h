@@ -8,5 +8,7 @@
 
 #import <WXOUIModule/YWUIFMWK.h>
 
-@interface SPBaseBubbleChatViewCustomize : YWBaseBubbleChatView
+@interface SPBaseBubbleChatViewCustomize : YWBaseBubbleChatView{
+      NSString *username;
+}
 @end

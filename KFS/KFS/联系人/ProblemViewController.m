@@ -21,7 +21,7 @@
     [super viewDidLoad];
    
     UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 64)];
-    topView.backgroundColor=[UIColor lightGrayColor];
+    topView.backgroundColor=DE_BgColorPink;
     [self.view addSubview:topView];
     
     UIButton *closeBtn=[[UIButton alloc]initWithFrame:CGRectMake(16, 30, 60, 30)];

@@ -209,6 +209,7 @@
             [weakSelf appdelegate].token=token;
             
             UserInfoModel *userModel=[UserInfoModel getModelWithDic:data];
+            userModel.pwd=pwdStr;
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:DE_Token];
@@ -220,6 +221,8 @@
                 weakSelf.username= accountStr;
                 NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:userModel];
                 [defaults setObject:savedata forKey:DE_UserInfo];
+                
+                [defaults setObject:userModel.username forKey:DE_Username];
             }
             
             [defaults synchronize];
@@ -271,8 +274,8 @@
         
     } successBlock:^{
         
-        [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
-        
+//        [[SPUtil sharedInstance]setWaitingIndicatorShown:NO withKey:weakSelf.description];
+
         NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
         [defaults setBool:YES forKey:DE_IsLogin];
         [defaults synchronize];

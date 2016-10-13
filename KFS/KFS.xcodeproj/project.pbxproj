@@ -76,6 +76,8 @@
 		A666E7281DACD23F00CA367A /* ProblemFourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E7261DACD23F00CA367A /* ProblemFourTableViewCell.xib */; };
 		A666E72C1DACDC8900CA367A /* ProblemThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */; };
 		A666E72D1DACDC8900CA367A /* ProblemThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */; };
+		A666E7341DAF3E8C00CA367A /* RightImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7321DAF3E8C00CA367A /* RightImageViewCell.m */; };
+		A666E7351DAF3E8C00CA367A /* RightImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E7331DAF3E8C00CA367A /* RightImageViewCell.xib */; };
 		A66793441D7D61940085C6AC /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793431D7D61930085C6AC /* PopViewController.m */; };
 		A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */; };
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
@@ -319,6 +321,9 @@
 		A666E7291DACDC8900CA367A /* ProblemThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemThreeTableViewCell.h; sourceTree = "<group>"; };
 		A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemThreeTableViewCell.m; sourceTree = "<group>"; };
 		A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProblemThreeTableViewCell.xib; sourceTree = "<group>"; };
+		A666E7311DAF3E8C00CA367A /* RightImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightImageViewCell.h; sourceTree = "<group>"; };
+		A666E7321DAF3E8C00CA367A /* RightImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightImageViewCell.m; sourceTree = "<group>"; };
+		A666E7331DAF3E8C00CA367A /* RightImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightImageViewCell.xib; sourceTree = "<group>"; };
 		A66793421D7D61930085C6AC /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
 		A66793431D7D61930085C6AC /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		A66793481D7EAA290085C6AC /* SPTribeInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTribeInfoEditViewController.h; sourceTree = "<group>"; };
@@ -1071,6 +1076,9 @@
 				A666E7291DACDC8900CA367A /* ProblemThreeTableViewCell.h */,
 				A666E72A1DACDC8900CA367A /* ProblemThreeTableViewCell.m */,
 				A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */,
+				A666E7311DAF3E8C00CA367A /* RightImageViewCell.h */,
+				A666E7321DAF3E8C00CA367A /* RightImageViewCell.m */,
+				A666E7331DAF3E8C00CA367A /* RightImageViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1304,6 +1312,7 @@
 				A68812ED1D757C0500E37207 /* input_plug_ico_card_nor@2x.png in Resources */,
 				A68812E81D757C0500E37207 /* CustomizedUIResources.bundle in Resources */,
 				A6DCCE801D62C0D4006A0CAF /* LearnMainCell.xib in Resources */,
+				A666E7351DAF3E8C00CA367A /* RightImageViewCell.xib in Resources */,
 				A67B856A1D6D421500B08D9F /* 短信08.caf in Resources */,
 				A68812F21D757C0500E37207 /* demo_discussion@2x.png in Resources */,
 				A666E7281DACD23F00CA367A /* ProblemFourTableViewCell.xib in Resources */,
@@ -1406,6 +1415,7 @@
 				A6C672D71D5C10B900EDCC56 /* LewPopupBackgroundView.m in Sources */,
 				A6D29AF81D6EEF65000DCA0B /* sdkCall.m in Sources */,
 				A63B05611D81596E004B8AC8 /* SPTribeConversationViewController.m in Sources */,
+				A666E7341DAF3E8C00CA367A /* RightImageViewCell.m in Sources */,
 				A666E72C1DACDC8900CA367A /* ProblemThreeTableViewCell.m in Sources */,
 				A68812E31D757C0500E37207 /* SPInputViewPluginGreeting.m in Sources */,
 				A68812E61D757C0500E37207 /* SPInputViewPluginTransparent.m in Sources */,

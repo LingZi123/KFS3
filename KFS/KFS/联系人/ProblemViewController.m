@@ -40,7 +40,7 @@
     label.textColor=[UIColor whiteColor];
     [topView addSubview:label];
     
-    dataTabelView=[[UITableView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-CGRectGetMaxY(topView.frame))];
+    dataTabelView=[[UITableView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(topView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-CGRectGetMaxY(topView.frame))];
     dataTabelView.dataSource=self;
     dataTabelView.delegate=self;
 //    dataTabelView.allowsMultipleSelection=YES;
@@ -52,10 +52,11 @@
 
     [dataTabelView registerNib:[UINib nibWithNibName:@"ProblemFourTableViewCell" bundle:nil] forCellReuseIdentifier:@"valueTypeCell"];
     [dataTabelView registerNib:[UINib nibWithNibName:@"ProblemThreeTableViewCell" bundle:nil] forCellReuseIdentifier:@"RangeValueTypeCell"];
-    
     originFrame=self.view.frame;
     
 }
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -73,10 +74,9 @@
     [dataArray removeAllObjects];
     
     NSData *jsondata=[[NSData alloc]initWithData:[self.content dataUsingEncoding:NSUTF8StringEncoding]];
-    NSArray *tempArray=[NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableLeaves error:nil];
+    NSArray *tempArray=[[NSJSONSerialization JSONObjectWithData:jsondata options:NSJSONReadingMutableLeaves error:nil] objectForKey:@"data"];
     if (tempArray) {
         for (NSDictionary *dic in tempArray) {
-            
             ProblemModel *model=[ProblemModel getModelWithDic:dic];
             [dataArray addObject:model];
         }
@@ -100,13 +100,30 @@
    
 }
 -(void)send:(UIButton *)sender{
-//    [self exampleSendCustomMessageWithConversation];
+    [self exampleSendCustomMessageWithConversation];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 -(void)exampleSendCustomMessageWithConversation{
-    YWMessageBodyCustomize *body=[[YWMessageBodyCustomize alloc]initWithMessageCustomizeContent:@"你4不4 傻" summary:@"问卷答案"];
+    
+    NSMutableArray *sendDataArray=[[NSMutableArray alloc]init];
+    for (ProblemModel *model in dataArray) {
+        NSDictionary *dic=[model getDicWithModel:model];
+        [sendDataArray addObject:dic];
+    }
+    
+    NSMutableDictionary *sendDic=[[NSMutableDictionary alloc]init];
+    [sendDic setObject:sendDataArray forKey:@"data"];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:sendDic
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+     NSString   *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        
+    
+    YWMessageBodyCustomize *body=[[YWMessageBodyCustomize alloc]initWithMessageCustomizeContent:jsonString summary:label.text];
     [self.conversation asyncSendMessageBody:body progress:^(CGFloat progress, NSString *messageID) {
         
         
@@ -134,20 +151,17 @@
     
     ProblemModel *model=dataArray[section];
     
-    if([model.valueType integerValue]==3){
+    if([model.valueType integerValue]==3||[model.valueType integerValue]==4){
         return 1;
     }
-    else{
        
-         NSArray *problemValueArray=model.problemValueArray;
-        if (problemValueArray) {
-            return problemValueArray.count;
-        }
-        else{
-            return 0;
-        }
+    NSArray *problemValueArray=model.problemValueArray;
+    if (problemValueArray) {
+        return problemValueArray.count;
     }
-    return 0;
+    else{
+        return 0;
+    }
     
 }
 
@@ -157,17 +171,21 @@
     if([model.valueType integerValue]==4){
         return 60;
     }
-    else{
-        return 44;
-    }
+    return 44;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     ProblemModel *model=dataArray[section];
+    if ([model.valueType integerValue]==2) {
+        return [NSString stringWithFormat:@"%lD、%@? (多选)",(section+1),model.topic];
+
+    }
     return  [NSString stringWithFormat:@"%lD、%@?",(section+1),model.topic];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ProblemModel *model=dataArray[indexPath.section];
+    
+    NSInteger section=indexPath.section;
+    ProblemModel *model=dataArray[section];
     
      if ([model.valueType integerValue]==3){
         //范围
@@ -191,25 +209,28 @@
         }
         
         cell.textFiled.delegate=self;
-        
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if([model.valueType integerValue]==4){
         //简答题
-         NSString *indif=@"valueTypeCell";
-          ProblemFourTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:indif];
+         NSString *valueTypeCellIndif=@"valueTypeCell";
+        
+          ProblemFourTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:valueTypeCellIndif];
         if (cell==nil) {
             cell=[[ProblemFourTableViewCell alloc]init];
         }
         cell.textview.delegate=self;
+        cell.selectionStyle=UITableViewCellSelectionStyleNone;
+
         return cell;
     }
     else{
           //单选 多选
-        NSString *indif=@"selectedValueTypeCell";
-        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:indif];
+        NSString *selectedValueTypeIndif=@"selectedValueTypeCell";
+        UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:selectedValueTypeIndif];
         if (cell==nil) {
-            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:indif];
+            cell=[[UITableViewCell alloc]init ];
         }
         
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -219,9 +240,7 @@
         cell.imageView.image=[UIImage imageNamed:@"单选灰"];
         cell.textLabel.text=[subdic objectForKey:@"value"];
         cell.textLabel.font=DE_Font14;
-        
-        cell.textLabel.textColor=[UIColor blackColor];
-        
+
         return  cell;
 
     }
@@ -292,6 +311,7 @@
     }
 
 }
+
 #pragma mark-UITextViewDelegate
 
 -(void)textViewDidEndEditing:(UITextView *)textView{

@@ -18,6 +18,11 @@
 @property(nonatomic,retain)NSArray *prlblemClassifyArray;//
 @property(nonatomic,retain)NSString *userId;//用户id；
 @property(nonatomic,retain)NSString *value;//回答的答案；
+@property(nonatomic,retain)NSString *hashKey;//回答的答案
+@property(nonatomic,retain)NSString *created_at;//回答的答案
+@property(nonatomic,retain)NSString *updated_at;//回答的答案
 
 +(ProblemModel *)getModelWithDic:(NSDictionary *)dic;
+-(NSDictionary *)getDicWithModel:(ProblemModel *)model;
+
 @end

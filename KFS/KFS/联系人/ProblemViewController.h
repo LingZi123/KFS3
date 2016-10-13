@@ -11,6 +11,7 @@
 #import <WXOpenIMSDKFMWK/YWMessageBodyCustomize.h>
 
 @interface ProblemViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UITextFieldDelegate,UIScrollViewDelegate>{
+    
     UILabel *label;
     UITableView *dataTabelView;
     NSMutableArray *dataArray;

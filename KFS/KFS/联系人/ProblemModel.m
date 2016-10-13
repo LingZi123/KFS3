@@ -18,6 +18,30 @@
     model.prlblemClassifyArray=[dic objectForKey:@"problem_classify"];
     model.userId=[dic objectForKey:@"user_id"];
     model.valueType=[dic objectForKey:@"value_type"];
+    model.hashKey=[dic objectForKey:@"$$hashKey"];
+    model.created_at=[dic objectForKey:@"created_at"];
+    model.updated_at=[dic objectForKey:@"updated_at"];
+
     return  model;
+}
+
+-(NSDictionary *)getDicWithModel:(ProblemModel *)model{
+    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+    [dic setObject:model.topic forKey:@"topic"];
+     [dic setObject:model.problemId forKey:@"id"];
+     [dic setObject:model.topicType forKey:@"topic_type"];
+     [dic setObject:model.problemValueArray forKey:@"problem_value"];
+     [dic setObject:model.prlblemClassifyArray forKey:@"problem_classify"];
+     [dic setObject:model.userId forKey:@"user_id"];
+     [dic setObject:model.valueType forKey:@"value_type"];
+     [dic setObject:model.hashKey forKey:@"$$hashKey"];
+     [dic setObject:model.created_at forKey:@"created_at"];
+     [dic setObject:model.updated_at forKey:@"updated_at"];
+    if (model.value==nil) {
+        model.value=@"";
+    }
+     [dic setObject:model.value forKey:@"value"];
+    
+    return  dic;
 }
 @end

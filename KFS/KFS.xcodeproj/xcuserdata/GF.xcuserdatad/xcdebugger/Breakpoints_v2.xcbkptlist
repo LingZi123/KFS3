@@ -218,13 +218,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496230086.642645"
+            timestampString = "498554059.663263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "-makeView"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,7 +240,7 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "-initWithFrame:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1358,7 +1358,7 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "-getMoodAndHealth"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1406,7 +1406,7 @@
             startingLineNumber = "132"
             endingLineNumber = "132"
             landmarkName = "-postToServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1422,7 +1422,7 @@
             startingLineNumber = "143"
             endingLineNumber = "143"
             landmarkName = "-postToServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1560,13 +1560,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1576,13 +1576,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1592,13 +1592,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "-getRemandListFromLocal"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1608,13 +1608,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1624,13 +1624,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496230086.642645"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1646,7 +1646,7 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "-fullLastMyRemandWithArray:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1656,13 +1656,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1672,45 +1672,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496313374.248115"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496313374.248115"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
             endingLineNumber = "208"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1720,13 +1688,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496231036.307478"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-getLastTwoRemand"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
+            timestampString = "498556093.933228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "-getLastTwoRemand"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
+            timestampString = "498556093.933228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "-viewWillAppear:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1736,13 +1736,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496305650.468423"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "-getRemandListFromServer"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1880,13 +1880,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496313374.248115"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1896,13 +1896,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496313374.248115"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2088,13 +2088,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496313365.16048"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2104,13 +2104,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496314837.373671"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2120,13 +2120,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496314852.899309"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -2168,13 +2168,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496314853.917492"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2184,13 +2184,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496314866.959773"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2200,13 +2200,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x9996;&#x9875;/FirstPageMainViewController.m"
-            timestampString = "496314877.755703"
+            timestampString = "498556093.933228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "-getLastTwoRemand"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4033,7 +4033,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/UserInfoModel.m"
@@ -5019,6 +5019,70 @@
             startingLineNumber = "222"
             endingLineNumber = "222"
             landmarkName = "-loginBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/&#x963f;&#x91cc;/MainLogic/SPKitExample.m"
+            timestampString = "498129443.431386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-exampleInit"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/RegistTableViewController.m"
+            timestampString = "498477270.248378"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-getVerityCodeBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/RegistTableViewController.m"
+            timestampString = "498477272.87277"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-getVerityCodeBtnClick:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x9996;&#x9875;/GFRemandView.m"
+            timestampString = "498642113.214701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-makeView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

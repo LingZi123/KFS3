@@ -47,7 +47,7 @@
      [settingBtn setTitleColor:DE_BgColorPink forState:UIControlStateNormal];
     [self addSubview:settingBtn];
     
-    UIView *seg1=[[UIView alloc]initWithFrame:CGRectMake(8, CGRectGetHeight(self.frame)-1, CGRectGetWidth(self.frame)-16, 1)];
+    UIView *seg1=[[UIView alloc]initWithFrame:CGRectMake(8, CGRectGetHeight(self.frame)-1, CGRectGetWidth(self.frame)-16, 0.5)];
     seg1.backgroundColor=DE_SegColorGray;
     [self addSubview:seg1];
 }

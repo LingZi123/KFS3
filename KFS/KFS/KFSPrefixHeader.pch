@@ -34,6 +34,7 @@
 #define DE_SegColorGray [UIColor colorWithRed:97.0/255.0 green:97.0/255.0 blue:97.0/255.0 alpha:0.5]
 #define DE_LineColorPup [UIColor colorWithRed:219.0/255.0 green:129.0/255.0 blue:233.0/255.0 alpha:1]
 #define DE_LineColorOrg [UIColor colorWithRed:230.0/255.0 green:166.0/255.0 blue:98.0/255.0 alpha:1]
+#define DE_GreenColor [UIColor colorWithRed:0x2c/255.0 green:0xbd/255.0 blue:0x2f/255.0 alpha:1]
 
 
 #define DE_Ratio5 320/568

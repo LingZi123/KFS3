@@ -265,9 +265,9 @@
 
 -(void)upLoadHeadImage:(NSData *)myimageData{
     
-    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
-    [dic setObject:myimageData forKey:@"file"];
-    
+//    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+//    [dic setObject:myimageData forKey:@"file"];
+//    
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];

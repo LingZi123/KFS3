@@ -78,6 +78,10 @@
 		A666E72D1DACDC8900CA367A /* ProblemThreeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E72B1DACDC8900CA367A /* ProblemThreeTableViewCell.xib */; };
 		A666E7341DAF3E8C00CA367A /* RightImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7321DAF3E8C00CA367A /* RightImageViewCell.m */; };
 		A666E7351DAF3E8C00CA367A /* RightImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A666E7331DAF3E8C00CA367A /* RightImageViewCell.xib */; };
+		A666E7381DB7126700CA367A /* GFSelfInvolvedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7371DB7126700CA367A /* GFSelfInvolvedView.m */; };
+		A666E73B1DB757E500CA367A /* GFDoctorSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E73A1DB757E500CA367A /* GFDoctorSuggest.m */; };
+		A666E73E1DB869B100CA367A /* GFRemandUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E73D1DB869B100CA367A /* GFRemandUnitView.m */; };
+		A666E7411DB86C1900CA367A /* GFRemandView.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7401DB86C1900CA367A /* GFRemandView.m */; };
 		A66793441D7D61940085C6AC /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793431D7D61930085C6AC /* PopViewController.m */; };
 		A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */; };
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
@@ -324,6 +328,14 @@
 		A666E7311DAF3E8C00CA367A /* RightImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightImageViewCell.h; sourceTree = "<group>"; };
 		A666E7321DAF3E8C00CA367A /* RightImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightImageViewCell.m; sourceTree = "<group>"; };
 		A666E7331DAF3E8C00CA367A /* RightImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightImageViewCell.xib; sourceTree = "<group>"; };
+		A666E7361DB7126700CA367A /* GFSelfInvolvedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFSelfInvolvedView.h; sourceTree = "<group>"; };
+		A666E7371DB7126700CA367A /* GFSelfInvolvedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFSelfInvolvedView.m; sourceTree = "<group>"; };
+		A666E7391DB757E500CA367A /* GFDoctorSuggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFDoctorSuggest.h; sourceTree = "<group>"; };
+		A666E73A1DB757E500CA367A /* GFDoctorSuggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFDoctorSuggest.m; sourceTree = "<group>"; };
+		A666E73C1DB869B100CA367A /* GFRemandUnitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRemandUnitView.h; sourceTree = "<group>"; };
+		A666E73D1DB869B100CA367A /* GFRemandUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFRemandUnitView.m; sourceTree = "<group>"; };
+		A666E73F1DB86C1900CA367A /* GFRemandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRemandView.h; sourceTree = "<group>"; };
+		A666E7401DB86C1900CA367A /* GFRemandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFRemandView.m; sourceTree = "<group>"; };
 		A66793421D7D61930085C6AC /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
 		A66793431D7D61930085C6AC /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		A66793481D7EAA290085C6AC /* SPTribeInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTribeInfoEditViewController.h; sourceTree = "<group>"; };
@@ -772,6 +784,14 @@
 				A6594B831D5C2A1E0007C4A3 /* GFWeekView.h */,
 				A6594B841D5C2A1E0007C4A3 /* GFWeekView.m */,
 				A6594B861D5C2A360007C4A3 /* GFWeekView.xib */,
+				A666E7361DB7126700CA367A /* GFSelfInvolvedView.h */,
+				A666E7371DB7126700CA367A /* GFSelfInvolvedView.m */,
+				A666E7391DB757E500CA367A /* GFDoctorSuggest.h */,
+				A666E73A1DB757E500CA367A /* GFDoctorSuggest.m */,
+				A666E73C1DB869B100CA367A /* GFRemandUnitView.h */,
+				A666E73D1DB869B100CA367A /* GFRemandUnitView.m */,
+				A666E73F1DB86C1900CA367A /* GFRemandView.h */,
+				A666E7401DB86C1900CA367A /* GFRemandView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1376,9 +1396,11 @@
 				A63B055B1D8104F6004B8AC8 /* GFAddContactViewController.m in Sources */,
 				A63B05761D828864004B8AC8 /* SPTribeQRCodeViewController.m in Sources */,
 				A6AD43511D8E97710090F38E /* AFURLRequestSerialization.m in Sources */,
+				A666E73B1DB757E500CA367A /* GFDoctorSuggest.m in Sources */,
 				A62F21621D5186F3003E71C7 /* ContactMainViewController.m in Sources */,
 				A6DCCE7F1D62C0D4006A0CAF /* LearnMainCell.m in Sources */,
 				A68812FA1D757FB200E37207 /* MainTabBarController.m in Sources */,
+				A666E7381DB7126700CA367A /* GFSelfInvolvedView.m in Sources */,
 				A6594BAA1D61A6040007C4A3 /* JHShowInfoView.m in Sources */,
 				A66793501D7FAD880085C6AC /* SPContactProfileController.m in Sources */,
 				A68DFE5B1D9A413A007F5CD4 /* ForgetPwdTableViewController.m in Sources */,
@@ -1400,6 +1422,7 @@
 				A6AD43521D8E97710090F38E /* AFURLResponseSerialization.m in Sources */,
 				A68812E21D757C0500E37207 /* SPGreetingBubbleViewModel.m in Sources */,
 				A63B05671D81688B004B8AC8 /* SPQRCodeReaderViewController.m in Sources */,
+				A666E73E1DB869B100CA367A /* GFRemandUnitView.m in Sources */,
 				A6D064EA1D78027800CFAAE5 /* SPContactCell.m in Sources */,
 				A68812DE1D757C0500E37207 /* SPCallingCardBubbleChatView.m in Sources */,
 				A6DCCE881D643A24006A0CAF /* LableTextFieldView.m in Sources */,
@@ -1445,6 +1468,7 @@
 				A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */,
 				A6594BA91D61A6040007C4A3 /* JHRingChart.m in Sources */,
 				A62F218B1D582C18003E71C7 /* MoodView.m in Sources */,
+				A666E7411DB86C1900CA367A /* GFRemandView.m in Sources */,
 				A62F21941D585916003E71C7 /* MoodUnitView.m in Sources */,
 				A63B05731D825384004B8AC8 /* SPTribeMemberCell.m in Sources */,
 				A6AD433C1D8E942D0090F38E /* MBProgressHUD.m in Sources */,

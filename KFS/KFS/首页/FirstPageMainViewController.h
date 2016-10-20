@@ -8,18 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "MoodView.h"
-#import "RemainView.h"
+#import "GFRemandView.h"
 #import "MyStateView.h"
 #import "CommonRootViewController.h"
+#import "GFSelfInvolvedView.h"
+#import "GFDoctorSuggest.h"
 
 @interface FirstPageMainViewController : CommonRootViewController<RemainViewDelegate,MoodViewDelegate>
 {
     MoodView *firstView;
     MyStateView *mystateView;
     NSMutableArray *lastTwoArray;//最近俩提醒
+    GFDoctorSuggest *docotorSegusetView;
+    GFSelfInvolvedView *selfInvolvedView;//自评view
 //    NSMutableArray *todayRemandArray;
 }
 
 @property(nonatomic,retain)NSMutableArray  *remandListArray;
-@property(nonatomic,retain)RemainView *remandView;
+@property(nonatomic,retain)GFRemandView *remandView;
 @end

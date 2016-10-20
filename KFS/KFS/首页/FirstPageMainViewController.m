@@ -30,33 +30,56 @@
 }
 
 -(void)makeView{
-    UIScrollView *bgview=[[UIScrollView alloc]initWithFrame:self.view.frame];
+    UIScrollView *bgview=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     [self.view addSubview:bgview];
+    
+    UIImageView *topImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(bgview.frame), 200)];
+    topImageView.image=[UIImage imageNamed:@"首页头部"];
+    [bgview addSubview:topImageView];
+    
+//    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(100, 31, CGRectGetWidth(bgview.frame)-200, 22)];
+//    titleLabel.text=@"我的状态";
+    
+//    titleLabel.font=[UIFont systemFontOfSize:18];
+//    titleLabel.textAlignment=NSTextAlignmentCenter;
+////    titleLabel.textColor=DE_BgColorPink;
+//    [bgview addSubview:titleLabel];
     //第一行面板
-    firstView=[[MoodView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(bgview.frame), 165)];
-    firstView.delegate=self;
-    [bgview addSubview:firstView];
+//    firstView=[[MoodView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(bgview.frame), 165)];
+//    firstView.delegate=self;
+//    [bgview addSubview:firstView];
+    
+    selfInvolvedView=[[GFSelfInvolvedView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(bgview.frame), 200)];
+    [bgview addSubview:selfInvolvedView];
     
     //我的提醒
-    _remandView=[[RemainView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(firstView.frame)+1, CGRectGetWidth(bgview.frame), 168)];
+    _remandView=[[GFRemandView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(selfInvolvedView.frame)+1, CGRectGetWidth(bgview.frame), 125)];
     _remandView.delegate=self;
     [bgview addSubview:_remandView];
+    
+    
+    //医生建议
+    docotorSegusetView=[[GFDoctorSuggest alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_remandView.frame)+1, CGRectGetWidth(bgview.frame), 150)];
+    
+    [bgview addSubview:docotorSegusetView];
     //我的状态
     
-    mystateView=[[MyStateView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_remandView.frame)+1, CGRectGetWidth(bgview.frame), 200)];
+    mystateView=[[MyStateView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(docotorSegusetView.frame)+5, CGRectGetWidth(bgview.frame), 200)];
     [bgview addSubview:mystateView];
     
     UIImageView *endImage=[[UIImageView alloc]initWithFrame:CGRectMake(2, CGRectGetMaxY(mystateView.frame)+5, CGRectGetWidth(bgview.frame)-4, DE_Ration65*CGRectGetWidth(self.view.frame))];
     [endImage setImage:[UIImage imageNamed:@"任务"]];
     [bgview addSubview:endImage];
     
-      bgview.contentSize=CGSizeMake(self.view.frame.size.width,firstView.frame.size.height+_remandView.frame.size.height+mystateView.frame.size.height+endImage.frame.size.height+80);
+      bgview.contentSize=CGSizeMake(self.view.frame.size.width,topImageView.frame.size.height+_remandView.frame.size.height+docotorSegusetView.frame.size.height+mystateView.frame.size.height+endImage.frame.size.height+80);
     
 }
 
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+//    self.navigationController.navigationBarHidden=YES;
+    
     //请求健康和心情
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self getMyMoodAndHealth];
@@ -73,6 +96,7 @@
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+//    self.navigationController.navigationBarHidden=NO;
 }
 #pragma mark-RemainViewDelegate
 

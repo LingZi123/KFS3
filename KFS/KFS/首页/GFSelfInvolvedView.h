@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol GFSelfInvolvedViewDelegate <NSObject>
+
+-(void)anserQuestionClick;
+-(void)seeSoreTotal;
+
+@end
+
 @interface GFSelfInvolvedView : UIView
 {
     UIButton *soreTotoalBtn;//进入分数统计，按照每天时间
     UIButton *soreBtn;//分数按钮
 }
+
+@property(nonatomic,assign) id<GFSelfInvolvedViewDelegate> delegate;
+
 @end

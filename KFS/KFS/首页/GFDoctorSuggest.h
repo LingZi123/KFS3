@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface GFDoctorSuggest : UIView
 
 @property(nonatomic,retain)UILabel *titleLabel;

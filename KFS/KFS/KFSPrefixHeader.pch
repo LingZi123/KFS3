@@ -50,7 +50,7 @@
 #define DE_WeChatAppId @"wxb9ac005700c7efce"
 #define DE_TententAppId @"1105624492"
 
-#define DE_ServerUrl  @"58.17.246.25:3000"
+#define DE_ServerUrl  @"192.168.8.125:3000" //@"58.17.246.25:3000"
 #define DE_UrlCodes [NSString stringWithFormat:@"http://%@/api/codes",DE_ServerUrl]//获取验证码
 #define DE_UrlRegister [NSString stringWithFormat:@"http://%@/api/register",DE_ServerUrl]//注册
 #define DE_UrlLoginIn [NSString stringWithFormat:@"http://%@/api/loginIn",DE_ServerUrl]//登录
@@ -66,6 +66,9 @@
 
 #define DE_UrlUpload [NSString stringWithFormat:@"http://%@/api/upload",DE_ServerUrl]  //上传文件
 #define DE_UrlInvite [NSString stringWithFormat:@"http://%@/api/invite_friends_by_ios",DE_ServerUrl]  //邀请
+
+#define DE_UrlGetDailyQuestionnaire [NSString stringWithFormat:@"http://%@/api/get_daily_questionnaire",DE_ServerUrl]  //获取自评问卷
+
 
 
 

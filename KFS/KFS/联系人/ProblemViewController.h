@@ -10,6 +10,12 @@
 #import <WXOpenIMSDKFMWK/YWConversation.h>
 #import <WXOpenIMSDKFMWK/YWMessageBodyCustomize.h>
 
+typedef NS_ENUM(NSUInteger, ProblemType) {
+    SELFINVOLVEDG,//自评
+    DOCTORPROBELM,//医生
+
+};
+
 @interface ProblemViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate,UITextFieldDelegate,UIScrollViewDelegate>{
     
     UILabel *label;
@@ -22,6 +28,7 @@
 }
 @property(nonatomic,retain)NSString *content;
 @property(nonatomic,retain)NSString *titlesummary;
+@property(nonatomic,assign)ProblemType problemType;
 
 @property(nonatomic,retain)YWConversation *conversation;
 @end

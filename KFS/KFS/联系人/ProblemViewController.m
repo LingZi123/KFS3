@@ -10,6 +10,9 @@
 #import "ProblemFourTableViewCell.h"
 #import "ProblemThreeTableViewCell.h"
 #import "ProblemModel.h"
+#import "AFHTTPSessionManager.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
 
 @interface ProblemViewController ()
 
@@ -67,6 +70,18 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     label.text=self.titlesummary;
+    
+    if (_problemType==DOCTORPROBELM) {
+        [self getDoctorProblem];
+    }
+    else if (_problemType==SELFINVOLVEDG){
+        [self getSelfProblem];
+    }
+    
+    
+}
+
+-(void)getDoctorProblem{
     if(dataArray==nil)
     {
         dataArray=[[NSMutableArray alloc]init];
@@ -83,7 +98,6 @@
     }
     
     [dataTabelView reloadData];
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -426,5 +440,51 @@
         }
         
     }
+}
+
+#pragma mark-appdelegate
+-(AppDelegate *)appdelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
+}
+#pragma mark-获取自评问卷
+
+-(void)getSelfProblem{
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+     [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [manager GET:DE_UrlGetDailyQuestionnaire parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            hud.label.text= [responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+        else{
+            [hud hideAnimated:YES];
+            
+            if (dataArray==nil) {
+                dataArray=[[NSMutableArray alloc]init];
+            }
+            [dataArray removeAllObjects];
+            
+            NSArray *tempArray=[responseObject objectForKey:@"data"];
+            if (tempArray&&tempArray.count>0) {
+                for (NSDictionary *dic in tempArray) {
+                    ProblemModel *model=[ProblemModel getModelWithDic:dic];
+                    [dataArray addObject:model];
+                }
+                [dataTabelView reloadData];
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:2.5f];
+        NSLog(@"");
+    }];
+    
+    
 }
 @end

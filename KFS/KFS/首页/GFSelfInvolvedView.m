@@ -44,10 +44,8 @@
     soreBtn.titleLabel.font=[UIFont systemFontOfSize:20];
     soreBtn.titleLabel.layer.shadowColor = [UIColor blackColor].CGColor;
     
-//    [soreBtn.titleLabel setTintColor:[UIColor greenColor]];
     [soreBtn setTitleColor:DE_GreenColor forState:UIControlStateNormal];
-//    [soreBtn.titleLabel setTextColor:[UIColor greenColor]];
-//    [soreBtn addTarget:self action:@selector(soreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [soreBtn addTarget:self action:@selector(soreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:soreBtn];
     
@@ -68,8 +66,10 @@
 
 -(void)soreBtnClick:(UIButton *)sender{
     
+    [self.delegate seeSoreTotal];
+    
 }
 -(void)goMyValuation:(UIButton *)sender{
-    
+    [self.delegate anserQuestionClick];
 }
 @end

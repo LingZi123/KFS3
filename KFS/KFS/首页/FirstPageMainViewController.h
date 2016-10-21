@@ -14,7 +14,7 @@
 #import "GFSelfInvolvedView.h"
 #import "GFDoctorSuggest.h"
 
-@interface FirstPageMainViewController : CommonRootViewController<RemainViewDelegate,MoodViewDelegate>
+@interface FirstPageMainViewController : CommonRootViewController<RemainViewDelegate,MoodViewDelegate,GFSelfInvolvedViewDelegate>
 {
     MoodView *firstView;
     MyStateView *mystateView;

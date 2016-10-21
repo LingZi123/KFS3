@@ -12,6 +12,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "CommonHelper.h"
+#import "ProblemViewController.h"
 
 @interface FirstPageMainViewController ()
 
@@ -50,6 +51,7 @@
 //    [bgview addSubview:firstView];
     
     selfInvolvedView=[[GFSelfInvolvedView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(bgview.frame), 200)];
+    selfInvolvedView.delegate=self;
     [bgview addSubview:selfInvolvedView];
     
     //我的提醒
@@ -271,6 +273,19 @@
         }
         
     }
+}
+
+
+#pragma mark-GFSelfInvolvedViewDelegate
+
+-(void)anserQuestionClick{
+    ProblemViewController *vc=[[ProblemViewController alloc]init];
+    vc.titlesummary=@"自评问卷";
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)seeSoreTotal{
+    
 }
 
 @end

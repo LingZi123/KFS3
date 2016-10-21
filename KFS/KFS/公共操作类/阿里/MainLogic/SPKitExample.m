@@ -1212,6 +1212,7 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
                 
                 ProblemViewController *vc=[[ProblemViewController alloc]init];
                 vc.content=customizebody.content;
+                vc.problemType=DOCTORPROBELM;
                 vc.titlesummary=customizebody.summary;
                 vc.conversation=conversationController.conversation;
                 [conversationController presentViewController:vc animated:YES completion:^{

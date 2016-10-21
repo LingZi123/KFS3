@@ -70,6 +70,10 @@
 #define DE_UrlGetDailyQuestionnaire [NSString stringWithFormat:@"http://%@/api/get_daily_questionnaire",DE_ServerUrl]  //获取自评问卷
 
 
+#define DE_UrlFindUserAllProblem [NSString stringWithFormat:@"http://%@/api/find_user_all_problem",DE_ServerUrl]//查询所有问卷
+
+#define DE_UrlFindUserProblemById [NSString stringWithFormat:@"http://%@/api/find_user_problem_by_id",DE_ServerUrl]//查询问卷通过id
+
 
 
 

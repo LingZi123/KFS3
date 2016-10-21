@@ -77,6 +77,10 @@
     else if (_problemType==SELFINVOLVEDG){
         [self getSelfProblem];
     }
+    else if (_problemType==SELECTEDBYID){
+        
+        [self getProblemById];
+    }
     
     
 }
@@ -486,5 +490,46 @@
     }];
     
     
+}
+
+-(void)getProblemById{
+    
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    NSString *tempurl=[NSString stringWithFormat:@"%@/%ld",DE_UrlFindUserProblemById,(long)_questionId];
+    [manager GET:tempurl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            hud.label.text= [responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+        else{
+            [hud hideAnimated:YES];
+            
+            if (dataArray==nil) {
+                dataArray=[[NSMutableArray alloc]init];
+            }
+            [dataArray removeAllObjects];
+            
+            NSArray *tempArray=[responseObject objectForKey:@"data"];
+            if (tempArray&&tempArray.count>0) {
+                for (NSDictionary *dic in tempArray) {
+                    ProblemModel *model=[ProblemModel getModelWithDic:dic];
+                    [dataArray addObject:model];
+                }
+                [dataTabelView reloadData];
+            }
+        }
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:2.5f];
+        NSLog(@"");
+    }];
+
 }
 @end

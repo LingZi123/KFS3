@@ -82,6 +82,7 @@
 		A666E73B1DB757E500CA367A /* GFDoctorSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E73A1DB757E500CA367A /* GFDoctorSuggest.m */; };
 		A666E73E1DB869B100CA367A /* GFRemandUnitView.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E73D1DB869B100CA367A /* GFRemandUnitView.m */; };
 		A666E7411DB86C1900CA367A /* GFRemandView.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7401DB86C1900CA367A /* GFRemandView.m */; };
+		A666E7441DB9E71000CA367A /* MyQuestionnaireTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A666E7431DB9E71000CA367A /* MyQuestionnaireTableViewController.m */; };
 		A66793441D7D61940085C6AC /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793431D7D61930085C6AC /* PopViewController.m */; };
 		A667934A1D7EAA290085C6AC /* SPTribeInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */; };
 		A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A667934C1D7EAF940085C6AC /* SPTribeProfileViewController.m */; };
@@ -336,6 +337,8 @@
 		A666E73D1DB869B100CA367A /* GFRemandUnitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFRemandUnitView.m; sourceTree = "<group>"; };
 		A666E73F1DB86C1900CA367A /* GFRemandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRemandView.h; sourceTree = "<group>"; };
 		A666E7401DB86C1900CA367A /* GFRemandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFRemandView.m; sourceTree = "<group>"; };
+		A666E7421DB9E71000CA367A /* MyQuestionnaireTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyQuestionnaireTableViewController.h; sourceTree = "<group>"; };
+		A666E7431DB9E71000CA367A /* MyQuestionnaireTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQuestionnaireTableViewController.m; sourceTree = "<group>"; };
 		A66793421D7D61930085C6AC /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
 		A66793431D7D61930085C6AC /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
 		A66793481D7EAA290085C6AC /* SPTribeInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTribeInfoEditViewController.h; sourceTree = "<group>"; };
@@ -716,6 +719,8 @@
 				A68DFE5A1D9A413A007F5CD4 /* ForgetPwdTableViewController.m */,
 				A67830E31DA8E63200BB3CC5 /* MyInfoTableViewController.h */,
 				A67830E41DA8E63200BB3CC5 /* MyInfoTableViewController.m */,
+				A666E7421DB9E71000CA367A /* MyQuestionnaireTableViewController.h */,
+				A666E7431DB9E71000CA367A /* MyQuestionnaireTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1480,6 +1485,7 @@
 				A666E7201DAC8A9600CA367A /* ProblemModel.m in Sources */,
 				A667934D1D7EAF940085C6AC /* SPTribeProfileViewController.m in Sources */,
 				A62F217B1D51E24D003E71C7 /* TableViewCell.m in Sources */,
+				A666E7441DB9E71000CA367A /* MyQuestionnaireTableViewController.m in Sources */,
 				A63B05791D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m in Sources */,
 				A666E7271DACD23F00CA367A /* ProblemFourTableViewCell.m in Sources */,
 				A62F21911D585867003E71C7 /* RemandUnitView.m in Sources */,

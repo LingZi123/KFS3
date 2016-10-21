@@ -13,6 +13,7 @@
 typedef NS_ENUM(NSUInteger, ProblemType) {
     SELFINVOLVEDG,//自评
     DOCTORPROBELM,//医生
+    SELECTEDBYID//通过id查找
 
 };
 
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSUInteger, ProblemType) {
 @property(nonatomic,retain)NSString *content;
 @property(nonatomic,retain)NSString *titlesummary;
 @property(nonatomic,assign)ProblemType problemType;
+@property(nonatomic,assign)NSInteger questionId;
 
 @property(nonatomic,retain)YWConversation *conversation;
 @end

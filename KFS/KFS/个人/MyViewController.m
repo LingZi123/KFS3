@@ -9,6 +9,7 @@
 #import "MyViewController.h"
 #import "AppDelegate.h"
 #import "SPKitExample.h"
+#import "MyQuestionnaireTableViewController.h"
 
 @interface MyViewController ()
 
@@ -58,7 +59,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section==0) {
-        return 4;
+        return 5;
     }
     return 1;
 }
@@ -129,8 +130,11 @@
         //反馈
         [[SPKitExample sharedInstance] exampleOpenFeedbackViewController:NO fromViewController:self];
     }
-    else{
+    else if(indexPath.row==3){
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
+    }
+    else{
+        vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"MyQuestionnaireTableViewController"];
     }
     
     vc.hidesBottomBarWhenPushed=YES;

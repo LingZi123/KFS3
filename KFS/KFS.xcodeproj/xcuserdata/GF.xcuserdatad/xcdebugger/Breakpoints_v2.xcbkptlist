@@ -480,7 +480,7 @@
             startingLineNumber = "19"
             endingLineNumber = "19"
             landmarkName = "-initWithFrame:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -496,7 +496,7 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "-shareBtnClick:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -570,13 +570,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
-            timestampString = "497778837.298608"
+            timestampString = "499158244.224111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
-            landmarkType = "7">
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "@implementation InviteFriendsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -592,7 +592,7 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "-makeView"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -608,7 +608,7 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "-makeView"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -618,12 +618,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
-            timestampString = "497778837.298608"
+            timestampString = "499158244.224111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "@implementation InviteFriendsViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/GFShareView.m"
+            timestampString = "493887302.792684"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-makeView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -640,23 +656,7 @@
             startingLineNumber = "37"
             endingLineNumber = "37"
             landmarkName = "-makeView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x516c;&#x5171;&#x64cd;&#x4f5c;&#x7c7b;/GFShareView.m"
-            timestampString = "493887302.792684"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-makeView"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -672,7 +672,7 @@
             startingLineNumber = "197"
             endingLineNumber = "197"
             landmarkName = "-handleSendResult:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -688,7 +688,7 @@
             startingLineNumber = "88"
             endingLineNumber = "88"
             landmarkName = "-shareBtnClick:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -4101,13 +4101,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
-            timestampString = "497778837.298608"
+            timestampString = "499158244.224111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-getDataFromServer"
-            landmarkType = "7">
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "@implementation InviteFriendsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -5147,6 +5147,54 @@
             startingLineNumber = "501"
             endingLineNumber = "501"
             landmarkName = "-getProblemById"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
+            timestampString = "499145986.912302"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-beginShare:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
+            timestampString = "499158244.224111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-beginShare:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/InviteFriendsViewController.m"
+            timestampString = "499158244.224111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-beginShare:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

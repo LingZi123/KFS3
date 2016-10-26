@@ -74,7 +74,7 @@
 
 #define DE_UrlFindUserProblemById [NSString stringWithFormat:@"http://%@/api/find_user_problem_by_id",DE_ServerUrl]//查询问卷通过id
 
-
+#define DE_ShareUrl @"http://58.17.246.25:3000/share"
 
 
 

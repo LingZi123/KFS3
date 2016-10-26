@@ -19,4 +19,5 @@
 
 @property(nonatomic,assign)BOOL isHidenShareView;//是否显示分享页面
 - (IBAction)shareBtnClick:(id)sender;
+- (IBAction)beginShare:(id)sender;
 @end

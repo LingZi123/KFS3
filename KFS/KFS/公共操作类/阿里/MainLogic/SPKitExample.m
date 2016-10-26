@@ -371,9 +371,9 @@ UIAlertViewDelegate>
     [[self.ywIMKit.IMCore getLoginService] asyncLoginWithCompletionBlock:^(NSError *aError, NSDictionary *aResult) {
         if (aError.code == 0 || [[self.ywIMKit.IMCore getLoginService] isCurrentLogined]) {
             /// 登录成功
-#ifdef DEBUG
-            [[SPUtil sharedInstance] showNotificationInViewController:self.rootWindow.rootViewController title:@"登录成功" subtitle:nil type:SPMessageNotificationTypeSuccess];
-#endif
+//#ifdef DEBUG
+//            [[SPUtil sharedInstance] showNotificationInViewController:self.rootWindow.rootViewController title:@"登录成功" subtitle:nil type:SPMessageNotificationTypeSuccess];
+//#endif
             
             
 #warning JUST COMMENT OUT THIS FUNCTION IF YOU DO NOT NEED THE CUSTOM CONVERSATION ON THE TOP

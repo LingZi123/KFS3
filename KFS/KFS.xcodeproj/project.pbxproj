@@ -270,6 +270,7 @@
 		A62F21E01D5B10BA003E71C7 /* RemandSetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemandSetTableViewCell.h; sourceTree = "<group>"; };
 		A62F21E11D5B10BA003E71C7 /* RemandSetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemandSetTableViewCell.m; sourceTree = "<group>"; };
 		A62F21E21D5B10BA003E71C7 /* RemandSetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemandSetTableViewCell.xib; sourceTree = "<group>"; };
+		A6344C551DC049D90046B91F /* KFS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KFS.entitlements; sourceTree = "<group>"; };
 		A63B05591D8104F6004B8AC8 /* GFAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFAddContactViewController.h; sourceTree = "<group>"; };
 		A63B055A1D8104F6004B8AC8 /* GFAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFAddContactViewController.m; sourceTree = "<group>"; };
 		A63B055C1D810DE6004B8AC8 /* SPContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPContactManager.h; sourceTree = "<group>"; };
@@ -604,6 +605,7 @@
 		A62F21221D518502003E71C7 /* KFS */ = {
 			isa = PBXGroup;
 			children = (
+				A6344C551DC049D90046B91F /* KFS.entitlements */,
 				A62F217D1D5430DA003E71C7 /* 公共操作类 */,
 				A62F21691D51875D003E71C7 /* Main */,
 				A62F21591D518657003E71C7 /* 个人 */,
@@ -1296,9 +1298,16 @@
 					A62F211F1D518502003E71C7 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 92S2DMY739;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					A62F213B1D518502003E71C7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 92S2DMY739;
 						TestTargetID = A62F211F1D518502003E71C7;
 					};
 					A62F21461D518502003E71C7 = {
@@ -1570,7 +1579,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
@@ -1590,9 +1600,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8fad7759-a28d-4d77-b4e2-c3075db1fd11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1615,7 +1626,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -1629,8 +1641,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8fad7759-a28d-4d77-b4e2-c3075db1fd11";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1640,6 +1653,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KFS/KFS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92S2DMY739;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1653,7 +1669,7 @@
 					"/公共操作类／微信",
 				);
 				INFOPLIST_FILE = KFS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1665,6 +1681,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gf.KFS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -1672,6 +1691,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KFS/KFS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 92S2DMY739;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1685,7 +1707,7 @@
 					"/公共操作类／微信",
 				);
 				INFOPLIST_FILE = KFS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1697,6 +1719,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gf.KFS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1704,6 +1729,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92S2DMY739;
 				INFOPLIST_FILE = KFSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gf.KFSTests;
@@ -1716,6 +1742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 92S2DMY739;
 				INFOPLIST_FILE = KFSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gf.KFSTests;

@@ -56,6 +56,7 @@
     [dataTabelView registerNib:[UINib nibWithNibName:@"ProblemFourTableViewCell" bundle:nil] forCellReuseIdentifier:@"valueTypeCell"];
     [dataTabelView registerNib:[UINib nibWithNibName:@"ProblemThreeTableViewCell" bundle:nil] forCellReuseIdentifier:@"RangeValueTypeCell"];
     originFrame=self.view.frame;
+    dataTabelView.sectionHeaderHeight=40;
     
 }
 
@@ -163,7 +164,20 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
+    
+    ProblemModel *model=dataArray[section];
+    NSString *title=[NSString stringWithFormat:@"%lD、%@",(section+1),model.topic];
+    if ([model.valueType integerValue]==2) {
+        title= [NSString stringWithFormat:@"%lD、%@ (多选)",(section+1),model.topic];
+        
+    }
+    NSInteger length=15*title.length;
+    
+    NSInteger a=length/(CGRectGetWidth(tableView.frame)-30);
+    if (a==0) {
+        return 30;
+    }
+    return 25*(a+1);
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -192,13 +206,34 @@
     return 44;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    ProblemModel *model=dataArray[section];
-    if ([model.valueType integerValue]==2) {
-        return [NSString stringWithFormat:@"%lD、%@? (多选)",(section+1),model.topic];
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    ProblemModel *model=dataArray[section];
+//    if ([model.valueType integerValue]==2) {
+//        return [NSString stringWithFormat:@"%lD、%@? (多选)",(section+1),model.topic];
+//
+//    }
+//    return  [NSString stringWithFormat:@"%lD、%@?",(section+1),model.topic];
+//}
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+   
+    ProblemModel *model=dataArray[section];
+    NSString *title=[NSString stringWithFormat:@"%lD、%@",(section+1),model.topic];
+    if ([model.valueType integerValue]==2) {
+        title= [NSString stringWithFormat:@"%lD、%@ (多选)",(section+1),model.topic];
+        
     }
-    return  [NSString stringWithFormat:@"%lD、%@?",(section+1),model.topic];
+    
+    UILabel *labelext=[[UILabel alloc]initWithFrame:CGRectMake(16, 5, CGRectGetWidth(tableView.frame)-20, 0)];
+    labelext.text=title;
+    labelext.font=[UIFont systemFontOfSize:15];
+    labelext.numberOfLines=0;
+    [labelext sizeToFit];
+    
+     UIView *titleview=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(tableView.frame), labelext.frame.size.height+10)];
+     titleview.backgroundColor=[UIColor colorWithRed:0xf7/255.0 green:0xf7/255.0 blue:0xf7/255.0 alpha:1];
+    [titleview addSubview:labelext];
+    return titleview;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     

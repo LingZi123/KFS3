@@ -235,7 +235,9 @@
     }];
     
     if (!displayName || avatar == nil ) {
-        displayName = person.personId;
+        if (!displayName) {
+            displayName = person.personId;
+        }
         
         __weak __typeof(self) weakSelf = self;
         __weak __typeof(cell) weakCell = cell;

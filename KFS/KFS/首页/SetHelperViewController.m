@@ -160,6 +160,19 @@
     [defaults synchronize];
 }
 -(void)deleteRemandModelFromServer:(RemandModel *)model{
+    
+    //检查网络
+    if ([self appdelegate].netstatus!=ReachableViaWiFi&&[self appdelegate].netstatus!=ReachableViaWWAN){
+        
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        hud.label.text=@"无网络，请打开数据流量或等待wifi下使用";
+        hud.mode=MBProgressHUDModeText;
+        [hud hideAnimated:YES afterDelay:3.0f];
+        
+        return;
+    }
+    
     AFHTTPSessionManager *manamger=[AFHTTPSessionManager manager];
     [manamger.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
     

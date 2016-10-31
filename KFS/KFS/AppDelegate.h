@@ -10,8 +10,12 @@
 #import <CoreData/CoreData.h>
 #import "MainTabBarController.h"
 #import "UserInfoModel.h"
+#import "Reachability.h"
+#import "NetworkStatusChangeDelegate.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    Reachability *internetReachability;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -25,6 +29,8 @@
 @property(nonatomic,retain)NSString *token;
 @property(nonatomic,retain)UserInfoModel *userInfo;
 @property(nonatomic,retain)UIImage *headImage;
+@property(nonatomic,assign)NetworkStatus netstatus;//网络状态
+@property(nonatomic,assign)id<NetworkStatusChangeDelegate> networkStatusDelegate;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

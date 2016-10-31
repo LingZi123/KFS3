@@ -186,6 +186,7 @@
 		A6DCCE851D62C127006A0CAF /* LearnSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DCCE831D62C127006A0CAF /* LearnSubCell.xib */; };
 		A6DCCE881D643A24006A0CAF /* LableTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE871D643A24006A0CAF /* LableTextFieldView.m */; };
 		A6DCCE8B1D6550C5006A0CAF /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */; };
+		A6EF4B9F1DC6E13E009FE7B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */; };
 		A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -494,6 +495,9 @@
 		A6DCCE871D643A24006A0CAF /* LableTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LableTextFieldView.m; sourceTree = "<group>"; };
 		A6DCCE891D6550C5006A0CAF /* RegistTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistTableViewController.h; sourceTree = "<group>"; };
 		A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistTableViewController.m; sourceTree = "<group>"; };
+		A6EF4B9D1DC6E13E009FE7B4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A6EF4BA01DC6E1DE009FE7B4 /* NetworkStatusChangeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStatusChangeDelegate.h; sourceTree = "<group>"; };
 		A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
 		A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -742,6 +746,7 @@
 		A62F217D1D5430DA003E71C7 /* 公共操作类 */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF4B9C1DC6E13E009FE7B4 /* 网络状态 */,
 				A62EE3121D8F803000F92D24 /* WXFrameworks */,
 				A6AD43391D8E942D0090F38E /* MBProgressHUD */,
 				A6AD43331D8E89000090F38E /* 网络 */,
@@ -1230,6 +1235,16 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		A6EF4B9C1DC6E13E009FE7B4 /* 网络状态 */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF4BA01DC6E1DE009FE7B4 /* NetworkStatusChangeDelegate.h */,
+				A6EF4B9D1DC6E13E009FE7B4 /* Reachability.h */,
+				A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */,
+			);
+			path = "网络状态";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1422,6 +1437,7 @@
 				A6C672C91D5C102100EDCC56 /* AddRemandViewController.m in Sources */,
 				A68812E11D757C0500E37207 /* SPGreetingBubbleChatView.m in Sources */,
 				A68812DF1D757C0500E37207 /* SPCallingCardBubbleViewModel.m in Sources */,
+				A6EF4B9F1DC6E13E009FE7B4 /* Reachability.m in Sources */,
 				A63B05641D8167EE004B8AC8 /* SPSearchTribeViewController.m in Sources */,
 				A67830E11DA8CD3D00BB3CC5 /* UserInfoModel.m in Sources */,
 				A6594B8E1D5DC3C90007C4A3 /* MyViewController.m in Sources */,

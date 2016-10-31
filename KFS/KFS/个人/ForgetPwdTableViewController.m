@@ -44,6 +44,18 @@
         return;
     }
     
+    //检查网络
+    if ([self appdelegate].netstatus!=ReachableViaWiFi&&[self appdelegate].netstatus!=ReachableViaWWAN){
+        
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        hud.label.text=@"无网络，请打开数据流量或等待wifi下使用";
+        hud.mode=MBProgressHUDModeText;
+        [hud hideAnimated:YES afterDelay:3.0f];
+        
+        return;
+    }
+    
     if([sendVerityCodeBtn.titleLabel.text isEqualToString:@"发送验证码"]) {
         //开始请求服务器
         
@@ -103,6 +115,18 @@
 }
 
 -(void)postInfoToServer{
+    
+    //检查网络
+    if ([self appdelegate].netstatus!=ReachableViaWiFi&&[self appdelegate].netstatus!=ReachableViaWWAN){
+        
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        hud.label.text=@"无网络，请打开数据流量或等待wifi下使用";
+        hud.mode=MBProgressHUDModeText;
+        [hud hideAnimated:YES afterDelay:3.0f];
+        
+        return;
+    }
     
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     

@@ -46,22 +46,13 @@
     //给界面赋值
     _storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-//    NSString *documentsDirectory = [paths objectAtIndex:0];
-//    NSString *path=NSHomeDirectory();
-//    NSLog(documentsDirectory);
     
-//    NSArray *localNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
-//
-//     NSLog(@"%@", localNotifications);
-//    for (UILocalNotification *itme in localNotifications) {
-//        NSLog(@"%@",itme.userInfo);
-//        
-//        [[UIApplication sharedApplication]cancelLocalNotification:itme];
-//
-//    }
-    
-    
+    //检查网络状态
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(netWorkStatusValueChanged:) name:kReachabilityChangedNotification object:nil];
+    internetReachability = [Reachability reachabilityForInternetConnection];
+    _netstatus=internetReachability.currentReachabilityStatus;
+    [internetReachability startNotifier];
+
     
     //获取是否已经登录
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
@@ -83,6 +74,7 @@
     else{
         [self makeLoginView];
     }
+    
     
     
     return YES;
@@ -277,6 +269,29 @@
     }
      ];
     
+}
+
+#pragma mark-netWorkStatusValueChanged
+-(void)netWorkStatusValueChanged:(NSNotification *)notif{
+    Reachability *reach=[notif object ];
+    if ([reach isKindOfClass:[Reachability class]]) {
+        NSLog(@"我收到网络变化");
+        _netstatus=[reach currentReachabilityStatus];
+        switch (_netstatus) {
+            case ReachableViaWiFi:
+                    [self.networkStatusDelegate networkStatusIsWifi];
+                break;
+            case ReachableViaWWAN:
+                    [self.networkStatusDelegate networkStatusIsWan];
+                
+                break;
+            case NotReachable:
+                [self.networkStatusDelegate noNetworkStatus];
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 @end

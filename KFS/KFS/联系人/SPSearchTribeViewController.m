@@ -9,8 +9,10 @@
 #import "SPSearchTribeViewController.h"
 #import "SPTribeProfileViewController.h"
 #import "SPKitExample.h"
-#import "SPUtil.h"
+//#import "SPUtil.h"
 #import "SPQRCodeReaderViewController.h"
+#import "MBProgressHUD.h"
+
 
 @interface SPSearchTribeViewController ()<UITextFieldDelegate, SPQRCodeReaderViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -90,18 +92,17 @@
     
     __weak typeof (self) weakSelf = self;
 
-    [[SPUtil sharedInstance] setWaitingIndicatorShown:YES withKey:self.description];
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [self.ywTribeService requestTribeFromServer:self.searchTextField.text completion:^(YWTribe *tribe, NSError *error) {
-        [[SPUtil sharedInstance] setWaitingIndicatorShown:NO withKey:weakSelf.description];
         if(!error) {
+            [hud hideAnimated:YES];
             [weakSelf.searchTextField endEditing:YES];
             [weakSelf presentTribeProfileViewControllerWithTribe:tribe];
         }
         else {
-            [[SPUtil sharedInstance] showNotificationInViewController:weakSelf.navigationController
-                                                                title:@"未找到该群，请确认群帐号后重试"
-                                                             subtitle:nil
-                                                                 type:SPMessageNotificationTypeError];
+            hud.label.text=@"未找到该群，请确认群帐号后重试";
+            [hud hideAnimated:YES afterDelay:2.f];
         }
     }];
 }

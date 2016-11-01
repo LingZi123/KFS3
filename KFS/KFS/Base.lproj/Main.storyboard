@@ -989,14 +989,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="关于软件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bZv-pz-TPX">
-                                                    <frame key="frameInset" minX="45" width="295" height="53"/>
+                                                    <frame key="frameInset" minX="56" width="284" height="53"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="关于软件" id="vli-Tx-9vl">
-                                                    <frame key="frameInset" minX="15" minY="14" width="15" height="25"/>
+                                                    <frame key="frameInset" minX="15" minY="14" width="26" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
                                             </subviews>
@@ -2052,7 +2052,7 @@
                                             <constraint firstAttribute="width" constant="44" id="3ZH-yF-tKd"/>
                                             <constraint firstAttribute="height" constant="44" id="psr-ks-l3I"/>
                                         </constraints>
-                                        <state key="normal" image="搜索灰"/>
+                                        <state key="normal" image="搜索好友"/>
                                         <connections>
                                             <action selector="onSearch:" destination="KM1-5a-Dnv" eventType="touchUpInside" id="sIc-cD-lmM"/>
                                         </connections>
@@ -2458,7 +2458,7 @@
         <image name="scan_4" width="9" height="10"/>
         <image name="scan_net" width="9" height="10"/>
         <image name="保存" width="47" height="47"/>
-        <image name="关于软件" width="15" height="25"/>
+        <image name="关于软件" width="26" height="25"/>
         <image name="删除" width="47" height="47"/>
         <image name="单选亮" width="15" height="15"/>
         <image name="单选灰" width="15" height="15"/>
@@ -2468,6 +2468,7 @@
         <image name="微信好友" width="34" height="34"/>
         <image name="微信朋友圈" width="34" height="34"/>
         <image name="报告" width="25" height="25"/>
+        <image name="搜索好友" width="14" height="15"/>
         <image name="搜索灰" width="9" height="10"/>
         <image name="注册按钮" width="280" height="40"/>
         <image name="邀请好友" width="27" height="25"/>

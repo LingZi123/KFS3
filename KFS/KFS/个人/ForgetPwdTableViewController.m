@@ -157,6 +157,8 @@
             NSData *savedata=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
             [defaults setObject:savedata forKey:DE_UserInfo];
             [defaults synchronize];
+            
+            [self.navigationController popViewControllerAnimated:YES];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -230,7 +232,7 @@
     BOOL result=YES;
     newpwd=[newPwdTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [newPwdTextField resignFirstResponder];
-    if (newpwd.length<=6) {
+    if (newpwd.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.label.text=@"密码长度不够";
         hud.mode=MBProgressHUDModeText;
@@ -243,6 +245,8 @@
 -(BOOL)verityCodes{
     
     BOOL result=YES;
+    [verityCodeField resignFirstResponder];
+    
     codes=[verityCodeField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     if (codes.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];

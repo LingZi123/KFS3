@@ -15,6 +15,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "ForgetPwdTableViewController.h"
+#import "GFBase64.h"
 
 @interface LoginViewController ()
 
@@ -103,7 +104,12 @@
     self.navigationController.navigationBarHidden=YES;
     self.username=[self appdelegate].userInfo.username;
     accountView.textField.text=self.username;
-    self.pwd=[self appdelegate].userInfo.pwd;
+    
+     self.pwd=[self appdelegate].userInfo.pwd;
+    if (self.pwd) {
+        pwdView.textField.text=[GFBase64 decodeText:self.pwd];
+    }
+    
 }
 -(void)viewWillDisappear:(BOOL)animated{
 
@@ -193,7 +199,9 @@
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
     [mdic setObject:accountStr forKey:@"username"];
-    [mdic setObject:pwdStr forKey:@"password"];
+    
+    NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
+    [mdic setObject:encodePwdStr forKey:@"password"];
     
     __weak typeof(self) weakSelf = self;
 
@@ -221,7 +229,7 @@
             [weakSelf appdelegate].token=token;
             
             UserInfoModel *userModel=[UserInfoModel getModelWithDic:data];
-            userModel.pwd=pwdStr;
+            userModel.pwd=encodePwdStr;
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:DE_Token];
@@ -239,7 +247,7 @@
             
             [defaults synchronize];
             
-            weakSelf.pwd=pwdStr;
+            weakSelf.pwd=encodePwdStr;
             [weakSelf appdelegate].userInfo.username=userModel.username;
             [weakSelf appdelegate].userInfo.pwd=weakSelf.pwd;
             [weakSelf appdelegate].userInfo.headImage=userModel.headImage;

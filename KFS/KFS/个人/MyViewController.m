@@ -40,7 +40,13 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    mainLabel.text=[self appdelegate].userInfo.username;
+    if ([self appdelegate].userInfo.trueName) {
+        mainLabel.text=[self appdelegate].userInfo.trueName;
+    }
+    else{
+        mainLabel.text=[self appdelegate].userInfo.username;
+    }
+    
     
     if ([self appdelegate].headImage) {
         [headImageView setImage:[self appdelegate].headImage];

@@ -115,7 +115,7 @@
     }];
     
     if (!avatar) {
-        avatar = [UIImage imageNamed:@"头像120"];
+        avatar = [UIImage imageNamed:@"头像90"];
     }
     __weak __typeof(self) weakSelf = self;
 

@@ -14,4 +14,7 @@
 
 -(NSString *)getWeekDay:(NSDate *)date;
 -(NSInteger)getMinitByTimeStr:(NSString *)str;
+
+
+
 @end

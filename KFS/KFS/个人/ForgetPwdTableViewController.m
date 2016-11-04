@@ -10,6 +10,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
+#import "GFBase64.h"
 
 @interface ForgetPwdTableViewController ()
 
@@ -132,7 +133,9 @@
     
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
     [mdic setObject:username forKey:@"username"];
-    [mdic setObject:newpwd forKey:@"password"];
+    NSString *encodeNewPwd=[GFBase64 encodeText:newpwd];
+    
+    [mdic setObject:encodeNewPwd forKey:@"password"];
     [mdic setObject:codes forKey:@"codes"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -149,7 +152,7 @@
             [hud hideAnimated:YES];
             //修改密码
             
-            [self appdelegate].userInfo.pwd=newpwd;
+            [self appdelegate].userInfo.pwd=encodeNewPwd;
         
             //保存到本地
             

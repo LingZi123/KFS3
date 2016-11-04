@@ -16,7 +16,6 @@
 		A62EE3271D8F803100F92D24 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EE3181D8F803000F92D24 /* SGMain.framework */; };
 		A62EE3281D8F803100F92D24 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EE3191D8F803000F92D24 /* UTDID.framework */; };
 		A62EE3291D8F803100F92D24 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EE31A1D8F803000F92D24 /* UTMini.framework */; };
-		A62EE32A1D8F803100F92D24 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EE31B1D8F803000F92D24 /* WXOpenIMSDKFMWK.framework */; };
 		A62EE32B1D8F803100F92D24 /* WXOpenIMSDKResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A62EE31C1D8F803000F92D24 /* WXOpenIMSDKResource.bundle */; };
 		A62EE32C1D8F803100F92D24 /* WXOUIModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62EE31D1D8F803000F92D24 /* WXOUIModule.framework */; };
 		A62EE32D1D8F803100F92D24 /* WXOUIModuleResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A62EE31E1D8F803000F92D24 /* WXOUIModuleResources.bundle */; };
@@ -32,7 +31,6 @@
 		A62F21411D518502003E71C7 /* KFSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21401D518502003E71C7 /* KFSTests.m */; };
 		A62F214C1D518502003E71C7 /* KFSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F214B1D518502003E71C7 /* KFSUITests.m */; };
 		A62F215F1D5186BB003E71C7 /* FirstPageMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F215E1D5186BB003E71C7 /* FirstPageMainViewController.m */; };
-		A62F21621D5186F3003E71C7 /* ContactMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21611D5186F3003E71C7 /* ContactMainViewController.m */; };
 		A62F21651D518703003E71C7 /* LearnMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21641D518703003E71C7 /* LearnMainViewController.m */; };
 		A62F216E1D519522003E71C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F216D1D519522003E71C7 /* LoginViewController.m */; };
 		A62F217B1D51E24D003E71C7 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A62F21791D51E24D003E71C7 /* TableViewCell.m */; };
@@ -187,6 +185,10 @@
 		A6DCCE881D643A24006A0CAF /* LableTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE871D643A24006A0CAF /* LableTextFieldView.m */; };
 		A6DCCE8B1D6550C5006A0CAF /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */; };
 		A6EF4B9F1DC6E13E009FE7B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */; };
+		A6EF4BED1DCAE9FC009FE7B4 /* ContactMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BEB1DCAE9FC009FE7B4 /* ContactMainViewController.m */; };
+		A6EF4BF41DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */; };
+		A6EF4BF61DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */; };
+		A6EF4BF91DCC5A64009FE7B4 /* GFBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BF81DCC5A64009FE7B4 /* GFBase64.m */; };
 		A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -218,7 +220,6 @@
 		A62EE3181D8F803000F92D24 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
 		A62EE3191D8F803000F92D24 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		A62EE31A1D8F803000F92D24 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
-		A62EE31B1D8F803000F92D24 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXOpenIMSDKFMWK.framework; sourceTree = "<group>"; };
 		A62EE31C1D8F803000F92D24 /* WXOpenIMSDKResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WXOpenIMSDKResource.bundle; sourceTree = "<group>"; };
 		A62EE31D1D8F803000F92D24 /* WXOUIModule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXOUIModule.framework; sourceTree = "<group>"; };
 		A62EE31E1D8F803000F92D24 /* WXOUIModuleResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WXOUIModuleResources.bundle; sourceTree = "<group>"; };
@@ -242,8 +243,6 @@
 		A62F214D1D518502003E71C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A62F215D1D5186BB003E71C7 /* FirstPageMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPageMainViewController.h; sourceTree = "<group>"; };
 		A62F215E1D5186BB003E71C7 /* FirstPageMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPageMainViewController.m; sourceTree = "<group>"; };
-		A62F21601D5186F3003E71C7 /* ContactMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMainViewController.h; sourceTree = "<group>"; };
-		A62F21611D5186F3003E71C7 /* ContactMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMainViewController.m; sourceTree = "<group>"; };
 		A62F21631D518703003E71C7 /* LearnMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnMainViewController.h; sourceTree = "<group>"; };
 		A62F21641D518703003E71C7 /* LearnMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnMainViewController.m; sourceTree = "<group>"; };
 		A62F216C1D519522003E71C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -498,6 +497,13 @@
 		A6EF4B9D1DC6E13E009FE7B4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A6EF4BA01DC6E1DE009FE7B4 /* NetworkStatusChangeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStatusChangeDelegate.h; sourceTree = "<group>"; };
+		A6EF4BEB1DCAE9FC009FE7B4 /* ContactMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMainViewController.m; sourceTree = "<group>"; };
+		A6EF4BEC1DCAE9FC009FE7B4 /* ContactMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMainViewController.h; sourceTree = "<group>"; };
+		A6EF4BF11DCC340E009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXOpenIMSDKFMWK.framework; path = ../../../Downloads/wx/WXFrameworks/WXOpenIMSDKFMWK.framework; sourceTree = "<group>"; };
+		A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXOpenIMSDKFMWK.framework; path = "KFS/公共操作类/WXFrameworks/WXOpenIMSDKFMWK.framework"; sourceTree = "<group>"; };
+		A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXOpenIMSDKFMWK.framework; sourceTree = "<group>"; };
+		A6EF4BF71DCC5A64009FE7B4 /* GFBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase64.h; sourceTree = "<group>"; };
+		A6EF4BF81DCC5A64009FE7B4 /* GFBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase64.m; sourceTree = "<group>"; };
 		A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
 		A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -507,12 +513,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6EF4BF41DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */,
 				A62EE3241D8F803100F92D24 /* ALBBSDK.framework in Frameworks */,
 				A6AD433E1D8E951A0090F38E /* NotificationCenter.framework in Frameworks */,
 				A62EE3291D8F803100F92D24 /* UTMini.framework in Frameworks */,
 				A688125A1D75642A00E37207 /* CoreMotion.framework in Frameworks */,
 				A68812581D75641B00E37207 /* AssetsLibrary.framework in Frameworks */,
-				A62EE32A1D8F803100F92D24 /* WXOpenIMSDKFMWK.framework in Frameworks */,
 				A68812561D7563FF00E37207 /* AVFoundation.framework in Frameworks */,
 				A68812541D7563E900E37207 /* AudioToolbox.framework in Frameworks */,
 				A68812521D7563D500E37207 /* ImageIO.framework in Frameworks */,
@@ -531,6 +537,7 @@
 				A6D29AEF1D6EE60E000DCA0B /* libsqlite3.tbd in Frameworks */,
 				A6D29AED1D6EE5FD000DCA0B /* CoreGraphics.framework in Frameworks */,
 				A62EE3221D8F803100F92D24 /* ALBBFullSecurityGuard.framework in Frameworks */,
+				A6EF4BF61DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */,
 				A62EE32C1D8F803100F92D24 /* WXOUIModule.framework in Frameworks */,
 				A6D29AEB1D6EE5F0000DCA0B /* libiconv.tbd in Frameworks */,
 				A62EE3281D8F803100F92D24 /* UTDID.framework in Frameworks */,
@@ -566,6 +573,7 @@
 		A62EE3121D8F803000F92D24 /* WXFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */,
 				A62EE3131D8F803000F92D24 /* ALBBFullSecurityGuard.framework */,
 				A62EE3141D8F803000F92D24 /* ALBBMediaService.framework */,
 				A62EE3151D8F803000F92D24 /* ALBBSDK.framework */,
@@ -574,7 +582,6 @@
 				A62EE3181D8F803000F92D24 /* SGMain.framework */,
 				A62EE3191D8F803000F92D24 /* UTDID.framework */,
 				A62EE31A1D8F803000F92D24 /* UTMini.framework */,
-				A62EE31B1D8F803000F92D24 /* WXOpenIMSDKFMWK.framework */,
 				A62EE31C1D8F803000F92D24 /* WXOpenIMSDKResource.bundle */,
 				A62EE31D1D8F803000F92D24 /* WXOUIModule.framework */,
 				A62EE31E1D8F803000F92D24 /* WXOUIModuleResources.bundle */,
@@ -593,6 +600,7 @@
 				A62F213F1D518502003E71C7 /* KFSTests */,
 				A62F214A1D518502003E71C7 /* KFSUITests */,
 				A62F21211D518502003E71C7 /* Products */,
+				A6EF4BF01DCC340D009FE7B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -815,6 +823,8 @@
 				A6594B8A1D5C7EAD0007C4A3 /* CommonRootViewController.m */,
 				A6AD43361D8E8BB60090F38E /* CommonHelper.h */,
 				A6AD43371D8E8BB60090F38E /* CommonHelper.m */,
+				A6EF4BF71DCC5A64009FE7B4 /* GFBase64.h */,
+				A6EF4BF81DCC5A64009FE7B4 /* GFBase64.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1118,6 +1128,8 @@
 		A6D064DD1D77FBFC00CFAAE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A6EF4BEB1DCAE9FC009FE7B4 /* ContactMainViewController.m */,
+				A6EF4BEC1DCAE9FC009FE7B4 /* ContactMainViewController.h */,
 				A63B056E1D825375004B8AC8 /* SPTribeMemberListViewController.h */,
 				A63B056F1D825375004B8AC8 /* SPTribeMemberListViewController.m */,
 				A63B05681D816C38004B8AC8 /* SPTribeSystemConversationViewController.h */,
@@ -1138,8 +1150,6 @@
 				A66793491D7EAA290085C6AC /* SPTribeInfoEditViewController.m */,
 				A6D064EC1D78147800CFAAE5 /* SPContactRequestListController.h */,
 				A6D064ED1D78147800CFAAE5 /* SPContactRequestListController.m */,
-				A62F21601D5186F3003E71C7 /* ContactMainViewController.h */,
-				A62F21611D5186F3003E71C7 /* ContactMainViewController.m */,
 				A66793421D7D61930085C6AC /* PopViewController.h */,
 				A66793431D7D61930085C6AC /* PopViewController.m */,
 				A60DA0DA1D800BC0003FE03A /* GFTribeListViewController.h */,
@@ -1243,6 +1253,15 @@
 				A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */,
 			);
 			path = "网络状态";
+			sourceTree = "<group>";
+		};
+		A6EF4BF01DCC340D009FE7B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */,
+				A6EF4BF11DCC340E009FE7B4 /* WXOpenIMSDKFMWK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1421,12 +1440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6EF4BED1DCAE9FC009FE7B4 /* ContactMainViewController.m in Sources */,
 				A6D064EE1D78147800CFAAE5 /* SPContactRequestListController.m in Sources */,
 				A63B055B1D8104F6004B8AC8 /* GFAddContactViewController.m in Sources */,
 				A63B05761D828864004B8AC8 /* SPTribeQRCodeViewController.m in Sources */,
 				A6AD43511D8E97710090F38E /* AFURLRequestSerialization.m in Sources */,
 				A666E73B1DB757E500CA367A /* GFDoctorSuggest.m in Sources */,
-				A62F21621D5186F3003E71C7 /* ContactMainViewController.m in Sources */,
 				A6DCCE7F1D62C0D4006A0CAF /* LearnMainCell.m in Sources */,
 				A68812FA1D757FB200E37207 /* MainTabBarController.m in Sources */,
 				A666E7381DB7126700CA367A /* GFSelfInvolvedView.m in Sources */,
@@ -1468,6 +1487,7 @@
 				A6C672D71D5C10B900EDCC56 /* LewPopupBackgroundView.m in Sources */,
 				A6D29AF81D6EEF65000DCA0B /* sdkCall.m in Sources */,
 				A63B05611D81596E004B8AC8 /* SPTribeConversationViewController.m in Sources */,
+				A6EF4BF91DCC5A64009FE7B4 /* GFBase64.m in Sources */,
 				A666E7341DAF3E8C00CA367A /* RightImageViewCell.m in Sources */,
 				A666E72C1DACDC8900CA367A /* ProblemThreeTableViewCell.m in Sources */,
 				A68812E31D757C0500E37207 /* SPInputViewPluginGreeting.m in Sources */,

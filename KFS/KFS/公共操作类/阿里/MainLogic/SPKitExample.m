@@ -855,13 +855,13 @@ UIAlertViewDelegate>
              */
         }
         
-#if HAS_PRIVATEIMAGE
-        if ([aConversationController.conversation isKindOfClass:[YWP2PConversation class]]) {
-            /// 透传消息目前仅支持单聊会话
-            SPInputViewPluginPrivateImage *plugin = [[SPInputViewPluginPrivateImage alloc] init];
-            [messageInputView addPlugin:plugin];
-        }
-#endif
+//#if HAS_PRIVATEIMAGE
+//        if ([aConversationController.conversation isKindOfClass:[YWP2PConversation class]]) {
+//            /// 透传消息目前仅支持单聊会话
+//            SPInputViewPluginPrivateImage *plugin = [[SPInputViewPluginPrivateImage alloc] init];
+//            [messageInputView addPlugin:plugin];
+//        }
+//#endif
     }
 }
 

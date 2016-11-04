@@ -7,6 +7,7 @@
 //
 
 #import "CommonHelper.h"
+#import "GFBase64.h"
 
 @implementation CommonHelper
 
@@ -47,4 +48,7 @@ static CommonHelper* instance=nil;
     NSInteger  s=[[str substringWithRange:NSMakeRange(6, 2)]integerValue];
     return h*60*60+m*60+s;
 }
+
+
+
 @end

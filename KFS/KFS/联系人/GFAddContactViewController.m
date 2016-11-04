@@ -66,7 +66,7 @@
     [[[self ywIMCore]getContactService] asyncGetProfileFromServerForPerson:person withTribe:nil withProgress:nil andCompletionBlock:^(BOOL aIsSuccess, YWProfileItem *item) {
         if (aIsSuccess && item.person) {
             
-            [hud hideAnimated:YES];
+            [hud hideAnimated:YES afterDelay:0.1f];
             if (item.displayName) {
                 weakSelf.cachedDisplayNames[item.person.personId] =item.displayName;
             }

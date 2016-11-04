@@ -11,6 +11,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "UserInfoModel.h"
+#import "GFBase64.h"
 
 
 @interface RegistTableViewController ()
@@ -135,14 +136,18 @@
 
 - (IBAction)registAndLoginBtnClick:(id)sender {
     [self keyBoardDisapper];
+    NSString *phoneStr=[phoneField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *pwdStr=[pwdField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
-    if (phoneField.text.length<=0) {
+    NSString *verityCodeStr=[vertyCodeField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (phoneStr.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode=MBProgressHUDModeText;
         hud.label.text=@"手机号不能为空";
         [hud hideAnimated:YES afterDelay:3.f];
     }
-    else if (pwdField.text.length<=0) {
+    else if (pwdStr.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode=MBProgressHUDModeText;
 
@@ -150,7 +155,7 @@
         [hud hideAnimated:YES afterDelay:3.f];
     }
 
-    else if (vertyCodeField.text.length<=0) {
+    else if (verityCodeStr.length<=0) {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode=MBProgressHUDModeText;
 
@@ -179,10 +184,13 @@
         else{
             [mdic setObject:@"" forKey:@"username"];
         }
-        [mdic setObject:pwdField.text forKey:@"password"];
+        
+        NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
+        
+        [mdic setObject:encodePwdStr forKey:@"password"];
         [mdic setObject:@"myname" forKey:@"trueName"];
-        [mdic setObject:phoneField.text forKey:@"phone"];
-        [mdic setObject:vertyCodeField.text forKey:@"codes"];
+        [mdic setObject:phoneStr forKey:@"phone"];
+        [mdic setObject:verityCodeStr forKey:@"codes"];
        
         __weak  typeof(self) weakself=self;
         
@@ -209,8 +217,8 @@
                 if ([self appdelegate].userInfo==nil) {
                     [self appdelegate].userInfo=[[UserInfoModel alloc]init];
                 }
-                [self appdelegate].userInfo.username=phoneField.text;
-                [self appdelegate].userInfo.pwd=pwdField.text;
+                [self appdelegate].userInfo.username=phoneStr;
+                [self appdelegate].userInfo.pwd=encodePwdStr;
                 
                 NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
                 [defaults setObject:saveData forKey:DE_UserInfo];

@@ -28,13 +28,13 @@
     [self addSubview:headlabel];
     
     view1=[[GFRemandUnitView alloc]initWithFrame:CGRectMake((CGRectGetWidth(self.frame)/2-20)-120, CGRectGetMaxY(headlabel.frame)+20, 120, 70)];
-    [view1.imageView setImage:[UIImage imageNamed:@"沙漏1"]];
+    [view1.imageView setImage:[UIImage imageNamed:@"沙漏2"]];
     view1.mainLabel.text=@"无提醒";
     view1.subLabel.text=@"00:00";
     [self addSubview:view1];
     
     view2=[[GFRemandUnitView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(view1.frame)+40, CGRectGetMaxY(headlabel.frame)+20, 120, 70)];
-    [view2.imageView setImage:[UIImage imageNamed:@"闹铃1"]];
+    [view2.imageView setImage:[UIImage imageNamed:@"闹铃2"]];
     view2.mainLabel.text=@"无提醒";
     view2.mainLabel.text=@"00:00";
     [self addSubview:view2];

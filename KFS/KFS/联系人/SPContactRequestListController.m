@@ -114,9 +114,6 @@
         avatar = aAvatarImage;
     }];
     
-    if (!avatar) {
-        avatar = [UIImage imageNamed:@"头像90"];
-    }
     __weak __typeof(self) weakSelf = self;
 
     if (!displayName) {

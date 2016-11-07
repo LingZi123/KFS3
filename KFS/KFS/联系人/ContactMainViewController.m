@@ -80,8 +80,7 @@
         self.navigationItem.leftBarButtonItem = cancelButtonItem;
     }
     
-    [_contactTableView reloadData];
-//    [_contactTableView deselectRowAtIndexPath:_contactTableView.indexPathForSelectedRow animated:YES];
+    [_contactTableView deselectRowAtIndexPath:_contactTableView.indexPathForSelectedRow animated:YES];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

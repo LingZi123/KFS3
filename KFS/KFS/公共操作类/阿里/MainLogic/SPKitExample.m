@@ -492,40 +492,40 @@ UIAlertViewDelegate>
     /// 如果你没有将所有的用户Profile导入到IM服务器，可以通过这个setFetchProfileForPersonBlock:函数来设置,在开发者未设置这个block的情况下，SDK默认会从服务端获取。
     /// 或者你还没有将用户Profile导入到IM服务器，则需要参考这里设置setFetchProfileForPersonBlock:中的实现，并修改成你自己获取用户Profile的方式。
     /// 如果你使用了客服功能，请参考这里设置setFetchProfileForEServiceBlock:中的实现。
-//    [self.ywIMKit setFetchProfileForPersonBlock:^(YWPerson *aPerson, YWTribe *aTribe, YWProfileProgressBlock aProgressBlock, YWProfileCompletionBlock aCompletionBlock) {
-//        if (aPerson.personId.length == 0) {
-//            return ;
-//        }
-//
-//        /// 如果你接入使用反馈功能并希望能够自定义显示头像，可参考如下实现：
-//        /// 登陆反馈请替换使用YWFeedbackServiceForIMCore(self.ywIMKit.IMCore)，并只需拦截FeedbackReceiver
-//        if ( [YWAnonFeedbackService isFeedbackSender:aPerson] ) {
-//            YWProfileItem *item = [YWProfileItem new];
-//            item.person = aPerson;
-//            item.avatar = [UIImage imageNamed:@"greeting_message"];
-//            aCompletionBlock(YES, item); return;
-//        } else if ( [YWAnonFeedbackService isFeedbackReceiver:aPerson] ) {
-//            YWProfileItem *item = [YWProfileItem new];
-//            item.person = aPerson;
-//            item.displayName = @"我是反馈";
-//            item.avatar = [UIImage imageNamed:@"greeting_message"];
-//            aCompletionBlock(YES, item); return;
-//        }
-//
-//        /// Demo中模拟了异步获取Profile的过程，你需要根据实际情况，从你的服务器获取用户profile
-//        YWProfileItem *item = [YWProfileItem new];
-//        item.person = aPerson;
-//        // 如果先获取了部分信息，那么可以通过aProgressBlock回调，可以回调多次
-//        item.displayName = @"我是昵称";
-//        aProgressBlock(item);
-//
-//        // 异步获取其他信息
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//            // 获取全部信息，通过aCompletionBlock回调，第一个参数为YES时更新缓存，aCompletionBlock只能回调一次，一旦回调后请不要使用aCompletionBlock或者aProgressBlock回调。
-//            item.avatar = [UIImage imageNamed:@"demo_head_120"];
-//            aCompletionBlock(YES, item);
-//        });
-//    }];
+    [self.ywIMKit setFetchProfileForPersonBlock:^(YWPerson *aPerson, YWTribe *aTribe, YWProfileProgressBlock aProgressBlock, YWProfileCompletionBlock aCompletionBlock) {
+        if (aPerson.personId.length == 0) {
+            return ;
+        }
+
+        /// 如果你接入使用反馈功能并希望能够自定义显示头像，可参考如下实现：
+        /// 登陆反馈请替换使用YWFeedbackServiceForIMCore(self.ywIMKit.IMCore)，并只需拦截FeedbackReceiver
+        if ( [YWAnonFeedbackService isFeedbackSender:aPerson] ) {
+            YWProfileItem *item = [YWProfileItem new];
+            item.person = aPerson;
+            item.avatar = [UIImage imageNamed:@"greeting_message"];
+            aCompletionBlock(YES, item); return;
+        } else if ( [YWAnonFeedbackService isFeedbackReceiver:aPerson] ) {
+            YWProfileItem *item = [YWProfileItem new];
+            item.person = aPerson;
+            item.displayName = @"我是反馈";
+            item.avatar = [UIImage imageNamed:@"greeting_message"];
+            aCompletionBlock(YES, item); return;
+        }
+
+        /// Demo中模拟了异步获取Profile的过程，你需要根据实际情况，从你的服务器获取用户profile
+        YWProfileItem *item = [YWProfileItem new];
+        item.person = aPerson;
+        // 如果先获取了部分信息，那么可以通过aProgressBlock回调，可以回调多次
+        item.displayName = @"我是昵称";
+        aProgressBlock(item);
+
+        // 异步获取其他信息
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            // 获取全部信息，通过aCompletionBlock回调，第一个参数为YES时更新缓存，aCompletionBlock只能回调一次，一旦回调后请不要使用aCompletionBlock或者aProgressBlock回调。
+            item.avatar = [UIImage imageNamed:@"demo_head_120"];
+            aCompletionBlock(YES, item);
+        });
+    }];
     
     
     /// 在这里设置客服的显示名称
@@ -705,16 +705,16 @@ UIAlertViewDelegate>
     }
 #endif
     
-#warning 添加小视频插件，只有链接了官方Demo中的YWExtensionForShortVideoFMWK.framework、ALBBMediaService.framework、TBAVSDK.framework和VSVideoCore.framework才会出现,并且将YWExtensionForShortVideoFMWK.framework中YWShortVideo.bundle添加到工程中. 小视频存储要使用百川多媒体（顽兔）服务，请到百川云旺官网，并阅读短视频开通流程，完成短视频业务的多媒体空间绑定
-#if __has_include(<YWExtensionForShortVideoFMWK/IYWExtensionForShortVideoService.h>)
-        if ([conversationController.messageInputView isKindOfClass:[YWMessageInputView class]]) {
-            __weak typeof(conversationController) weakController = conversationController;
-            YWInputViewPlugin *shortVideoPlugin = [SPExtensionServiceFromProtocol(IYWExtensionForShortVideoService) getShortVideoPluginWithPickerOverBlock:^(id<YWInputViewPluginProtocol> plugin, NSURL *fileUrl, UIImage *frontImage, NSUInteger width, NSUInteger height, NSUInteger duration) {
-                [weakController sendVideoMessage:fileUrl videoSize:0 frontImage:frontImage width:width height:height duration:duration];
-            }];
-            [(YWMessageInputView *)conversationController.messageInputView addPlugin:shortVideoPlugin];
-    }
-#endif
+//#warning 添加小视频插件，只有链接了官方Demo中的YWExtensionForShortVideoFMWK.framework、ALBBMediaService.framework、TBAVSDK.framework和VSVideoCore.framework才会出现,并且将YWExtensionForShortVideoFMWK.framework中YWShortVideo.bundle添加到工程中. 小视频存储要使用百川多媒体（顽兔）服务，请到百川云旺官网，并阅读短视频开通流程，完成短视频业务的多媒体空间绑定
+//#if __has_include(<YWExtensionForShortVideoFMWK/IYWExtensionForShortVideoService.h>)
+//        if ([conversationController.messageInputView isKindOfClass:[YWMessageInputView class]]) {
+//            __weak typeof(conversationController) weakController = conversationController;
+//            YWInputViewPlugin *shortVideoPlugin = [SPExtensionServiceFromProtocol(IYWExtensionForShortVideoService) getShortVideoPluginWithPickerOverBlock:^(id<YWInputViewPluginProtocol> plugin, NSURL *fileUrl, UIImage *frontImage, NSUInteger width, NSUInteger height, NSUInteger duration) {
+//                [weakController sendVideoMessage:fileUrl videoSize:0 frontImage:frontImage width:width height:height duration:duration];
+//            }];
+//            [(YWMessageInputView *)conversationController.messageInputView addPlugin:shortVideoPlugin];
+//    }
+//#endif
     
 #warning IF YOU NEED CUSTOMER SERVICE USER TRACK, REMOVE THE COMMENT '//' AND CHANGE THE ywcsTrackTitle OR ywcsUrl PROPERTIES
     /// 如果需要客服跟踪用户操作轨迹的功能，你可以取消以下行的注释，引入YWExtensionForCustomerServiceFMWK.framework，并并且修改相应的属性

@@ -40,7 +40,7 @@
          self.avatarImageView.image = image;
     }
     else{
-        self.avatarImageView.image =[UIImage imageNamed:@"头像90"];
+        self.avatarImageView.image =[UIImage imageNamed:@"头像60"];
     }
    
     self.titleLabel.text = title;

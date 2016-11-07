@@ -248,6 +248,7 @@
             [defaults synchronize];
             
             weakSelf.pwd=encodePwdStr;
+            
             [weakSelf appdelegate].userInfo.username=userModel.username;
             [weakSelf appdelegate].userInfo.pwd=weakSelf.pwd;
             [weakSelf appdelegate].userInfo.headImage=userModel.headImage;

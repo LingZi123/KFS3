@@ -59,7 +59,15 @@
     BOOL isLogin=[[defaults objectForKey:DE_IsLogin]boolValue];
     
     NSData *userdata=[defaults objectForKey:DE_UserInfo];
-    self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
+    if (userdata) {
+        self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
+    }
+    else{
+        if (self.userInfo==nil) {
+            self.userInfo=[[UserInfoModel alloc]init];
+        }
+    }
+    
     
     //如果登录进入主界面,否则进入登录界面
     if (isLogin) {

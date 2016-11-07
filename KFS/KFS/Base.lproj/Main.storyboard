@@ -1025,42 +1025,63 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="OOQ-kn-LtL" imageView="RnR-LG-vst" rowHeight="54" style="IBUITableViewCellStyleDefault" id="tcG-2g-8MJ">
+                                        <rect key="frame" x="0.0" y="326" width="375" height="54"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tcG-2g-8MJ" id="r2X-tU-6A7">
+                                            <frame key="frameInset" width="342" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="清理缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OOQ-kn-LtL">
+                                                    <frame key="frameInset" minX="55" width="285" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.37647058820000001" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="报告" id="RnR-LG-vst">
+                                                    <frame key="frameInset" minX="15" minY="14" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="jbH-Pc-TM3">
+                            <tableViewSection id="hjK-e8-VE0">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="Wud-yv-ln4">
-                                        <rect key="frame" x="0.0" y="326" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="qyS-0c-YMu">
+                                        <rect key="frame" x="0.0" y="380" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wud-yv-ln4" id="gCi-d0-Ac4">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qyS-0c-YMu" id="mau-m4-2lY">
                                             <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCz-n4-lLj">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z42-9h-2fZ">
                                                     <frame key="frameInset" minX="20" minY="24" width="280" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="280" id="HwB-BG-QJE"/>
-                                                        <constraint firstAttribute="height" constant="40" id="gUU-7k-TPa"/>
+                                                        <constraint firstAttribute="width" constant="280" id="ZvC-MS-n25"/>
+                                                        <constraint firstAttribute="height" constant="40" id="xFN-79-vHe"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="注销登录" backgroundImage="注册按钮">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="logoutBtnClick:" destination="lDD-PQ-Rf7" eventType="touchUpInside" id="aTz-NX-w6G"/>
+                                                        <action selector="logoutBtnClick:" destination="lDD-PQ-Rf7" eventType="touchUpInside" id="4UB-Jf-1CD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bCz-n4-lLj" firstAttribute="centerY" secondItem="gCi-d0-Ac4" secondAttribute="centerY" id="5xW-Uz-RBe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="bCz-n4-lLj" secondAttribute="trailing" constant="41" id="7fr-Tq-ioz"/>
-                                                <constraint firstItem="bCz-n4-lLj" firstAttribute="top" secondItem="gCi-d0-Ac4" secondAttribute="topMargin" constant="16" id="Z6t-rb-452"/>
-                                                <constraint firstItem="bCz-n4-lLj" firstAttribute="centerX" secondItem="gCi-d0-Ac4" secondAttribute="centerX" id="cil-kk-gqS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="z42-9h-2fZ" secondAttribute="trailing" constant="41" id="7Op-1K-9IZ"/>
+                                                <constraint firstItem="z42-9h-2fZ" firstAttribute="top" secondItem="mau-m4-2lY" secondAttribute="topMargin" constant="16" id="fGS-tm-c0A"/>
+                                                <constraint firstItem="z42-9h-2fZ" firstAttribute="centerX" secondItem="mau-m4-2lY" secondAttribute="centerX" id="lNR-OY-3kr"/>
+                                                <constraint firstItem="z42-9h-2fZ" firstAttribute="centerY" secondItem="mau-m4-2lY" secondAttribute="centerY" id="pwT-06-RfW"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="5xW-Uz-RBe"/>
-                                                    <exclude reference="7fr-Tq-ioz"/>
+                                                    <exclude reference="7Op-1K-9IZ"/>
+                                                    <exclude reference="pwT-06-RfW"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -2329,7 +2350,7 @@
                                     <frame key="frameInset" width="375" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_head_120.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-Pd-KFz">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像60" translatesAutoresizingMaskIntoConstraints="NO" id="Y6b-Pd-KFz">
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Y6b-Pd-KFz" secondAttribute="height" multiplier="1:1" id="Pfi-EZ-dic"/>
                                                 <constraint firstAttribute="width" constant="40" id="W5l-Wh-zvj"/>
@@ -2450,7 +2471,6 @@
         <image name="QQ好友" width="34" height="34"/>
         <image name="QQ空间" width="34" height="34"/>
         <image name="app二维码" width="190" height="190"/>
-        <image name="demo_head_120.png" width="9" height="10"/>
         <image name="gflogo" width="105" height="105"/>
         <image name="list_line" width="9" height="10"/>
         <image name="list_line_vertical" width="9" height="10"/>
@@ -2466,6 +2486,7 @@
         <image name="单选灰" width="15" height="15"/>
         <image name="反馈" width="25" height="23"/>
         <image name="头像120" width="800" height="800"/>
+        <image name="头像60" width="60" height="60"/>
         <image name="头像90" width="90" height="90"/>
         <image name="微信好友" width="34" height="34"/>
         <image name="微信朋友圈" width="34" height="34"/>

@@ -160,7 +160,7 @@ static NSString *reuseIdentifier = @"spContactProfileCell";
             }];
             
             if (!avatar) {
-                avatar = [UIImage imageNamed:@"demo_head_120"];
+                avatar = [UIImage imageNamed:@"头像90"];
             }
             if (!displayName) {
                 displayName = _contact.personId;

@@ -114,7 +114,7 @@
 - (UIImage *)avatar {
     if (!_avatar) {
         [self requestProfileIfNeeded];
-        return [UIImage imageNamed:@"demo_head_120"];
+        return [UIImage imageNamed:@"头像60"];
     }
     return _avatar;
 }

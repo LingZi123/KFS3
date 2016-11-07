@@ -291,7 +291,7 @@
         displayName = tribeMember.personId;
     }
     if (!avatar) {
-        avatar = [UIImage imageNamed:@"demo_head_120"];
+        avatar = [UIImage imageNamed:@"头像120"];
     }
 
     [cell configureWithAvatar:avatar name:displayName role:tribeMember.role];

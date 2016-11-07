@@ -65,7 +65,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section==0) {
-        return 5;
+        return 6;
     }
     return 1;
 }
@@ -126,6 +126,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *vc=nil;
+    if (indexPath.section==1) {
+        return;
+    }
     if (indexPath.row==0) {
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"MyInfoTableViewController"];
     }
@@ -139,9 +142,14 @@
     else if(indexPath.row==3){
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
     }
-    else{
+    else if(indexPath.row==4){
         vc=[[self appdelegate].storyboard instantiateViewControllerWithIdentifier:@"MyQuestionnaireTableViewController"];
     }
+    else{
+        [self actionClearCache];
+        return;
+    }
+    
     
     vc.hidesBottomBarWhenPushed=YES;
     
@@ -170,6 +178,27 @@
     [[self appdelegate] makeLoginView];
 }
 
+- (void)actionClearCache
+{
+    UIAlertController *vc=[UIAlertController alertControllerWithTitle:@"" message:@"确认要清除缓存数据吗" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *ok=[UIAlertAction actionWithTitle:@"清除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[[YWAPI sharedInstance] getGlobalUtilService4Cache] removeAllDatas];
+        [self.tableView reloadData];
+    }];
+    
+    UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+
+    [vc addAction:ok];
+    [vc addAction:cancel];
+   
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+
+}
 
 
 @end

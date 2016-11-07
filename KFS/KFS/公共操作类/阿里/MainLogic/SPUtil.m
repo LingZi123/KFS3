@@ -124,7 +124,7 @@
             displayName = person.personId;
         }
         if (avatar == nil) {
-            avatar = [UIImage imageNamed:@"demo_head_120"];
+            avatar = [UIImage imageNamed:@"头像60"];
         }
     }
 

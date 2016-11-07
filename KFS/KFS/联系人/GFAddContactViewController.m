@@ -122,7 +122,7 @@
     }
     avatar = self.cachedAvatars[person.personId];
     if (!avatar) {
-        avatar = [UIImage imageNamed:@"demo_head_120"];
+        avatar = [UIImage imageNamed:@"头像60"];
     }
     
     SPContactCell *cell= [tableView dequeueReusableCellWithIdentifier:@"ContactCell"

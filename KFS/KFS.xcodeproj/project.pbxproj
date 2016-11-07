@@ -186,9 +186,8 @@
 		A6DCCE8B1D6550C5006A0CAF /* RegistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DCCE8A1D6550C5006A0CAF /* RegistTableViewController.m */; };
 		A6EF4B9F1DC6E13E009FE7B4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4B9E1DC6E13E009FE7B4 /* Reachability.m */; };
 		A6EF4BED1DCAE9FC009FE7B4 /* ContactMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BEB1DCAE9FC009FE7B4 /* ContactMainViewController.m */; };
-		A6EF4BF41DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */; };
-		A6EF4BF61DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */; };
 		A6EF4BF91DCC5A64009FE7B4 /* GFBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EF4BF81DCC5A64009FE7B4 /* GFBase64.m */; };
+		A6EF4BFA1DD05742009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */; };
 		A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -501,7 +500,6 @@
 		A6EF4BEC1DCAE9FC009FE7B4 /* ContactMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMainViewController.h; sourceTree = "<group>"; };
 		A6EF4BF11DCC340E009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXOpenIMSDKFMWK.framework; path = ../../../Downloads/wx/WXFrameworks/WXOpenIMSDKFMWK.framework; sourceTree = "<group>"; };
 		A6EF4BF31DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WXOpenIMSDKFMWK.framework; path = "KFS/公共操作类/WXFrameworks/WXOpenIMSDKFMWK.framework"; sourceTree = "<group>"; };
-		A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WXOpenIMSDKFMWK.framework; sourceTree = "<group>"; };
 		A6EF4BF71DCC5A64009FE7B4 /* GFBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase64.h; sourceTree = "<group>"; };
 		A6EF4BF81DCC5A64009FE7B4 /* GFBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase64.m; sourceTree = "<group>"; };
 		A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemViewController.h; sourceTree = "<group>"; };
@@ -513,7 +511,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6EF4BF41DCC3467009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */,
+				A6EF4BFA1DD05742009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */,
 				A62EE3241D8F803100F92D24 /* ALBBSDK.framework in Frameworks */,
 				A6AD433E1D8E951A0090F38E /* NotificationCenter.framework in Frameworks */,
 				A62EE3291D8F803100F92D24 /* UTMini.framework in Frameworks */,
@@ -537,7 +535,6 @@
 				A6D29AEF1D6EE60E000DCA0B /* libsqlite3.tbd in Frameworks */,
 				A6D29AED1D6EE5FD000DCA0B /* CoreGraphics.framework in Frameworks */,
 				A62EE3221D8F803100F92D24 /* ALBBFullSecurityGuard.framework in Frameworks */,
-				A6EF4BF61DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework in Frameworks */,
 				A62EE32C1D8F803100F92D24 /* WXOUIModule.framework in Frameworks */,
 				A6D29AEB1D6EE5F0000DCA0B /* libiconv.tbd in Frameworks */,
 				A62EE3281D8F803100F92D24 /* UTDID.framework in Frameworks */,
@@ -573,7 +570,6 @@
 		A62EE3121D8F803000F92D24 /* WXFrameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A6EF4BF51DCC34AE009FE7B4 /* WXOpenIMSDKFMWK.framework */,
 				A62EE3131D8F803000F92D24 /* ALBBFullSecurityGuard.framework */,
 				A62EE3141D8F803000F92D24 /* ALBBMediaService.framework */,
 				A62EE3151D8F803000F92D24 /* ALBBSDK.framework */,

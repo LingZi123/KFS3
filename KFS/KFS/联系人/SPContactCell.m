@@ -36,12 +36,7 @@
 }
 
 - (void)configureWithAvatar:(UIImage *)image title:(NSString *)title subtitle:(NSString *)subtitle {
-    if (image) {
-         self.avatarImageView.image = image;
-    }
-    else{
-        self.avatarImageView.image =[UIImage imageNamed:@"头像60"];
-    }
+    self.avatarImageView.image = image;
    
     self.titleLabel.text = title;
     self.subtitleLabel.text = subtitle;

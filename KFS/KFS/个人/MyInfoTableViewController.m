@@ -33,6 +33,8 @@
     heightField.returnKeyType=UIReturnKeyNext;
     weightField.returnKeyType=UIReturnKeyDone;
     oldHeadImageUrl=[self appdelegate].userInfo.headImage;
+
+//    imageBtn.layer.cornerRadius=CGRectGetWidth(imageBtn.frame)/2.f;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -287,8 +289,13 @@
     
     __weak typeof(self)weakself=self;
     
-    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.label.text=@"正在上传头像";
+     __block MBProgressHUD *hud;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.label.text=@"正在上传头像";
+        hud.mode=MBProgressHUDModeIndeterminate;
+    });
+    
     [manager POST:DE_UrlUpload parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
 //        [formData appendPartWithFormData:myimageData name:@"file"];
@@ -301,15 +308,23 @@
         NSLog(@"%@",responseObject);
         NSString *status=[responseObject objectForKey:@"status"];
         if([status isEqualToString:@"error"]){
-            hud.label.text=@"上传头像失败 ";
-            hud.mode=MBProgressHUDModeText;
             
-            [hud hideAnimated:YES afterDelay:2.f];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                hud.label.text=@"上传头像失败 ";
+                hud.mode=MBProgressHUDModeText;
+                
+                [hud hideAnimated:YES afterDelay:2.f];
+            });
+            
             NSLog(@"上传头像失败 %@",[responseObject objectForKey:@"message"]);
         }
         else{
             //路径保存
-            [hud hideAnimated:YES];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideAnimated:YES afterDelay:0.f];
+            });
+            
             [weakself appdelegate].userInfo.headImage=[responseObject objectForKey:@"data"];
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
@@ -320,11 +335,14 @@
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"网络错误，上传头像失败") ;
-        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.label.text=@"网络错误，上传头像失败";
-        hud.mode=MBProgressHUDModeText;
         
-        [hud hideAnimated:YES afterDelay:2.f];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            hud.label.text=@"网络错误，上传头像失败";
+            hud.mode=MBProgressHUDModeText;
+            
+            [hud hideAnimated:YES afterDelay:2.f];
+        });
+        
     }];
 }
 

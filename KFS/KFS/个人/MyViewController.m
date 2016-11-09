@@ -32,6 +32,9 @@
     UIImage *image=[UIImage imageWithData:imagedata];
     [headImageView setImage :image];
     self.tableView.rowHeight=54;
+    
+    headImageView.layer.cornerRadius=CGRectGetWidth(headImageView.frame)/2.f;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,9 +53,17 @@
     
     if ([self appdelegate].headImage) {
         [headImageView setImage:[self appdelegate].headImage];
+        
     }
     else{
-         [headImageView setImage :[UIImage imageNamed:@"头像90"] ];
+        if ([self appdelegate].userInfo.headImage) {
+            [self appdelegate].headImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self appdelegate].userInfo.headImage]]];
+            [headImageView setImage:[self appdelegate].headImage] ;
+        }
+        else{
+            [headImageView setImage :[UIImage imageNamed:@"头像90"] ];
+        }
+
     }
 }
 #pragma mark - Table view data source

@@ -40,5 +40,6 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) SPContactListMode mode;
 @property (nonatomic, strong) NSArray *excludedPersonIDs;
 @property (nonatomic, weak) id<ContactMainViewControllerDelegate> delegate;
+@property (nonatomic, strong) YWConversation *conversation;
 
 @end

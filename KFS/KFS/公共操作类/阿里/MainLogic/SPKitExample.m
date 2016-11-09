@@ -1372,8 +1372,14 @@ const CGFloat kSPCustomConversationCellContentMargin =10;
             [weakSelf exampleOpenConversationViewControllerWithPerson:aPerson fromNavigationController:aParentController.navigationController];
         }
         else {
-            /// 您可以打开该用户的profile页面
-            [[SPUtil sharedInstance] showNotificationInViewController:aParentController title:@"打开profile" subtitle:aPerson.description type:SPMessageNotificationTypeMessage];
+//            /// 您可以打开该用户的profile页面
+//            
+//            YWConversation *conversation = [YWP2PConversation fetchConversationByPerson:aPerson creatIfNotExist:YES baseContext:weakSelf.ywIMKit.IMCore];
+//            
+//            SPContactProfileController *profileController = [[SPContactProfileController alloc] initWithContact:((YWP2PConversation *)conversation).person IMKit:weakSelf.ywIMKit];
+//            //            [weakController presentViewController:profileController animated:YES completion:nil];
+//        
+//            [aParentController.navigationController pushViewController:profileController animated:YES];
         }
     }];
 }

@@ -32,6 +32,7 @@
     trueNameField.returnKeyType=UIReturnKeyDone;
     heightField.returnKeyType=UIReturnKeyNext;
     weightField.returnKeyType=UIReturnKeyDone;
+    oldHeadImageUrl=[self appdelegate].userInfo.headImage;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +61,7 @@
     
     NSString *sexstr=[self appdelegate].userInfo.sex;
     if (sexstr!=(id)[NSNull null]&& sexstr!=nil) {
-        if ([sexstr isEqualToString:@"男"]) {
+        if ([sexstr isEqualToString:@"M"]||[sexstr isEqualToString:@"m"]) {
             
             [self sexBtnClick:sexNanBtn];
         }
@@ -286,11 +287,13 @@
     
     __weak typeof(self)weakself=self;
     
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text=@"正在上传头像";
     [manager POST:DE_UrlUpload parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
 //        [formData appendPartWithFormData:myimageData name:@"file"];
         
-        [formData appendPartWithFileData:myimageData name:@"file" fileName:@"头像" mimeType:@"image/png"];
+        [formData appendPartWithFileData:myimageData name:@"file" fileName:@"png" mimeType:@"image/png"];
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
@@ -298,7 +301,6 @@
         NSLog(@"%@",responseObject);
         NSString *status=[responseObject objectForKey:@"status"];
         if([status isEqualToString:@"error"]){
-            MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.label.text=@"上传头像失败 ";
             hud.mode=MBProgressHUDModeText;
             
@@ -307,6 +309,7 @@
         }
         else{
             //路径保存
+            [hud hideAnimated:YES];
             [weakself appdelegate].userInfo.headImage=[responseObject objectForKey:@"data"];
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
@@ -330,12 +333,19 @@
     [self closeKeyBoard];
     
     NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+//    [dic setObject:[self appdelegate].userInfo.username forKey:@"username"];
     
     NSString *sexStr=[oldSelectedBtn.titleLabel.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if (oldSelectedBtn) {
         if (![[self appdelegate].userInfo.sex isEqualToString:sexStr]) {
-            [dic setObject:oldSelectedBtn.titleLabel.text forKey:@"sex"];
+            if ([oldSelectedBtn.titleLabel.text isEqualToString:@"男"]) {
+                [dic setObject:@"M" forKey:@"sex"];
+
+            }
+            else if ([oldSelectedBtn.titleLabel.text isEqualToString:@"女"]){
+                [dic setObject:@"F" forKey:@"sex"];
+            }
         }
     }
     
@@ -353,6 +363,10 @@
     
     if (truenameStr.length>0&&![truenameStr isEqual:[self appdelegate].userInfo.trueName]) {
         [dic setObject:truenameStr forKey:@"trueName"];
+    }
+    
+    if (![[self appdelegate].userInfo.headImage isEqualToString:oldHeadImageUrl]) {
+        [dic setObject:[self appdelegate].userInfo.headImage forKey:@"headImage"];
     }
     
     if (dic.count==0) {
@@ -398,6 +412,7 @@
             [weakself appdelegate].userInfo.weight=weightStr;
             [weakself appdelegate].userInfo.sex=sexStr ;
             
+            oldHeadImageUrl=[self appdelegate].userInfo.headImage;
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[weakself appdelegate].userInfo];
             [defaults setObject:saveData forKey:DE_UserInfo];

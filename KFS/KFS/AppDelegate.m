@@ -58,6 +58,9 @@
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL isLogin=[[defaults objectForKey:DE_IsLogin]boolValue];
     
+    _token=[defaults objectForKey:DE_Token];
+    NSLog(@"%@",_token);
+    
     NSData *userdata=[defaults objectForKey:DE_UserInfo];
     if (userdata) {
         self.userInfo=[NSKeyedUnarchiver unarchiveObjectWithData:userdata];
@@ -110,7 +113,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
     [[SPKitExample sharedInstance] callThisBeforeISVAccountLogout];
-
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults setBool:NO forKey:DE_IsLogin];
+    [defaults synchronize];
+    
     [self saveContext];
 }
 

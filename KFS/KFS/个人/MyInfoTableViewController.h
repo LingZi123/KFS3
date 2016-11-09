@@ -25,6 +25,7 @@
     NSString *headImageStr;
      CGRect originframe;
     BOOL buttonEnble;
+    NSString *oldHeadImageUrl;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;

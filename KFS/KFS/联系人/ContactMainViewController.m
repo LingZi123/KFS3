@@ -31,6 +31,21 @@
     [super viewDidLoad];
     
     [self makeView];
+    
+    _conversation = [[[SPKitExample sharedInstance].ywIMKit.IMCore getContactService] fetchContactSystemConversation];
+    
+    [_conversation setOnNewMessageBlockV2:^(NSArray *aMessages, BOOL aIsOffline) {
+        NSLog(@"....setOnNewMessageBlockV2  addfriend");
+    }];
+    [_conversation loadMoreMessages:100 completion:^(BOOL existMore) {
+        NSLog(@"....loadMoreMessages  addfriend");
+    }];
+    
+    [_conversation setDidChangeContentBlock:^(){
+       NSLog(@".....setDidChangeContentBlock  addfriend");
+    }];
+
+    
 }
 
 -(void)makeView{
@@ -206,6 +221,13 @@
             UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"createTribeCell"];
             if (cell==nil) {
                 cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"createTribeCell"];
+                if (indexPath.row==0) {
+                    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(cell.frame)-40, CGRectGetHeight(cell.frame)/2+5, 10, 10)];
+                    [btn setBackgroundImage:[UIImage imageNamed:@"小红"] forState:UIControlStateNormal];
+                    //                btn.hidden=YES;
+                    btn.tag=101;
+                    [cell addSubview:btn];
+                }
             }
             cell.imageView.image=[UIImage imageNamed:[sectionOneArray objectAtIndex:indexPath.row]];
             cell.textLabel.text=[sectionOneArray objectAtIndex:indexPath.row];

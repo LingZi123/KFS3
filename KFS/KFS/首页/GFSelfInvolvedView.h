@@ -22,5 +22,6 @@
 }
 
 @property(nonatomic,assign) id<GFSelfInvolvedViewDelegate> delegate;
+-(void)refashScore:(NSString *)score;
 
 @end

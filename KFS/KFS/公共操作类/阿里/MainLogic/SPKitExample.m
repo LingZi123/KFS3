@@ -533,7 +533,7 @@ UIAlertViewDelegate>
         YWProfileItem *item = [[YWProfileItem alloc] init];
         item.person = aPerson;
         item.displayName = aPerson.personId;
-        item.avatar = [UIImage imageNamed:@"demo_customer_120"];
+//        item.avatar = [UIImage imageNamed:@"demo_customer_120"];
         aCompletionBlock(YES, item);
     }];
     /// IM会在需要显示群聊profile时，调用这个block，来获取群聊的头像和昵称

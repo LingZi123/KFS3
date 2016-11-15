@@ -80,12 +80,17 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    if ([self appdelegate].score) {
+        [selfInvolvedView refashScore:[self appdelegate].score];
+    }
+    
 //    self.navigationController.navigationBarHidden=YES;
     
     //请求健康和心情
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self getMyMoodAndHealth];
-    }) ;
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [self getMyMoodAndHealth];
+//    }) ;
     
     //请求提醒
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -95,6 +100,12 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self getMyStatus];
     }) ;
+    
+    //医生建议
+    if ([self appdelegate].doctorSuggest) {
+        docotorSegusetView.titleLabel.text=[self appdelegate].doctorSuggest;
+    }
+   
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];

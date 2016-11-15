@@ -24,6 +24,8 @@
 #define DE_RemandList @"RemandList"
 #define DE_RedicationList @"RedicationList"
 #define DE_InvisitData @"InvisitData"
+#define DE_DoctorSuggest @"doctorSuggest"
+#define DE_Score @"score"
 
 
 #define DE_Font11 [UIFont systemFontOfSize:11]  //11号字
@@ -50,32 +52,35 @@
 #define DE_WeChatAppId @"wxb9ac005700c7efce"
 #define DE_TententAppId @"1105624492"
 
-#define DE_ServerUrl @"192.168.8.108:3000" //@"58.17.246.25:3000"  //@"192.168.8.125:3000" //
-#define DE_UrlCodes [NSString stringWithFormat:@"http://%@/api/codes",DE_ServerUrl]//获取验证码
-#define DE_UrlRegister [NSString stringWithFormat:@"http://%@/api/register",DE_ServerUrl]//注册
-#define DE_UrlLoginIn [NSString stringWithFormat:@"http://%@/api/loginIn",DE_ServerUrl]//登录
-#define DE_UrlInfoByUser [NSString stringWithFormat:@"http://%@/api/infoByUser",DE_ServerUrl]  //用户心情和健康
-#define DE_UrlRemind [NSString stringWithFormat:@"http://%@/api/remind",DE_ServerUrl] //提醒
+#define DE_ServerUrl @"http://192.168.8.108:3000" //@"http://58.17.246.25:3000"  //@"http://192.168.8.125:3000" //
+#define DE_UrlCodes [NSString stringWithFormat:@"%@/api/codes",DE_ServerUrl]//获取验证码
+#define DE_UrlRegister [NSString stringWithFormat:@"%@/api/register",DE_ServerUrl]//注册
+#define DE_UrlLoginIn [NSString stringWithFormat:@"%@/api/loginIn",DE_ServerUrl]//登录
+#define DE_UrlInfoByUser [NSString stringWithFormat:@"%@/api/infoByUser",DE_ServerUrl]  //用户心情和健康
+#define DE_UrlRemind [NSString stringWithFormat:@"%@/api/remind",DE_ServerUrl] //提醒
 
-#define DE_UrlDducation_Type [NSString stringWithFormat:@"http://%@/api/get_education_system_type",DE_ServerUrl]  //教育类型
+#define DE_UrlDducation_Type [NSString stringWithFormat:@"%@/api/get_education_system_type",DE_ServerUrl]  //教育类型
 
-#define DE_UrlDducationByType [NSString stringWithFormat:@"http://%@/api/education_system",DE_ServerUrl]  //根据教育类型获取数据
-#define DE_UrlRecoverPassword [NSString stringWithFormat:@"http://%@/api/recoverPassword",DE_ServerUrl]  //修改密码
+#define DE_UrlDducationByType [NSString stringWithFormat:@"%@/api/education_system",DE_ServerUrl]  //根据教育类型获取数据
+#define DE_UrlRecoverPassword [NSString stringWithFormat:@"%@/api/recoverPassword",DE_ServerUrl]  //修改密码
 
-#define DE_UrlUpgradeUser [NSString stringWithFormat:@"http://%@/api/upgrade_user",DE_ServerUrl]  //修改个人信息
+#define DE_UrlUpgradeUser [NSString stringWithFormat:@"%@/api/upgrade_user",DE_ServerUrl]  //修改个人信息
 
-#define DE_UrlUpload [NSString stringWithFormat:@"http://%@/api/upload",DE_ServerUrl]  //上传文件
-#define DE_UrlInvite [NSString stringWithFormat:@"http://%@/api/invite_friends_by_ios",DE_ServerUrl]  //邀请
+#define DE_UrlUpload [NSString stringWithFormat:@"%@/api/upload",DE_ServerUrl]  //上传文件
+#define DE_UrlInvite [NSString stringWithFormat:@"%@/api/invite_friends_by_ios",DE_ServerUrl]  //邀请
 
-#define DE_UrlGetDailyQuestionnaire [NSString stringWithFormat:@"http://%@/api/get_daily_questionnaire",DE_ServerUrl]  //获取自评问卷
+#define DE_UrlGetDailyQuestionnaire [NSString stringWithFormat:@"%@/api/get_daily_questionnaire",DE_ServerUrl]  //获取自评问卷
+
+#define DE_UrlPostDailyQuestionnaire [NSString stringWithFormat:@"%@/api/save_daily_questionnaire",DE_ServerUrl]  //保存自评问卷
 
 
-#define DE_UrlFindUserAllProblem [NSString stringWithFormat:@"http://%@/api/find_user_all_problem",DE_ServerUrl]//查询所有问卷
+#define DE_UrlFindUserAllProblem [NSString stringWithFormat:@"%@/api/find_user_all_problem",DE_ServerUrl]//查询所有问卷
 
-#define DE_UrlFindUserProblemById [NSString stringWithFormat:@"http://%@/api/find_user_problem_by_id",DE_ServerUrl]//查询问卷通过id
+#define DE_UrlFindUserProblemById [NSString stringWithFormat:@"%@/api/find_user_problem_by_id",DE_ServerUrl]//查询问卷通过id
 
-#define DE_ShareUrl @"http://58.17.246.25:3000/share"
+#define DE_ShareUrl [NSString stringWithFormat:@"%@/share",DE_ServerUrl]
 
+#define DE_Learn  [NSString stringWithFormat:@"%@/education/list",DE_ServerUrl]
 
 
 

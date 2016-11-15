@@ -44,4 +44,15 @@
     
     return  dic;
 }
+
+-(NSDictionary *)getValueDicWithModel:(ProblemModel *)model{
+    NSMutableDictionary *dic=[[NSMutableDictionary alloc]init];
+    [dic setObject:model.problemId forKey:@"problem_id"];
+    if (model.value==nil) {
+        model.value=@"";
+    }
+    [dic setObject:model.value forKey:@"value"];
+    
+    return  dic;
+}
 @end

@@ -24,5 +24,5 @@
 
 +(ProblemModel *)getModelWithDic:(NSDictionary *)dic;
 -(NSDictionary *)getDicWithModel:(ProblemModel *)model;
-
+-(NSDictionary *)getValueDicWithModel:(ProblemModel *)model;
 @end

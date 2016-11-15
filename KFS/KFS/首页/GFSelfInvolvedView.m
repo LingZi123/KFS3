@@ -72,4 +72,8 @@
 -(void)goMyValuation:(UIButton *)sender{
     [self.delegate anserQuestionClick];
 }
+
+-(void)refashScore:(NSString *)score{
+    [soreBtn setTitle:score forState:UIControlStateNormal];
+}
 @end

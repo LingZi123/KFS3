@@ -58,6 +58,9 @@
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
     BOOL isLogin=[[defaults objectForKey:DE_IsLogin]boolValue];
     
+    _score=[defaults objectForKey:DE_Score];
+    _doctorSuggest=[defaults objectForKey:DE_DoctorSuggest];
+    
     _token=[defaults objectForKey:DE_Token];
     NSLog(@"%@",_token);
     

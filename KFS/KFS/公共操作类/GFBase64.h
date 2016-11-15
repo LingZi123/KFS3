@@ -30,7 +30,7 @@
  ******************************************************************************/
 + (NSString *)textFromBase64String:(NSString *)base64;
 
-+(NSString *)encodeText:(NSString *)str;
-+(NSString *)decodeText:(NSString *)str;
+//+(NSString *)encodeText:(NSString *)str;
+//+(NSString *)decodeText:(NSString *)str;
 
 @end

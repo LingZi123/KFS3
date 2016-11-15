@@ -185,9 +185,9 @@
             [mdic setObject:@"" forKey:@"username"];
         }
         
-        NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
+//        NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
         
-        [mdic setObject:encodePwdStr forKey:@"password"];
+        [mdic setObject:pwdStr forKey:@"password"];
         [mdic setObject:@"myname" forKey:@"trueName"];
         [mdic setObject:phoneStr forKey:@"phone"];
         [mdic setObject:verityCodeStr forKey:@"codes"];
@@ -218,7 +218,7 @@
                     [self appdelegate].userInfo=[[UserInfoModel alloc]init];
                 }
                 [self appdelegate].userInfo.username=phoneStr;
-                [self appdelegate].userInfo.pwd=encodePwdStr;
+                [self appdelegate].userInfo.pwd=pwdStr;
                 
                 NSData *saveData=[NSKeyedArchiver archivedDataWithRootObject:[self appdelegate].userInfo];
                 [defaults setObject:saveData forKey:DE_UserInfo];

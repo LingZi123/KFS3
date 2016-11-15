@@ -30,6 +30,8 @@
 @property(nonatomic,retain)UserInfoModel *userInfo;
 @property(nonatomic,retain)UIImage *headImage;
 @property(nonatomic,assign)NetworkStatus netstatus;//网络状态
+@property(nonatomic,retain)NSString *doctorSuggest;//医生建议
+@property(nonatomic,retain)NSString *score;//得分
 @property(nonatomic,assign)id<NetworkStatusChangeDelegate> networkStatusDelegate;
 
 - (void)saveContext;

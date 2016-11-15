@@ -119,8 +119,13 @@
    
 }
 -(void)send:(UIButton *)sender{
-    [self exampleSendCustomMessageWithConversation];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (_problemType==SELFINVOLVEDG) {
+        [self saveSelfProblem];
+    }
+    else{
+        [self exampleSendCustomMessageWithConversation];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 
@@ -262,6 +267,9 @@
         }
         
         cell.textFiled.delegate=self;
+         if (model.value) {
+             cell.textFiled.text=model.value;
+         }
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -276,6 +284,9 @@
         cell.textview.delegate=self;
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
 
+        if (model.value) {
+            cell.textview.text=model.value;
+        }
         return cell;
     }
     else{
@@ -290,10 +301,16 @@
         
         NSArray *problemValueArray=model.problemValueArray;
         NSDictionary *subdic=[problemValueArray objectAtIndex:indexPath.row];
-        cell.imageView.image=[UIImage imageNamed:@"单选灰"];
         cell.textLabel.text=[subdic objectForKey:@"value"];
         cell.textLabel.font=DE_Font14;
 
+        if (model.value&&[model.value isEqualToString:[subdic objectForKey:@"value"]]) {
+            cell.imageView.image=[UIImage imageNamed:@"单选亮"];
+        }
+        else{
+            cell.imageView.image=[UIImage imageNamed:@"单选灰"];
+
+        }
         return  cell;
 
     }
@@ -526,6 +543,53 @@
     
     
 }
+
+
+-(void)saveSelfProblem{
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    
+    NSMutableArray *sendDataArray=[[NSMutableArray alloc]init];
+    for (ProblemModel *model in dataArray) {
+        NSDictionary *dic=[model getValueDicWithModel:model];
+        [sendDataArray addObject:dic];
+    }
+    
+    NSMutableDictionary *sendDic=[[NSMutableDictionary alloc]init];
+    [sendDic setObject:sendDataArray forKey:@"data"];
+    
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [manager POST:DE_UrlPostDailyQuestionnaire parameters:sendDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSString *status=[responseObject objectForKey:@"status"];
+        if ([status isEqualToString:@"error"]) {
+            hud.label.text= [responseObject objectForKey:@"message"];
+            [hud hideAnimated:YES afterDelay:3.f];
+        }
+        else{
+            
+            [hud hideAnimated:YES];
+            
+            [self appdelegate].doctorSuggest=[[responseObject objectForKey:@"data"] objectForKey:@"doctor_orders"];
+            [self appdelegate].score=[[responseObject objectForKey:@"data"] objectForKey:@"score"];
+            
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            [defaults setObject:[self appdelegate].doctorSuggest forKey:DE_DoctorSuggest];
+            [defaults setObject:[self appdelegate].score forKey:DE_Score];
+            [defaults synchronize];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        hud.label.text=@"网络错误";
+        [hud hideAnimated:YES afterDelay:2.5f];
+        NSLog(@"");
+    }] ;
+}
+
 
 -(void)getProblemById{
     

@@ -133,9 +133,9 @@
     
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
     [mdic setObject:username forKey:@"username"];
-    NSString *encodeNewPwd=[GFBase64 encodeText:newpwd];
+//    NSString *encodeNewPwd=[GFBase64 encodeText:newpwd];
     
-    [mdic setObject:encodeNewPwd forKey:@"password"];
+    [mdic setObject:newpwd forKey:@"password"];
     [mdic setObject:codes forKey:@"codes"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -152,7 +152,7 @@
             [hud hideAnimated:YES];
             //修改密码
             
-            [self appdelegate].userInfo.pwd=encodeNewPwd;
+            [self appdelegate].userInfo.pwd=newpwd;
         
             //保存到本地
             

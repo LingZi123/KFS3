@@ -107,7 +107,8 @@
     
      self.pwd=[self appdelegate].userInfo.pwd;
     if (self.pwd) {
-        pwdView.textField.text=[GFBase64 decodeText:self.pwd];
+//        pwdView.textField.text=[GFBase64 decodeText:self.pwd];
+        pwdView.textField.text=self.pwd;
     }
     
 }
@@ -200,8 +201,8 @@
     NSMutableDictionary *mdic=[[NSMutableDictionary alloc]init];
     [mdic setObject:accountStr forKey:@"username"];
     
-    NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
-    [mdic setObject:encodePwdStr forKey:@"password"];
+//    NSString *encodePwdStr=[GFBase64 encodeText:pwdStr];
+    [mdic setObject:pwdStr forKey:@"password"];
     
     __weak typeof(self) weakSelf = self;
 
@@ -229,7 +230,7 @@
             [weakSelf appdelegate].token=token;
             
             UserInfoModel *userModel=[UserInfoModel getModelWithDic:data];
-            userModel.pwd=encodePwdStr;
+            userModel.pwd=pwdStr;
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:token forKey:DE_Token];
@@ -247,7 +248,7 @@
             
             [defaults synchronize];
             
-            weakSelf.pwd=encodePwdStr;
+            weakSelf.pwd=pwdStr;
             
             [weakSelf appdelegate].userInfo.username=userModel.username;
             [weakSelf appdelegate].userInfo.pwd=weakSelf.pwd;

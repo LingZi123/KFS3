@@ -40,7 +40,7 @@
     
     soreBtn=[[UIButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.frame)/2-45, CGRectGetMaxY(headlabel.frame)+8, 90, 90)];
     [soreBtn setBackgroundImage:[UIImage imageNamed:@"低分"] forState:UIControlStateNormal];
-    [soreBtn setTitle:@"999" forState:UIControlStateNormal];
+    [soreBtn setTitle:@"0" forState:UIControlStateNormal];
     soreBtn.titleLabel.font=[UIFont systemFontOfSize:20];
     soreBtn.titleLabel.layer.shadowColor = [UIColor blackColor].CGColor;
     

@@ -1731,7 +1731,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "-saveToServer"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
+            timestampString = "500958414.509812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "-upLoadHeadImage:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "412"
@@ -1747,27 +1779,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-upLoadHeadImage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "357"
+            endingLineNumber = "357"
             landmarkName = "-saveToServer"
             landmarkType = "7">
          </BreakpointContent>
@@ -1779,27 +1795,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "353"
-            endingLineNumber = "353"
-            landmarkName = "-saveToServer"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-sexBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1811,11 +1811,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "419"
-            endingLineNumber = "419"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
             landmarkName = "-saveToServer"
             landmarkType = "7">
          </BreakpointContent>
@@ -1827,11 +1827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "441"
-            endingLineNumber = "441"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "-saveToServer"
             landmarkType = "7">
          </BreakpointContent>
@@ -1843,11 +1843,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
             landmarkName = "-saveToServer"
             landmarkType = "7">
          </BreakpointContent>
@@ -1859,11 +1859,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-upLoadHeadImage:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1875,11 +1875,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370200.801529"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "-upLoadHeadImage:"
             landmarkType = "7">
             <Locations>
@@ -1891,11 +1891,11 @@
                   moduleName = "KFS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyInfoTableViewController.m"
-                  timestampString = "500886962.808914"
+                  timestampString = "500958414.825965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "312"
-                  endingLineNumber = "312"
+                  startingLineNumber = "316"
+                  endingLineNumber = "316"
                   offsetFromSymbolStart = "196">
                </Location>
                <Location
@@ -1906,11 +1906,11 @@
                   moduleName = "KFS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyInfoTableViewController.m"
-                  timestampString = "500886962.81099"
+                  timestampString = "500958414.827992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "312"
-                  endingLineNumber = "312"
+                  startingLineNumber = "316"
+                  endingLineNumber = "316"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -1939,11 +1939,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
-            timestampString = "500370224.615344"
+            timestampString = "500958414.509812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -2121,6 +2121,22 @@
             startingLineNumber = "246"
             endingLineNumber = "246"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyInfoTableViewController.m"
+            timestampString = "500958414.509812"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "-saveToServer"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

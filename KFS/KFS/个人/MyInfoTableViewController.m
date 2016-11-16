@@ -11,6 +11,10 @@
 #import "AFHTTPSessionManager.h"
 #import "MBProgressHUD.h"
 #import "UserInfoModel.h"
+#import <WXOpenIMSDKFMWK/YWFMWK.h>
+#import <WXOUIModule/YWIndicator.h>
+#import <WXOpenIMSDKFMWK/YWServiceDef.h>
+#import "SPKitExample.h"
 
 @interface MyInfoTableViewController ()
 
@@ -436,6 +440,15 @@
             [defaults setObject:saveData forKey:DE_UserInfo];
             [defaults synchronize];
             
+            
+            //移除缓存
+            
+            YWIMCore *imcore = [SPKitExample sharedInstance].ywIMKit.IMCore;
+        YWPerson *mine=[[YWPerson alloc]initWithPersonId:[self appdelegate].userInfo.username inBaseContext:imcore];
+            
+            [[imcore getContactService]removeProfileForPerson:mine withSave:YES];
+        
+
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         hud.label.text=@"网络错误";

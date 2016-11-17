@@ -33,6 +33,7 @@
     [headImageView setImage :image];
     self.tableView.rowHeight=54;
     
+    headImageView.layer.masksToBounds=YES;
     headImageView.layer.cornerRadius=CGRectGetWidth(headImageView.frame)/2.f;
     
 }

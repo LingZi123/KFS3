@@ -20,6 +20,7 @@
     __weak IBOutlet UITextField *heightField;
     __weak IBOutlet UITextField *weightField;
     __weak IBOutlet UITextField *trueNameField;
+    UIBarButtonItem *rightBar;
     
     UIButton *oldSelectedBtn;
     NSString *headImageStr;

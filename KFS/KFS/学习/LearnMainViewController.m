@@ -26,7 +26,8 @@
     
     
     UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(0, -20, CGRectGetWidth(self.view.bounds), 40)];
-    topView.backgroundColor=DE_BgColorPink;
+    topView.backgroundColor=[UIColor colorWithRed:201.0/255.0 green:65.0/255.0 blue:122.0/255.0 alpha:1]
+;
     [self.view addSubview:topView];
     
     UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(topView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-20)];

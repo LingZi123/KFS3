@@ -27,7 +27,7 @@
     
     self.navigationItem.title=@"个人信息";
     
-    UIBarButtonItem *rightBar=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClick:)];
+    rightBar=[[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClick:)];
     self.navigationItem.rightBarButtonItem=rightBar;
     
     self.tableView.tableFooterView=[[UIView alloc]init];
@@ -38,7 +38,9 @@
     weightField.returnKeyType=UIReturnKeyDone;
     oldHeadImageUrl=[self appdelegate].userInfo.headImage;
 
-//    imageBtn.layer.cornerRadius=CGRectGetWidth(imageBtn.frame)/2.f;
+    imageBtn.layer.masksToBounds=YES;
+    imageBtn.layer.cornerRadius=CGRectGetWidth(imageBtn.frame)/2.f;
+     [self enbleControls:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,7 +94,7 @@
         trueNameField.text=[self appdelegate].userInfo.trueName;
     }
     
-     [self enbleControls:NO];
+    
 }
 
 #pragma mark - Table view data source
@@ -116,11 +118,6 @@
         [self enbleControls:YES];
     }
     else{
-        [sender setTitle:@"编辑"];
-        
-        //禁用所有
-        [self enbleControls:NO];
-        
         //提交保存
         [self saveToServer];
 
@@ -139,7 +136,7 @@
         UIImagePickerControllerSourceType sourceType=UIImagePickerControllerSourceTypeCamera;
         UIImagePickerController *picker=[[UIImagePickerController alloc]init];
         picker.delegate=self;
-        picker.allowsEditing=NO;
+        picker.allowsEditing=YES;
         picker.sourceType=sourceType;
         [self presentViewController:picker animated:YES completion:^{
             
@@ -150,7 +147,7 @@
         UIImagePickerControllerSourceType sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
         UIImagePickerController *picker=[[UIImagePickerController alloc]init];
         picker.delegate=self;
-        picker.allowsEditing=NO;
+        picker.allowsEditing=YES;
         picker.sourceType=sourceType;
         [self presentViewController:picker animated:YES completion:^{
             
@@ -427,6 +424,10 @@
             [hud hideAnimated:YES afterDelay:3.f];
         }
         else{
+            
+            [rightBar setTitle:@"编辑"];
+            //禁用所有
+            [self enbleControls:NO];
             
             [hud hideAnimated:YES];
             [weakself appdelegate].userInfo.trueName=truenameStr;

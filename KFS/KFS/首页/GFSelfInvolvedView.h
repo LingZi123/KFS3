@@ -19,6 +19,7 @@
 {
     UIButton *soreTotoalBtn;//进入分数统计，按照每天时间
     UIButton *soreBtn;//分数按钮
+    UILabel *locationLabel;
 }
 
 @property(nonatomic,assign) id<GFSelfInvolvedViewDelegate> delegate;

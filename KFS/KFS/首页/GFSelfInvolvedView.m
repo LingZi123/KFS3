@@ -7,6 +7,8 @@
 //
 
 #import "GFSelfInvolvedView.h"
+#import "AFHTTPSessionManager.h"
+#import "AppDelegate.h"
 
 @implementation GFSelfInvolvedView
 
@@ -25,12 +27,12 @@
     [self addSubview:locationImage];
     locationImage.hidden=YES;
     
-    UILabel *locationLabel=[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(locationImage.frame)+10, 10, 200, 25)];
+    locationLabel=[[UILabel alloc]initWithFrame:CGRectMake(30, 10, 200, 25)];
     locationLabel.font=DE_Font11;
-    locationLabel.text=@"重庆市北部新区木星科技大厦";
+    locationLabel.text=@"暂无公告";
     locationLabel.textColor=DE_BgColorPink;
     [self addSubview:locationLabel];
-    locationLabel.hidden=YES;
+//    locationLabel.hidden=YES;
     
     UILabel *headlabel=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(locationLabel.frame)+8, 200, 21)];
     headlabel.font=DE_Font11;
@@ -75,5 +77,31 @@
 
 -(void)refashScore:(NSString *)score{
     [soreBtn setTitle:score forState:UIControlStateNormal];
+    [self getMessage];
+}
+
+-(void)getMessage{
+    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
+    [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+
+//    __weak typeof(self) weakself=self;
+    
+    [manager GET:DE_GetMessage parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (responseObject) {
+            NSString *status=[responseObject objectForKey:@"status"];
+            if ([status isEqualToString:@"ok"]) {
+                locationLabel.text= [[responseObject objectForKey:@"data"]objectForKey:@"content"];
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+#pragma mark-appdelegate
+-(AppDelegate *)appdelegate{
+    return (AppDelegate *)[[UIApplication sharedApplication]delegate];
 }
 @end

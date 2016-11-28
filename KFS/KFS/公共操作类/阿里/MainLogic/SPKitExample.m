@@ -21,6 +21,7 @@
 #import "SPInputViewPluginGreeting.h"
 #import "SPInputViewPluginCallingCard.h"
 #import "SPInputViewPluginTransparent.h"
+#import "GFInputViewPluginVideo.h"
 
 #import <WXOUIModule/YWIndicator.h>
 #import <objc/runtime.h>
@@ -840,11 +841,14 @@ UIAlertViewDelegate>
         YWMessageInputView *messageInputView = (YWMessageInputView *)aConversationController.messageInputView;
 
         /// 创建自定义插件
-        SPInputViewPluginGreeting *plugin = [[SPInputViewPluginGreeting alloc] init];
-        [messageInputView addPlugin:plugin];
+//        SPInputViewPluginGreeting *plugin = [[SPInputViewPluginGreeting alloc] init];
+//        [messageInputView addPlugin:plugin];
 
-        SPInputViewPluginCallingCard *pluginCallingCard = [[SPInputViewPluginCallingCard alloc] init];
-        [messageInputView addPlugin:pluginCallingCard];
+//        SPInputViewPluginCallingCard *pluginCallingCard = [[SPInputViewPluginCallingCard alloc] init];
+//        [messageInputView addPlugin:pluginCallingCard];
+        
+        GFInputViewPluginVideo *pluginVideo = [[GFInputViewPluginVideo alloc] init];
+        [messageInputView addPlugin:pluginVideo];
         
         if ([aConversationController.conversation isKindOfClass:[YWP2PConversation class]]) {
             /// 透传消息目前仅支持单聊会话

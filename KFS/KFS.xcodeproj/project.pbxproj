@@ -56,6 +56,8 @@
 		A63B05731D825384004B8AC8 /* SPTribeMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A63B05721D825384004B8AC8 /* SPTribeMemberCell.m */; };
 		A63B05761D828864004B8AC8 /* SPTribeQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63B05751D828864004B8AC8 /* SPTribeQRCodeViewController.m */; };
 		A63B05791D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63B05781D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m */; };
+		A6519A041DE531D9003692C4 /* GFInputViewPluginVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A6519A031DE531D9003692C4 /* GFInputViewPluginVideo.m */; };
+		A6519A071DE534B5003692C4 /* GFVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6519A061DE534B5003692C4 /* GFVideoViewController.m */; };
 		A6594B851D5C2A1E0007C4A3 /* GFWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594B841D5C2A1E0007C4A3 /* GFWeekView.m */; };
 		A6594B871D5C2A360007C4A3 /* GFWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6594B861D5C2A360007C4A3 /* GFWeekView.xib */; };
 		A6594B8B1D5C7EAD0007C4A3 /* CommonRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594B8A1D5C7EAD0007C4A3 /* CommonRootViewController.m */; };
@@ -292,6 +294,10 @@
 		A63B05751D828864004B8AC8 /* SPTribeQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTribeQRCodeViewController.m; sourceTree = "<group>"; };
 		A63B05771D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFEditeMyTrideNameViewController.h; sourceTree = "<group>"; };
 		A63B05781D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFEditeMyTrideNameViewController.m; sourceTree = "<group>"; };
+		A6519A021DE531D9003692C4 /* GFInputViewPluginVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFInputViewPluginVideo.h; sourceTree = "<group>"; };
+		A6519A031DE531D9003692C4 /* GFInputViewPluginVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInputViewPluginVideo.m; sourceTree = "<group>"; };
+		A6519A051DE534B5003692C4 /* GFVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFVideoViewController.h; sourceTree = "<group>"; };
+		A6519A061DE534B5003692C4 /* GFVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFVideoViewController.m; sourceTree = "<group>"; };
 		A6594B831D5C2A1E0007C4A3 /* GFWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFWeekView.h; sourceTree = "<group>"; };
 		A6594B841D5C2A1E0007C4A3 /* GFWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFWeekView.m; sourceTree = "<group>"; };
 		A6594B861D5C2A360007C4A3 /* GFWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFWeekView.xib; sourceTree = "<group>"; };
@@ -812,6 +818,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		A6519A011DE5311A003692C4 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A6519A021DE531D9003692C4 /* GFInputViewPluginVideo.h */,
+				A6519A031DE531D9003692C4 /* GFInputViewPluginVideo.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		A6594B881D5C7E900007C4A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +932,7 @@
 		A68812AB1D757C0500E37207 /* Customized Message */ = {
 			isa = PBXGroup;
 			children = (
+				A6519A011DE5311A003692C4 /* Video */,
 				A68812AC1D757C0500E37207 /* CallingCard */,
 				A68812B41D757C0500E37207 /* Greeting */,
 				A68812BB1D757C0500E37207 /* Other */,
@@ -1156,6 +1172,8 @@
 				A63B05781D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m */,
 				A6F3DA8B1D9B9B9E00E11D9B /* ProblemViewController.h */,
 				A6F3DA8C1D9B9B9E00E11D9B /* ProblemViewController.m */,
+				A6519A051DE534B5003692C4 /* GFVideoViewController.h */,
+				A6519A061DE534B5003692C4 /* GFVideoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1437,6 +1455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EF4BED1DCAE9FC009FE7B4 /* ContactMainViewController.m in Sources */,
+				A6519A041DE531D9003692C4 /* GFInputViewPluginVideo.m in Sources */,
 				A6D064EE1D78147800CFAAE5 /* SPContactRequestListController.m in Sources */,
 				A63B055B1D8104F6004B8AC8 /* GFAddContactViewController.m in Sources */,
 				A63B05761D828864004B8AC8 /* SPTribeQRCodeViewController.m in Sources */,
@@ -1514,6 +1533,7 @@
 				A6F3DA8D1D9B9B9E00E11D9B /* ProblemViewController.m in Sources */,
 				A6594BA91D61A6040007C4A3 /* JHRingChart.m in Sources */,
 				A62F218B1D582C18003E71C7 /* MoodView.m in Sources */,
+				A6519A071DE534B5003692C4 /* GFVideoViewController.m in Sources */,
 				A666E7411DB86C1900CA367A /* GFRemandView.m in Sources */,
 				A62F21941D585916003E71C7 /* MoodUnitView.m in Sources */,
 				A63B05731D825384004B8AC8 /* SPTribeMemberCell.m in Sources */,

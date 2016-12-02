@@ -32,7 +32,7 @@
     
     UIWebView *webview=[[UIWebView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(topView.frame), CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)-20)];
     
-    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.8.108:3000/education/list"]]];
+    [webview loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:DE_Learn]]];
     
     [self.view addSubview:webview];
 }

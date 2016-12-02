@@ -1891,7 +1891,7 @@
                   moduleName = "KFS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyInfoTableViewController.m"
-                  timestampString = "502012078.148115"
+                  timestampString = "502339043.693209"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -1906,7 +1906,7 @@
                   moduleName = "KFS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyInfoTableViewController.m"
-                  timestampString = "502012078.149955"
+                  timestampString = "502339043.69502"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "313"
@@ -1955,11 +1955,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x4e2a;&#x4eba;/MyViewController.m"
-            timestampString = "501057584.802976"
+            timestampString = "502275813.943226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
             landmarkName = "-actionClearCache"
             landmarkType = "7">
          </BreakpointContent>
@@ -2015,7 +2015,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x8054;&#x7cfb;&#x4eba;/ProblemViewController.m"
@@ -2095,7 +2095,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KFS/&#x8054;&#x7cfb;&#x4eba;/ProblemViewController.m"
@@ -2217,6 +2217,150 @@
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "-getMessage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyViewController.m"
+            timestampString = "502275694.146741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyViewController.m"
+            timestampString = "502275804.161318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyViewController.m"
+            timestampString = "502275842.230427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyViewController.m"
+            timestampString = "502275845.243891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x8054;&#x7cfb;&#x4eba;/ProblemViewController.m"
+            timestampString = "502338244.970181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
+            landmarkName = "-saveSelfProblem"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyQuestionnaireTableViewController.m"
+            timestampString = "502338539.512289"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-getQuestionsFormServer"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MyQuestionnaireTableViewController getQuestionsFormServer]"
+                  moduleName = "KFS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyQuestionnaireTableViewController.m"
+                  timestampString = "502338539.740919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "844">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__60-[MyQuestionnaireTableViewController getQuestionsFormServer]_block_invoke"
+                  moduleName = "KFS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/GF/Documents/KFS3/KFS/KFS/%E4%B8%AA%E4%BA%BA/MyQuestionnaireTableViewController.m"
+                  timestampString = "502338539.742954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KFS/&#x4e2a;&#x4eba;/MyQuestionnaireTableViewController.m"
+            timestampString = "502338541.71955"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-getQuestionsFormServer"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

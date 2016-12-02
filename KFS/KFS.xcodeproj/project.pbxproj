@@ -58,6 +58,7 @@
 		A63B05791D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A63B05781D828A7E004B8AC8 /* GFEditeMyTrideNameViewController.m */; };
 		A6519A041DE531D9003692C4 /* GFInputViewPluginVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A6519A031DE531D9003692C4 /* GFInputViewPluginVideo.m */; };
 		A6519A071DE534B5003692C4 /* GFVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6519A061DE534B5003692C4 /* GFVideoViewController.m */; };
+		A6519A0B1DEC20E3003692C4 /* 视频@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6519A0A1DEC20E3003692C4 /* 视频@2x.png */; };
 		A6594B851D5C2A1E0007C4A3 /* GFWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594B841D5C2A1E0007C4A3 /* GFWeekView.m */; };
 		A6594B871D5C2A360007C4A3 /* GFWeekView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6594B861D5C2A360007C4A3 /* GFWeekView.xib */; };
 		A6594B8B1D5C7EAD0007C4A3 /* CommonRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6594B8A1D5C7EAD0007C4A3 /* CommonRootViewController.m */; };
@@ -298,6 +299,7 @@
 		A6519A031DE531D9003692C4 /* GFInputViewPluginVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFInputViewPluginVideo.m; sourceTree = "<group>"; };
 		A6519A051DE534B5003692C4 /* GFVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFVideoViewController.h; sourceTree = "<group>"; };
 		A6519A061DE534B5003692C4 /* GFVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFVideoViewController.m; sourceTree = "<group>"; };
+		A6519A0A1DEC20E3003692C4 /* 视频@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频@2x.png"; sourceTree = "<group>"; };
 		A6594B831D5C2A1E0007C4A3 /* GFWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFWeekView.h; sourceTree = "<group>"; };
 		A6594B841D5C2A1E0007C4A3 /* GFWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFWeekView.m; sourceTree = "<group>"; };
 		A6594B861D5C2A360007C4A3 /* GFWeekView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GFWeekView.xib; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 		A68812C31D757C0500E37207 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6519A0A1DEC20E3003692C4 /* 视频@2x.png */,
 				A68812C41D757C0500E37207 /* calling_card_bg@2x.png */,
 				A68812C51D757C0500E37207 /* CustomizedUIResources.bundle */,
 				A68812C61D757C0500E37207 /* face_e@2x.png */,
@@ -1404,6 +1407,7 @@
 				A62EE3251D8F803100F92D24 /* baichuan.bundle in Resources */,
 				A68812DD1D757C0500E37207 /* SPCallingCardBubbleChatContentView.xib in Resources */,
 				A68812EC1D757C0500E37207 /* icon_delete@2x.png in Resources */,
+				A6519A0B1DEC20E3003692C4 /* 视频@2x.png in Resources */,
 				A6D29AE91D6EE5BC000DCA0B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A6C672E11D5C114B00EDCC56 /* GFDateView.xib in Resources */,
 				A68DFE581D991B47007F5CD4 /* 学习默认.png in Resources */,

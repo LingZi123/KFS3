@@ -18,6 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title=@"关于";
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    // app版本
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    vesionLabel.text=[NSString stringWithFormat:@"软件版本 v%@",app_Version];
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -57,9 +57,13 @@
         
     }
     else{
-        if ([self appdelegate].userInfo.headImage) {
-            [self appdelegate].headImage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self appdelegate].userInfo.headImage]]];
-            [headImageView setImage:[self appdelegate].headImage] ;
+        if ([self appdelegate].userInfo.headImage!=nil&&[self appdelegate].userInfo.headImage!=(id)[NSNull null]) {
+            NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:[self appdelegate].userInfo.headImage]];
+            if (data) {
+                [self appdelegate].headImage=[UIImage imageWithData:data];
+                [headImageView setImage:[self appdelegate].headImage] ;
+            }
+           
         }
         else{
             [headImageView setImage :[UIImage imageNamed:@"头像90"] ];

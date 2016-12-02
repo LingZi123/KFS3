@@ -32,7 +32,7 @@
 // 插件图标
 - (UIImage *)pluginIconImage
 {
-    return [UIImage imageNamed:@"input_plug_ico_hi_nor"];
+    return [UIImage imageNamed:@"视频"];
 }
 
 // 插件名称

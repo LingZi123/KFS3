@@ -17,7 +17,7 @@
         _name=[aDecoder decodeObjectForKey:@"name"];
         _beginDate=[aDecoder decodeObjectForKey:@"beginDate"];
         _excuteTime=[aDecoder decodeObjectForKey:@"excuteTime"];
-        _isOpen=[aDecoder decodeBoolForKey:@"isOpen"];
+        _isOpen=[aDecoder decodeObjectForKey:@"isOpen"];
         _isRepeat=[aDecoder decodeObjectForKey:@"isRepeat"];
         _modelId=[aDecoder decodeIntegerForKey:@"modelId"];
 
@@ -31,7 +31,7 @@
     [aCoder encodeObject:_beginDate forKey:@"beginDate"];
     [aCoder encodeObject:_excuteTime forKey:@"excuteTime"];
     [aCoder encodeObject:_isRepeat forKey:@"isRepeat"];
-    [aCoder encodeBool:_isOpen forKey:@"isOpen"];
+    [aCoder encodeObject:_isOpen forKey:@"isOpen"];
     [aCoder encodeInteger:_modelId forKey:@"modelId"];
 }
 
@@ -41,8 +41,8 @@
     model.name=[dic objectForKey:@"name"];
     model.modelId=[[dic objectForKey:@"id"]integerValue];
     model.isOpen=[dic objectForKey:@"is_open"];
-    model.isRepeat=[dic objectForKey:@"is_repeat"];
     
+    model.isRepeat=[dic objectForKey:@"is_repeat"];    
     NSString *str1=[dic objectForKey:@"execution_time"];
     model.beginDate=[str1 substringWithRange:NSMakeRange(0, 10)];
     model.excuteTime=[str1 substringFromIndex:11];

@@ -225,7 +225,7 @@
         repeatStr=@"null";
     }
     [mdic setObject:repeatStr forKey:@"is_repeat"];
-    [mdic setObject:[NSNumber numberWithBool:YES] forKey:@"is_open"];
+    [mdic setObject:@"1" forKey:@"is_open"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
@@ -251,7 +251,7 @@
             weakself.remandmodel.beginDate=beginDateStr;
             weakself.remandmodel.excuteTime=timeStr;
             weakself.remandmodel.isRepeat=repeatStr;
-            weakself.remandmodel.isOpen=YES;
+            weakself.remandmodel.isOpen=@"1";
             
             
             [self.delegate addRemand:weakself.remandmodel];
@@ -301,7 +301,7 @@
         repeatStr=@"null";
     }
     [mdic setObject:repeatStr forKey:@"is_repeat"];
-    [mdic setObject:[NSNumber numberWithBool:YES] forKey:@"is_open"];
+    [mdic setObject:@"1" forKey:@"is_open"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
     

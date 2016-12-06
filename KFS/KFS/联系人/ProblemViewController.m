@@ -548,6 +548,7 @@
 -(void)saveSelfProblem{
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
     [manager.requestSerializer setValue:[self appdelegate].token forHTTPHeaderField:@"x-access-token"];
+    manager.requestSerializer.stringEncoding =CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingUTF8);
     
     NSMutableArray *sendDataArray=[[NSMutableArray alloc]init];
     for (ProblemModel *model in dataArray) {
@@ -559,13 +560,15 @@
     [sendDic setObject:sendDataArray forKey:@"data"];
     
     MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    [manager POST:DE_UrlPostDailyQuestionnaire parameters:sendDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:DE_UrlPostDailyQuestionnaire parameters:sendDic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
         NSLog(@"%@",responseObject);
         
         NSString *status=[responseObject objectForKey:@"status"];
         if ([status isEqualToString:@"error"]) {
-            hud.label.text= [responseObject objectForKey:@"message"];
+            hud.label.text= [[responseObject objectForKey:@"message"] objectForKey:@"code"];
             [hud hideAnimated:YES afterDelay:3.f];
         }
         else{
@@ -583,11 +586,15 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         }
 
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
         hud.label.text=@"网络错误";
         [hud hideAnimated:YES afterDelay:2.5f];
         NSLog(@"");
-    }] ;
+        
+    }];
+    
 }
 
 

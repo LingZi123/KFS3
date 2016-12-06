@@ -78,7 +78,13 @@
     RemandModel *model=[self.remandListArray objectAtIndex:indexPath.row];
     cell.myTitleLabel.text=model.name;
 //    cell.imageView.image=[UIImage imageNamed:@"appLogo"];
-    [cell.controlSwitch setOn:model.isOpen];
+    if (model.isOpen&&[model.isOpen isEqualToString:@"1"]) {
+        [cell.controlSwitch setOn:YES];
+    }
+    else{
+        [cell.controlSwitch setOn:NO];
+    }
+
     cell.detailLabel.text=[model getRepeatDis:model.isRepeat];
     cell.detailLabel2.text=[model.excuteTime substringWithRange:NSMakeRange(0, 5)];
     cell.datamodel=model;

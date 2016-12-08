@@ -544,6 +544,20 @@
     
 }
 
+-(NSString *)dicToJsonString:(NSDictionary *)dic{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+
+    return jsonString;
+}
 
 -(void)saveSelfProblem{
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
@@ -553,7 +567,10 @@
     NSMutableArray *sendDataArray=[[NSMutableArray alloc]init];
     for (ProblemModel *model in dataArray) {
         NSDictionary *dic=[model getValueDicWithModel:model];
-        [sendDataArray addObject:dic];
+        NSString *jsonString=[self dicToJsonString:dic];
+        if (jsonString) {
+            [sendDataArray addObject:jsonString];
+        }
     }
     
     NSMutableDictionary *sendDic=[[NSMutableDictionary alloc]init];
@@ -568,15 +585,24 @@
         
         NSString *status=[responseObject objectForKey:@"status"];
         if ([status isEqualToString:@"error"]) {
-            hud.label.text= [[responseObject objectForKey:@"message"] objectForKey:@"code"];
-            [hud hideAnimated:YES afterDelay:3.f];
+            
+            id message=[responseObject objectForKey:@"message"];
+            if ([message isKindOfClass:[NSString class]]) {
+                hud.label.text=message;
+            }
+            else{
+                hud.label.text= [message objectForKey:@"code"];
+ 
+            }
+                [hud hideAnimated:YES afterDelay:3.f];
         }
         else{
             
             [hud hideAnimated:YES];
             
             [self appdelegate].doctorSuggest=[[responseObject objectForKey:@"data"] objectForKey:@"doctor_orders"];
-            [self appdelegate].score=[[responseObject objectForKey:@"data"] objectForKey:@"score"];
+            NSNumber *sore=[[responseObject objectForKey:@"data"] objectForKey:@"score"];
+            [self appdelegate].score=[NSString stringWithFormat:@"%@",sore];
             
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             [defaults setObject:[self appdelegate].doctorSuggest forKey:DE_DoctorSuggest];

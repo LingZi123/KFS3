@@ -97,9 +97,9 @@
         [self getLastMyRemand];
 //    }) ;
     //请求状态
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self getMyStatus];
-    }) ;
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [self getMyStatus];
+//    }) ;
     
     //医生建议
     if ([self appdelegate].doctorSuggest) {
